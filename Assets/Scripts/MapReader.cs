@@ -33,6 +33,9 @@ public class MapReader {
 					case '#':
 						m.addWall(x,i);
 						break;
+					case '&':
+						m.addWall(x,i);
+						break;
 					case '@':
 						m.addCharacter(x,i);
 						break;
