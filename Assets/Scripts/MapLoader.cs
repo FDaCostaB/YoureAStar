@@ -31,9 +31,9 @@ public class MapLoader : MonoBehaviour
 
         using (StreamWriter writer = new StreamWriter(AssetDatabase.GetAssetPath(map)))
         {
-            for (int x = 0; x < image.width; x++)
+            for (int x = 0; x < image.height; x++)
             {
-                for (int y = 0; y < image.height; y++)
+                for (int y = 0; y < image.width; y++)
                 {
                     UnityEngine.Color pixel = image.GetPixel(x, y);
                     if (pixel.r > 0.5 && pixel.g < 0.5 && pixel.b < 0.5)
@@ -42,11 +42,11 @@ public class MapLoader : MonoBehaviour
                     }
                     else if (pixel.r < 0.5 && pixel.g > 0.5 && pixel.b < 0.5)
                     {
-                        writer.Write(" ");
+                        writer.Write("$");
                     }
                     else if (pixel.r < 0.5 && pixel.g < 0.5 && pixel.b > 0.5)
                     {
-                        writer.Write("&");
+                        writer.Write("%");
                     }
                 }
                 writer.WriteLine();
