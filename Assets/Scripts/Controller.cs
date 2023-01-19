@@ -76,27 +76,27 @@ public class Controller : IEventCollector {
 
     internal void up()
     {
-        cam.GetComponent<Transform>().position += new Vector3(0,5,0);
+        cam.GetComponent<Transform>().position += new Vector3(0,5,0) * gZone.camSpeed;
     }
 
     internal void left()
     {
-        cam.GetComponent<Transform>().position -= new Vector3(5,0,0);
+        cam.GetComponent<Transform>().position -= new Vector3(5,0,0) * gZone.camSpeed;
     }
 
     internal void down()
     {
-        cam.GetComponent<Transform>().position -= new Vector3(0,5,0);
+        cam.GetComponent<Transform>().position -= new Vector3(0,5,0) * gZone.camSpeed;
     }
 
     internal void right()
     {
-        cam.GetComponent<Transform>().position += new Vector3(5,0,0);
+        cam.GetComponent<Transform>().position += new Vector3(5,0,0) * gZone.camSpeed;
     }
 
     internal void zoom(int zoom)
     {
-        int newSize = (int) cam.orthographicSize - zoom;
+        int newSize = (int) cam.orthographicSize - (zoom * gZone.camSpeed);
         if( newSize > 10)
             cam.orthographicSize = newSize;
 		gZone.updateTileSize();
@@ -113,6 +113,10 @@ public class Controller : IEventCollector {
 		}
 		map.Notify();
     }
+
+	internal void computeSG(){
+		map.SubGoalGraph();
+	}
 
     internal void clear()
     {

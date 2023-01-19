@@ -55,6 +55,10 @@ public class InputAdapter {
         {
             control.clear();
         }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            control.computeSG();
+        }
         if((int) Input.mouseScrollDelta.y != 0){
             control.zoom((int) Input.mouseScrollDelta.y);
         }

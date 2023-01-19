@@ -9,8 +9,9 @@ public class AStar {
     public const int REACHABLE = 0x00000F;
     public const int SCANNED = 0x0000F0;
     public const int PATH = 0x000F00;
-    //public const int USED = 0x00F000;
-    bool refresh = true;
+    public const int NODES = 0x00F000;
+    public const int EMPTY = 0xF00000;
+    public const int ALL = 0xFFFFFF;
     Map map;
 
     public AStar(Map m){
@@ -25,12 +26,12 @@ public class AStar {
 
         reachable.Add(new Vector2Int(characterX, characterY));
 
-        if(refresh || doRefresh){
+        if(doRefresh){
             map.eraseMark();
             while (reachable.Count > 0) {
                 curr = reachable[0];
                 reachable.RemoveAt(0);
-                AddNeighborhood(curr.x, curr.y, 0, reachable, true);
+                AddNeighborhood(curr.x, curr.y, ~REACHABLE, reachable, true);
                 map.setMark(REACHABLE, curr.x, curr.y);
             }
         }
@@ -40,21 +41,19 @@ public class AStar {
     }
 
     List<Vector2Int> AddNeighborhood(int x, int y, int color, List<Vector2Int> res, bool doMark = false){
-        if(x-1 >= 0 && map.isFree(x-1,y) && map.mark(x-1,y) == color){
-            res.Add(new Vector2Int(x-1,y));
-            if(doMark) map.setMark(REACHABLE, x-1, y);
+        byte neighborhood = 0x0;
+        for(int i=0; i<8;i++){
+            Directions d = (Directions)(1<<i);
+            neighborhood |=  (byte) ((map.isFree(x,y,d) && ((map.mark(x,y,d) & color) != 0) )  ? 0x1 << i : 0x0);
         }
-        if(y-1 >= 0 && map.isFree(x,y-1) && map.mark(x,y-1) == color){
-            res.Add(new Vector2Int(x,y-1));
-            if(doMark) map.setMark(REACHABLE, x, y-1);
-        }
-        if(x+1 < map.Width() && map.isFree(x+1,y) && map.mark(x+1,y) == color){
-            res.Add(new Vector2Int(x+1,y));
-            if(doMark) map.setMark(REACHABLE, x+1, y);
-        }
-        if(y+1 < map.Height() && map.isFree(x,y+1) && map.mark(x,y+1) == color){
-            res.Add(new Vector2Int(x,y+1));
-            if(doMark) map.setMark(REACHABLE, x, y+1);
+        for(int i=0; i<8;i++){
+            Directions d = (Directions)(1<<i);
+            if( (neighborhood | MaskFree.maskFree[i]) == 0xFF){
+                if(map.parameters.allowDiagonal || d == Directions.NORTH || d == Directions.EAST || d==Directions.SOUTH || d==Directions.WEST ){
+                    res.Add(new Vector2Int(Map.moveX(x,d), Map.moveY(y,d)));
+                    if(doMark) map.setMark(REACHABLE, Map.moveX(x,d), Map.moveY(y,d));
+                }
+            }
         }
         return res;
     }
@@ -72,55 +71,48 @@ public class AStar {
         }
         return m;
     }
+
     public Move path(int toX, int toY, int charNb){
-        List<Vector2Int> explore = new List<Vector2Int>();
-        List<Vector2Int> voisins =  new List<Vector2Int>();
+        IOpenList<Vector2Int> explore = map.parameters.newOpenList();
+        List<Vector2Int> neighborhood =  new List<Vector2Int>();
         List<Move> res =  new List<Move>();
         Vector2Int[,] pred = new Vector2Int[map.Width(),map.Height()];
-        int minDH = int.MaxValue;
         int fromX = map.CharacterX();
         int fromY = map.CharacterY();
         Vector2Int curr,min= new Vector2Int(-1,-1);
-        int [,] dist;
+        float [,] dist;
 
-        //Marquer les cases atteignable
-        mark(true);
-        refresh=false;
+        //Mark reachable grid cell
+        //mark(true);
         Move cp = new Move(map, charNb);
 
-        //si inatteignable on joue rien
-        if(map.mark(toX,toY)!=REACHABLE){
-            UnityEngine.Debug.Log("Aucun chemin existe" );
-            refresh=true;
+        //If not reachable skip
+        //TODO : FIND CLOSEST FREE GRID CELL
+        if(!map.isFree(toX,toY)){
+            UnityEngine.Debug.Log("No path exist" );
             return null;
         }
 
 
-        dist = new int[map.Width(), map.Height()];
+        dist = new float[map.Width(), map.Height()];
         for (int y = 0; y < map.Height(); y++) {
             for (int x = 0; x < map.Width(); x++) {
-                dist[x,y] = int.MaxValue;
+                dist[x,y] = 1e30f;
             }
         }
+
         dist[fromX,fromY]=0;
-
         min=new Vector2Int(fromX,fromY);
-        explore.Add(min);
-        while(explore.Count > 0){
+        explore.Enqueue(min,0);
 
-            minDH = int.MaxValue;
-            min = new Vector2Int(-1,-1);
-            foreach(Vector2Int p in explore){
-                if( (min.x==-1 && min.y==-1) || minDH > distHeuristic(dist,p.x,p.y,toX,toY)){
-                    minDH = distHeuristic(dist,p.x,p.y,toX,toY);
-                    min = p;
-                }
-            }
+        while(explore.size > 0){
 
+            min = explore.Dequeue();
+            cp.scanned++;
+            map.setMark(SCANNED,min.x,min.y);
 
-            //si min==destination
+            //If destination reached
             if(min.x == toX && min.y == toY){
-                refresh=true;
                 curr = new Vector2Int(toX,toY);
                 map.setMark(PATH,toX,toY);
                 Step d;
@@ -133,42 +125,54 @@ public class AStar {
                 return cp;
             }
 
-            bool remove=false;
-            for(int i = 0; i < explore.Count && !remove; i++){
-                remove=false;
-                Vector2Int p = explore[i];
-                if(p.x==min.x && p.y==min.y){
-                    explore.RemoveAt(i);
-                    remove = true;
-                    cp.scanned++;
-                    map.setMark(SCANNED,min.x,min.y);
-                }
-            }
+            
 
-            //vider voisins
-            voisins.Clear();
-
-
-            //pour tous les v voisins de u mettre à jour la distance
-            AddNeighborhood(min.x,min.y,REACHABLE,voisins);
-            foreach(Vector2Int p in voisins){
-                if( dist[min.x,min.y] + 1 < dist[p.x,p.y]){
-                    dist[p.x,p.y] = dist[min.x,min.y] +1;
-                    explore.Add(p);
-                    pred[p.x,p.y] = min;
+            //For all neighborhood v update the distance
+            neighborhood.Clear();
+            AddNeighborhood(min.x,min.y,ALL,neighborhood);
+            float diagDist = map.parameters.heuristic == Heuristics.Chebyshev ? 1f : map.parameters.heuristic == Heuristics.Manhattan ? 2f : 1.4f;
+            float neighborhoodDist;
+            foreach(Vector2Int next in neighborhood){
+                if(min.x != next.x && min.y != next.y ) neighborhoodDist = diagDist;
+                else neighborhoodDist = 1;
+                if( dist[min.x,min.y] + neighborhoodDist < dist[next.x, next.y]){
+                    dist[next.x, next.y] = dist[min.x,min.y] + neighborhoodDist;
+                    pred[next.x, next.y] = min;
+                    int idx = explore.Find(p=> p.x == next.x && p.y == next.y);
+                    if(idx>=0){
+                        explore.changePriority(idx, distHeuristic(dist,next.x,next.y,toX,toY));
+                    }else {
+                        explore.Enqueue(next, distHeuristic(dist,next.x,next.y,toX,toY));
+                    }
                 }
             }
             
         }
 
-        refresh=true;
+        UnityEngine.Debug.Log("No path exist" );
         return null;
     }
 
-    int distHeuristic(int [,]dist, int pt1x, int pt1y, int pt2x, int pt2y){
-        return Mathf.Abs(pt2x-pt1x) + Mathf.Abs(pt2y-pt1y) + dist[pt1x,pt1y];
-        // Djikstra's version
-        // return dist[pt1x][pt1y]+1;
+    float distHeuristic(float [,]dist, int pt1x, int pt1y, int pt2x, int pt2y){
+        //dist is g i.e. the cost from the start to pt1 the rest is the heuristic h
+        int dx = Mathf.Abs(pt2x - pt1x);
+        int dy = Mathf.Abs(pt2y - pt1y);
+        float d2 = map.parameters.heuristic == Heuristics.Chebyshev ? 1f : map.parameters.heuristic == Heuristics.Manhattan ? 2f : 1.4f;
+
+        switch(map.parameters.heuristic){
+            case Heuristics.Manhattan:
+                return dx + dy + dist[pt1x,pt1y]; 
+            case Heuristics.Euclidean:
+                return Mathf.Sqrt(dx+dy);
+            case Heuristics.Chebyshev:
+            case Heuristics.Octile:
+                return (dx + dy) + (d2 - 2) * (dx > dy? dy : dx);
+            case Heuristics.Djikstra:
+                return dist[pt1x,pt1y]+d2;
+            default:
+                return 1;
+        }
+
     }
 
 }

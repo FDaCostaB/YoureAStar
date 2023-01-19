@@ -30,24 +30,29 @@ public class MapReader {
 			} else {
 				for (int x=0; x<line.Length; x++) {
 					switch(line[x]) {
-					case '#':
-						m.addWall(x,i);
-						break;
-					case '@':
-						m.addCharacter(x,i);
-						break;
-					case ' ':
-						break;
-					default:
-						Debug.LogError("Unknown character encounter while reading the map");
-						Application.Quit();
-                        break;
+						case '#':
+							m.addWall(x,i);
+							break;
+						case '@':
+							m.addCharacter(x,i);
+							break;
+						case ' ':
+						case '%':
+						case '$':
+							m.add(0,x,i);
+							break;
+						default:
+							Debug.LogError("Unknown character encounter while reading the map");
+							Application.Quit();
+							break;
 					}
+					m.setMark(AStar.EMPTY,x,i);
 				}
 			}
 			line = reader.ReadLine();
 			i++;
 		}
+		Debug.Log(m.Height());
 		return m;
 	}
 

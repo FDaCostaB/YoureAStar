@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+//TODO : Transformer la map en byte[,]
 public class Map : Subject {
-	/* Une case contient un entier pour coder MUR, POUSSEUR, ...
-       On choisit de prendre un bit différent de notre entier pour coder la présence
-       de chaque objet
+	/* 	A grid cell is an int that encode WALL, WHARACTER, FREE
+		One bit encode the presence of each object
 	*/
     static int WALL = 1;
 	static int CHARACTER = 2;
@@ -17,12 +16,22 @@ public class Map : Subject {
 	int width, height;
     int charcater = 0;
 	List<Vector2Int> characterPos = new List<Vector2Int>();
+	public Parameters parameters {get; private set;}
 
 
 	public Map() {
 		content = new int[1,1];
 		width = 0;
 		height = 0;
+		parameters = null;
+	}
+
+	public SubGoalGraph SubGoalGraph(){
+		return new SubGoalGraph(this);
+	}
+
+	public void AttachParameters(Parameters param){
+		parameters = param;
 	}
 
 	int adjust(int c, int i) {
@@ -66,7 +75,6 @@ public class Map : Subject {
 	public void addCharacter(int x, int y) { 
 		add(CHARACTER, x, y);
 		characterPos.Add(new Vector2Int(x,y));
-        Notify();
 	}
 
 	public void selectChar(int x, int y) {
@@ -98,6 +106,18 @@ public class Map : Subject {
 		return width;
 	}
 
+	public static int moveX(int x, Directions d){
+		if(d==Directions.NORTHWEST || d==Directions.WEST || d==Directions.SOUTHWEST ) return --x;
+		if(d==Directions.NORTHEAST || d==Directions.EAST || d==Directions.SOUTHEAST ) return ++x;
+		return x;
+	}
+
+	public static int moveY(int y, Directions d){
+		if(d==Directions.NORTHEAST || d==Directions.NORTH || d==Directions.NORTHWEST ) return --y;
+		if(d==Directions.SOUTHEAST || d==Directions.SOUTH || d==Directions.SOUTHWEST ) return ++y;
+		return y;
+	}
+
 	public bool isWall(int x, int y) {
 		return (content[x,y] & WALL) != 0;
 	}
@@ -108,6 +128,15 @@ public class Map : Subject {
 
 	public bool isFree(int x, int y) {
 		return !isWall(x,y);
+	}
+
+	public bool isFree(int x, int y, Directions d) {
+		int newX = moveX(x,d); int newY = moveY(y,d);
+		return newX>=0 && newX<Width() && newY>=0 && newY<Height() && !isWall(newX,newY);
+	}
+
+	public bool isIn(int x, int y){
+		return x>=0 && x<Width() && y>=0 && y<Height();
 	}
 
 	public int CharacterY() {
@@ -130,6 +159,12 @@ public class Map : Subject {
 		return (content[x,y] >> 8) & 0xFFFFFF;
 	}
 
+	public int mark(int x, int y, Directions d) {
+		int newX = moveX(x,d); int newY = moveY(y,d);
+		if(newX>=0 && newX<Width() && newY>=0 && newY<Height()) return ((content[newX,newY] >> 8) & 0xFFFFFF);
+		else return 0x000000;
+	}
+
 	public void setMark(int m, int x, int y) {
 		content[x,y] = (content[x,y] & 0xFF) | (m << 8);
 	}
@@ -137,10 +172,9 @@ public class Map : Subject {
 	public void eraseMark(){
 		for (int y = 0; y < Height(); y++) {
 			for (int x = 0; x < Width(); x++) {
-				setMark(0, x, y);
+				setMark(AStar.EMPTY, x, y);
 			}
 		}
-		Notify();
 	}
 
 	public Step playStep(Move cp) {
@@ -151,7 +185,6 @@ public class Map : Subject {
 			delete(CHARACTER, CharacterX(cp.charNb), CharacterY(cp.charNb));
 			characterPos[cp.charNb] = new Vector2Int(d.toX,d.toY);
 			add(CHARACTER, d.toX, d.toY);
-			Notify();
 		}
 		return d;
 	}

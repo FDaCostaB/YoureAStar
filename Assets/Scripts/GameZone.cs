@@ -1,20 +1,27 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.Tilemaps;
 
 public class GameZone : MonoBehaviour, IObserver
 {
 
+    public TextAsset mapFile;
     public GameObject character;
     public Camera cam;
+    public Parameters param;
+    public float animSpeed = 0.1f;
+    public int camSpeed = 1;
+    public bool debug;
+    public bool redraw;
     private List<Transform> characterList;
     private Map map;
     private Tile ground;
     private Tile path;
     private Tile reachable;
     private Tile scanned;
-    private Tile used;
+    private Tile nodes;
     private Tile wall;
     private Tile npc;
     public float tileSize {get; private set;}
@@ -23,20 +30,22 @@ public class GameZone : MonoBehaviour, IObserver
 
     private void Awake(){
         try {
-			MapReader mapReader = new MapReader("Assets/output.txt");
+            Debug.Log(AssetDatabase.GetAssetPath(mapFile));
+			MapReader mapReader = new MapReader( AssetDatabase.GetAssetPath(mapFile));
 			map = mapReader.read();
+            map.AttachParameters(param);
             map.Attach(this);
+            c = new Controller(map,cam);
+            c.setGraphicInterface(this);
 			Debug.Log("Map size : " + map.Width() +","+ map.Height());
             tileSize = Screen.height/(2*cam.orthographicSize);
             ground = TilesResourcesLoader.GetTileByName("Ground");
             path = TilesResourcesLoader.GetTileByName("path");
             reachable = TilesResourcesLoader.GetTileByName("reachable");
             scanned = TilesResourcesLoader.GetTileByName("scanned");
-            used = TilesResourcesLoader.GetTileByName("used");
+            nodes = TilesResourcesLoader.GetTileByName("nodes");
             wall = TilesResourcesLoader.GetTileByName("Wall");
             npc = TilesResourcesLoader.GetTileByName("NPC");
-            c = new Controller(map,cam);
-            c.setGraphicInterface(this);
             characterList = new List<Transform>();
             input = new InputAdapter(this,c);
 		} catch (Exception e) {
@@ -57,24 +66,27 @@ public class GameZone : MonoBehaviour, IObserver
                 if(map.isWall(i,j)){
                     levelMap.SetTile(new Vector3Int(i,-j,0), wall);
                 } else {
-                    switch(map.mark(i,j)){
-                    case AStar.REACHABLE:
-                        levelMap.SetTile(new Vector3Int(i,-j,0), reachable );
-                        break;
-                    case AStar.SCANNED:
-                        levelMap.SetTile(new Vector3Int(i,-j,0), scanned );
-                        break;
-                    case AStar.PATH:
-                        levelMap.SetTile(new Vector3Int(i,-j,0), path );
-                        break;
-                    /*case AStar.USED:
-                        levelMap.SetTile(new Vector3Int(i,-j,0), used);
-                        break;*/
-                    default:
-                        levelMap.SetTile(new Vector3Int(i,-j,0), ground );
-                        break;
+                    if(debug){
+                        switch(map.mark(i,j)){
+                            case AStar.REACHABLE:
+                            case AStar.EMPTY:
+                                levelMap.SetTile(new Vector3Int(i,-j,0), reachable );
+                                break;
+                            case AStar.SCANNED:
+                                levelMap.SetTile(new Vector3Int(i,-j,0), scanned );
+                                break;
+                            case AStar.PATH:
+                                levelMap.SetTile(new Vector3Int(i,-j,0), path );
+                                break;
+                            case AStar.NODES:
+                                levelMap.SetTile(new Vector3Int(i,-j,0), nodes );
+                                break;
+                            default:
+                                levelMap.SetTile(new Vector3Int(i,-j,0), ground );
+                                break;
 
-                }
+                        }
+                    } else levelMap.SetTile(new Vector3Int(i,-j,0), ground );
                 }
                 if(map.isCharacter(i,j)){
                     if(initPaint){
@@ -96,7 +108,7 @@ public class GameZone : MonoBehaviour, IObserver
 
 
     void IObserver.Update(ISubject subject){
-        Paint();
+        if(debug)Paint();
     }
 
     public void shift(float dX, float dY, int charNb) {
@@ -105,6 +117,11 @@ public class GameZone : MonoBehaviour, IObserver
 
     void Update(){
         input.inputCheck();
+        animSpeed = Mathf.Clamp(animSpeed, 0.01f, 1f);
+        if(redraw){
+            redraw=false;
+            Paint();
+        }
     }
 
     internal void updateTileSize()

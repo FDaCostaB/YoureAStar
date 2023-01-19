@@ -13,7 +13,7 @@ public class AnimationMove : Animation {
 	Step d;
 
 	public AnimationMove(Move move, Controller c, GameZone gz) : base(1) { // 
-		animSpeed = 0.1f;
+		animSpeed = gz.animSpeed;
 		mv = move;
         gZone = gz;
 		control = c;
@@ -24,6 +24,7 @@ public class AnimationMove : Animation {
 	}
 
 	public override void update() {
+		animSpeed = gZone.animSpeed;
 		IEnumerator<Step> it = mv.Steps().GetEnumerator();
 		if(stepFinished && it.MoveNext() && !isFinished && !pause){
 			d = control.playStep(mv);
@@ -39,7 +40,10 @@ public class AnimationMove : Animation {
 			if (progress > 1) {
 				progress = 0;
 				stepFinished = true;
-				if(mv.Steps().Count == 0)isFinished = true;
+				if(mv.Steps().Count == 0){
+					isFinished = true;
+					gZone.shift(0, 0, mv.charNb);
+				}
 			}
 		}
 
