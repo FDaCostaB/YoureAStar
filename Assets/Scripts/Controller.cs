@@ -71,7 +71,7 @@ public class Controller : IEventCollector {
 	}
 
 	internal void centerCam(){
-		cam.GetComponent<Transform>().position = new Vector3(map.CharacterX(),-map.CharacterY(),-10);
+		//cam.GetComponent<Transform>().position = new Vector3(map.CharacterX(),-map.CharacterY(),-10);
 	}
 
     internal void up()
