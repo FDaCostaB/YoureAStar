@@ -9,7 +9,6 @@ public class Parameters : MonoBehaviour
     public bool doBidirectionnal;
     public Heuristics heuristic;
     public OpenSetType listType;
-    public bool enableCollisionAvoidance;
     
     public IOpenList<Vector2Int> newOpenList(){
         switch(listType){
