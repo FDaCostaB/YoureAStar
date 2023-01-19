@@ -14,25 +14,25 @@ public class SubGoalGraph {
             for(int y=0; y < map.Height(); y++){
                 if(map.isFree(x,y)){
 
-                    if( map.isWall(Map.moveX(x,Directions.EAST), Map.moveY(y,Directions.NORTH)) ){
+                    if( !map.isFree(Map.moveX(x,Directions.EAST), Map.moveY(y,Directions.NORTH)) ){
                         if( map.isFree(x,y,Directions.EAST) && map.isFree(x,y,Directions.NORTH) ){
                             if(map.isIn(x,y)) vertices.Add(new Vector2Int(x,y));
                         }
                     }
 
-                    if( map.isWall(Map.moveX(x,Directions.EAST), Map.moveY(y,Directions.SOUTH)) ){
+                    if( !map.isFree(Map.moveX(x,Directions.EAST), Map.moveY(y,Directions.SOUTH)) ){
                         if( map.isFree(x,y,Directions.EAST) && map.isFree(x,y,Directions.SOUTH) ){
                             if(map.isIn(x,y)) vertices.Add(new Vector2Int(x,y));
                         }
                     }
 
-                    if( map.isWall(Map.moveX(x,Directions.WEST), Map.moveY(y,Directions.SOUTH)) ){
+                    if( !map.isFree(Map.moveX(x,Directions.WEST), Map.moveY(y,Directions.SOUTH)) ){
                         if( map.isFree(x,y,Directions.WEST) && map.isFree(x,y,Directions.SOUTH) ){
                             if(map.isIn(x,y)) vertices.Add(new Vector2Int(x,y));
                         }
                     }
 
-                    if( map.isWall(Map.moveX(x,Directions.WEST), Map.moveY(y,Directions.NORTH)) ){
+                    if( !map.isFree(Map.moveX(x,Directions.WEST), Map.moveY(y,Directions.NORTH)) ){
                         if( map.isFree(x,y,Directions.WEST) && map.isFree(x,y,Directions.NORTH) ){
                             if(map.isIn(x,y)) vertices.Add(new Vector2Int(x,y));
                         }

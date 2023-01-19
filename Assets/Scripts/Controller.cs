@@ -33,7 +33,10 @@ public class Controller : IEventCollector {
 		for(int i =0; i<map.nbChar();i++){
 			if(mouvement[i]!=null){
 				mouvement[i].tictac();
-				if(mouvement[i].IsFinished())mouvement[i]=null;
+				if(mouvement[i].IsFinished()){
+					mouvement[i]=null;
+					map.Notify();
+				}
 			}
 		}
     }
@@ -71,7 +74,7 @@ public class Controller : IEventCollector {
 	}
 
 	internal void centerCam(){
-		//cam.GetComponent<Transform>().position = new Vector3(map.CharacterX(),-map.CharacterY(),-10);
+		cam.GetComponent<Transform>().position = new Vector3(map.CharacterX(),-map.CharacterY(),-10);
 	}
 
     internal void up()

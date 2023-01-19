@@ -11,6 +11,7 @@ public class Map : Subject {
 	*/
     static int WALL = 1;
 	static int CHARACTER = 2;
+	static int WATER = 4;
 
 	int [,] content;
 	int width, height;
@@ -72,6 +73,10 @@ public class Map : Subject {
 		add(WALL, x, y);
 	}
 
+	public void addWater(int x, int y) {
+		add(WATER, x, y);
+	}
+
 	public void addCharacter(int x, int y) { 
 		add(CHARACTER, x, y);
 		characterPos.Add(new Vector2Int(x,y));
@@ -81,6 +86,7 @@ public class Map : Subject {
 		for(int i = 0; i < characterPos.Count; i++){
 			if(characterPos[i].x==x && characterPos[i].y==y ) charcater = i;
 		}
+		Notify();
 	}
 
 	public int findChar(int x, int y) {
@@ -122,17 +128,21 @@ public class Map : Subject {
 		return (content[x,y] & WALL) != 0;
 	}
 
+	public bool isWater(int x, int y) {
+		return (content[x,y] & WATER) != 0;
+	}
+
 	public bool isCharacter(int x, int y) {
 		return (content[x, y] & CHARACTER) != 0;
 	}
 
 	public bool isFree(int x, int y) {
-		return !isWall(x,y);
+		return !isWall(x,y) && !isWater(x,y);
 	}
 
 	public bool isFree(int x, int y, Directions d) {
 		int newX = moveX(x,d); int newY = moveY(y,d);
-		return newX>=0 && newX<Width() && newY>=0 && newY<Height() && !isWall(newX,newY);
+		return newX>=0 && newX<Width() && newY>=0 && newY<Height() && isFree(newX,newY);
 	}
 
 	public bool isIn(int x, int y){

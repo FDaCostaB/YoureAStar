@@ -176,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e374335bbd92cbe4d8abed1661b874b2, type: 2}
+  - {fileID: 2100000, guid: c86681099c946f043a0e93963c035984, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -213,14 +213,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463493072}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1500, y: -1500, z: 0}
-  m_LocalScale: {x: 3000, y: -3000, z: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalPosition: {x: 1500, y: -1499, z: -1}
+  m_LocalScale: {x: 3000, y: 3000, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,13 +364,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a2713295d21e4488c16b4ccc0adc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapFile: {fileID: 4900000, guid: 880c8108fa381c5439c04cce19d79001, type: 3}
+  mapFile: {fileID: 4900000, guid: 6d7d980fe2e74b14cb4d44fcd64c9171, type: 3}
   character: {fileID: 3930526818132198865, guid: 593e911fd3b17ed47973150bb7da793e, type: 3}
   cam: {fileID: 519420031}
   param: {fileID: 1054846581}
   animSpeed: 0.1
   camSpeed: 1
-  debug: 0
+  debug: 1
   redraw: 0
 --- !u!114 &1054846581
 MonoBehaviour:
@@ -384,10 +384,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d095802dadddd48a30391dbf330573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowDiagonal: 0
+  allowDiagonal: 1
   doBidirectionnal: 0
-  heuristic: 0
-  listType: 0
+  heuristic: 3
+  listType: 1
   enableCollisionAvoidance: 0
 --- !u!1 &1392641007
 GameObject:

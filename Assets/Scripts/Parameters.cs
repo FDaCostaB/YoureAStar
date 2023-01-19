@@ -10,14 +10,7 @@ public class Parameters : MonoBehaviour
     public Heuristics heuristic;
     public OpenSetType listType;
     public bool enableCollisionAvoidance;
-
-    void Start(){
-        allowDiagonal = false;
-        doBidirectionnal = false;
-        heuristic = Heuristics.Manhattan;
-        listType = OpenSetType.UnsortedList;
-        enableCollisionAvoidance = false;
-    }
+    
     public IOpenList<Vector2Int> newOpenList(){
         switch(listType){
             case OpenSetType.UnsortedList:

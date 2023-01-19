@@ -36,8 +36,10 @@ public class MapReader {
 						case '@':
 							m.addCharacter(x,i);
 							break;
-						case ' ':
 						case '%':
+							m.addWater(x,i);
+							break;
+						case ' ':
 						case '$':
 							m.add(0,x,i);
 							break;

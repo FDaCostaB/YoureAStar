@@ -23,6 +23,7 @@ public class GameZone : MonoBehaviour, IObserver
     private Tile scanned;
     private Tile nodes;
     private Tile wall;
+    private Tile water;
     private Tile npc;
     public float tileSize {get; private set;}
     private InputAdapter input;
@@ -46,6 +47,7 @@ public class GameZone : MonoBehaviour, IObserver
             nodes = TilesResourcesLoader.GetTileByName("nodes");
             wall = TilesResourcesLoader.GetTileByName("Wall");
             npc = TilesResourcesLoader.GetTileByName("NPC");
+            water = TilesResourcesLoader.GetTileByName("Water");
             characterList = new List<Transform>();
             input = new InputAdapter(this,c);
 		} catch (Exception e) {
@@ -57,14 +59,15 @@ public class GameZone : MonoBehaviour, IObserver
 
     private void Paint(bool initPaint = false){
         Tilemap levelMap = GetComponentsInChildren<Tilemap>()[0];
-        
-        //levelMap.ClearAllTiles();
+
         for(int j = 0; j < map.Height(); j++)
         {
             for(int i = 0; i < map.Width(); i++)
             {
                 if(map.isWall(i,j)){
                     levelMap.SetTile(new Vector3Int(i,-j,0), wall);
+                } else if(map.isWater(i,j)){
+                    levelMap.SetTile(new Vector3Int(i,-j,0), water);
                 } else {
                     if(debug){
                         switch(map.mark(i,j)){
@@ -98,17 +101,18 @@ public class GameZone : MonoBehaviour, IObserver
                 } 
             }
         }
+        characterList[map.currentChar()].gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+    }
+
+
+    void IObserver.Update(ISubject subject){
+        if(debug) Paint();
         if(c.pause) {
             for(int i =0; i < map.nbChar(); i++) characterList[i].gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
         } else {
             for(int i =0; i < map.nbChar(); i++) characterList[i].gameObject.GetComponent<SpriteRenderer>().color = c.isSelectable(i) ? Color.yellow : Color.red;
         }
         characterList[map.currentChar()].gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
-    }
-
-
-    void IObserver.Update(ISubject subject){
-        if(debug)Paint();
     }
 
     public void shift(float dX, float dY, int charNb) {
