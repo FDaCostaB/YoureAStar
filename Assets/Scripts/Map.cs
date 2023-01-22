@@ -27,10 +27,6 @@ public class Map : Subject {
 		parameters = null;
 	}
 
-	public SubGoalGraph SubGoalGraph(){
-		return new SubGoalGraph(this);
-	}
-
 	public void AttachParameters(Parameters param){
 		parameters = param;
 	}
@@ -99,6 +95,10 @@ public class Map : Subject {
 	public int currentChar() {
 		return charcater;
 	}
+
+	public Vector2Int currentCharPos() {
+		return characterPos[charcater];
+	}
 	
 	public int nbChar() {
 		return characterPos.Count;
@@ -110,6 +110,19 @@ public class Map : Subject {
 
 	public int Width() {
 		return width;
+	}
+
+	public static Vector2Int move(int x, int y, Directions d, int times=1){
+		Vector2Int res = new Vector2Int(x,y);
+		if(d==Directions.NORTHWEST || d==Directions.WEST || d==Directions.SOUTHWEST ) res.x = x-times;
+		if(d==Directions.NORTHEAST || d==Directions.EAST || d==Directions.SOUTHEAST ) res.x = x+times;
+		if(d==Directions.NORTHEAST || d==Directions.NORTH || d==Directions.NORTHWEST )res.y = y-times;
+		if(d==Directions.SOUTHEAST || d==Directions.SOUTH || d==Directions.SOUTHWEST ) res.y = y+times;
+		return res;
+	}
+
+	public static Vector2Int move(Vector2Int p, Directions d, int times=1){
+		return move(p.x, p.y, d, times);
 	}
 
 	public static int moveX(int x, Directions d){
@@ -137,7 +150,11 @@ public class Map : Subject {
 	}
 
 	public bool isFree(int x, int y) {
-		return !isWall(x,y) && !isWater(x,y);
+		return isIn(x,y) && !isWall(x,y) && !isWater(x,y);
+	}
+
+	public bool isFree(Vector2Int p) {
+		return isFree(p.x,p.y);
 	}
 
 	public bool isFree(int x, int y, Directions d) {
@@ -175,14 +192,28 @@ public class Map : Subject {
 		else return 0x000000;
 	}
 
+	public int mark(Vector2Int p) {
+		return (content[p.x,p.y] >> 8) & 0xFFFFFF;
+	}
+
+	public bool isSubgoal(int x, int y){
+		return mark(x,y) == AStar.NODES || mark(x,y) == AStar.SELECTEDNODES;
+	}
+
+	public bool isSubgoal(Vector2Int p){
+		return isSubgoal(p.x,p.y);
+	}
+
 	public void setMark(int m, int x, int y) {
-		content[x,y] = (content[x,y] & 0xFF) | (m << 8);
+		if(!isSubgoal(x,y) || m == AStar.SELECTEDNODES || m == AStar.NODES)
+			content[x,y] = (content[x,y] & 0xFF) | (m << 8);
 	}
 
 	public void eraseMark(){
 		for (int y = 0; y < Height(); y++) {
 			for (int x = 0; x < Width(); x++) {
-				setMark(AStar.EMPTY, x, y);
+				if(!isSubgoal(x,y) && mark(x,y) != AStar.EMPTY) setMark(AStar.REACHABLE, x, y);
+				if(mark(x,y) == AStar.SELECTEDNODES) setMark(AStar.NODES,x,y);
 			}
 		}
 	}
@@ -198,5 +229,58 @@ public class Map : Subject {
 		}
 		return d;
 	}
+
+	public float distHeuristic(int pt1x, int pt1y, int pt2x, int pt2y){
+        //dist is g i.e. the cost from the start to pt1 the rest is the heuristic h
+
+        switch(parameters.heuristic){
+            case Heuristics.Manhattan:
+                return Manhattan(pt1x, pt1y, pt2x, pt2y);
+            case Heuristics.Euclidean:
+                return Euclidean(pt1x, pt1y, pt2x, pt2y);
+            case Heuristics.Chebyshev:
+				return Chebyshev(pt1x, pt1y, pt2x, pt2y);
+            case Heuristics.Octile:
+                return Octile(pt1x, pt1y, pt2x, pt2y);
+            case Heuristics.Djikstra:
+                return 1;
+            default:
+                return 1;
+        }
+
+    }
+
+	public static float Manhattan(int pt1x, int pt1y, int pt2x, int pt2y){
+		int dx = Mathf.Abs(pt2x - pt1x);
+        int dy = Mathf.Abs(pt2y - pt1y);
+		return Mathf.Abs(pt2x - pt1x) + Mathf.Abs(pt2y - pt1y); 
+	}
+	public static float Euclidean(int pt1x, int pt1y, int pt2x, int pt2y){
+		return Mathf.Sqrt(Mathf.Abs(pt2x - pt1x) + Mathf.Abs(pt2y - pt1y));
+	}
+	public static float Chebyshev(int pt1x, int pt1y, int pt2x, int pt2y){
+		return (Mathf.Abs(pt2x - pt1x) + Mathf.Abs(pt2y - pt1y)) - (Mathf.Abs(pt2x - pt1x) > Mathf.Abs(pt2y - pt1y) ? Mathf.Abs(pt2y - pt1y) : Mathf.Abs(pt2x - pt1x));
+	}
+	public static float Octile(int pt1x, int pt1y, int pt2x, int pt2y){
+		return (Mathf.Abs(pt2x - pt1x) + Mathf.Abs(pt2y - pt1y)) + (1.4f - 2) * (Mathf.Abs(pt2x - pt1x) > Mathf.Abs(pt2y - pt1y) ? Mathf.Abs(pt2y - pt1y) : Mathf.Abs(pt2x - pt1x));
+	}
+
+    public List<Vector2Int> AddNeighborhood(int x, int y, int color, List<Vector2Int> res, bool doMark = false){
+        byte neighborhood = 0x0;
+        for(int i=0; i<8;i++){
+            Directions d = (Directions)(1<<i);
+            neighborhood |=  (byte) ((isFree(x,y,d) && ((mark(x,y,d) & color) != 0) )  ? 0x1 << i : 0x0);
+        }
+        for(int i=0; i<8;i++){
+            Directions d = (Directions)(1<<i);
+            if( (neighborhood | MaskFree.maskFree[i]) == 0xFF){
+                if(parameters.allowDiagonal || d == Directions.NORTH || d == Directions.EAST || d==Directions.SOUTH || d==Directions.WEST ){
+                    res.Add(new Vector2Int(Map.moveX(x,d), Map.moveY(y,d)));
+                    if(doMark) setMark(AStar.REACHABLE, Map.moveX(x,d), Map.moveY(y,d));
+                }
+            }
+        }
+        return res;
+		}
 
 }

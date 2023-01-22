@@ -13,10 +13,11 @@ public class Controller : IEventCollector {
 	Camera cam;
 	float tileSize;
 
-	public Controller(Map n, Camera c) {
+	public Controller(Map m, Camera c, GameZone gz) {
 		cam = c;
-		map = n;
+		map = m;
 		pause = false;
+		gZone = gz;
 		aStar = new AStar(map);
 		mouvement = new List<AnimationMove>();
 		tileSize = (int) ((float)Screen.height/(2*cam.orthographicSize));
@@ -25,8 +26,8 @@ public class Controller : IEventCollector {
 		}
 	}
 
-	public void setGraphicInterface(GameZone gz) {
-		gZone = gz;
+	public void setGraphicInterface() {
+		
 	}
 
     public void clock(){
@@ -117,8 +118,13 @@ public class Controller : IEventCollector {
 		map.Notify();
     }
 
-	internal void computeSG(){
-		map.SubGoalGraph();
+	internal void debug(){
+		aStar.debug();
+	}
+
+	internal void debug(float x, float y){
+		Vector2Int clic = new Vector2Int((int) Math.Floor(x + cam.GetComponent<Transform>().position.x), (int) Math.Floor(y + 1 - cam.GetComponent<Transform>().position.y));
+		aStar.path(clic.x, clic.y, map.currentChar());
 	}
 
     internal void clear()

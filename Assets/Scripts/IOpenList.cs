@@ -10,4 +10,5 @@ public interface IOpenList<T>{
     public bool Exist(Predicate<T> p);
     public int Find(Predicate<T> p);
     public void changePriority(int i, float p);
+    public float getTopPriority();
 }

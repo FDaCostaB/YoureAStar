@@ -4,42 +4,57 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-// https://www.simplilearn.com/ Graph Implementation
 class Graph {
 
-    private int vertNb;
-    LinkedList<int>[] neighbors;
-    Dictionary<Vector2Int, int> verticesIdx;       
+    Dictionary<Vector2Int, LinkedList<Vector2Int>> neighbors;
+    int currIdx;       
 
-    public Graph (int vNb){
-        verticesIdx = new Dictionary<Vector2Int, int>();
-        neighbors = new LinkedList<int>[vNb];
-        for (int i = 0; i < vertNb; i++) {
-            neighbors[i] = new LinkedList<int>();
+    public Graph (){
+        currIdx=0;
+        neighbors = new Dictionary<Vector2Int, LinkedList<Vector2Int>>();
+    }
+
+    public List<Vector2Int> getNodes(){
+        return neighbors.Keys.ToList();
+    }
+
+    public void AddEdge(Vector2Int v, Vector2Int w) {            
+        if(!neighbors[v].Contains(w)){
+            neighbors[v].AddFirst(w);
+            //Debug.Log("Edge added : " + v.x +" ,"+v.y + " <==> "+ w.x +" ,"+w.y  + " Size of neighborhood : " + neighbors[v].Count);
         }
-        vertNb = vNb; 
-    }
-
-    public void Add_Edge(Vector2Int v, Vector2Int w) {            
-        neighbors[verticesIdx[v]].AddLast(verticesIdx[w]);
-        neighbors[verticesIdx[w]].AddLast(verticesIdx[v]);
+        if(!neighbors[w].Contains(v)){
+            neighbors[w].AddFirst(v);
+            //Debug.Log("Edge added : " + w.x +" ,"+ w.y + " <==> "+ v.x +" ," + v.y + " Size of neighborhood : " + neighbors[w].Count );
+        }
 
     }
 
-    public void Remove_Edge(Vector2Int v, Vector2Int w) {            
-        neighbors[verticesIdx[v]].Remove(verticesIdx[w]);
-        neighbors[verticesIdx[w]].Remove(verticesIdx[v]);
+    public void RemoveEdge(Vector2Int v, Vector2Int w) {            
+        if(neighbors[v].Contains(w)) neighbors[v].Remove(w);
+        if(neighbors[w].Contains(v)) neighbors[w].Remove(v);
 
     }
 
-    public int Add_Vertex(Vector2Int p) {            
-        // Add head and capacity if capacity copy array and double capacity            
-        throw new NotImplementedException();
+    public int AddVertex(Vector2Int p) {       
+        if(!neighbors.Keys.Contains(p)) neighbors[p] = new LinkedList<Vector2Int>();
+        return currIdx++;
     }
 
-    public void Remove_Vertex() {
-        // Remove the value from all neighbors list + Remove in vertices Idx           
-        throw new NotImplementedException();
+    public void RemoveVertex(Vector2Int p) {
+        foreach(Vector2Int neighbor in neighbors[p]){
+            neighbors[neighbor].Remove(p);
+        }
+        neighbors[p].Clear();
+        neighbors.Remove(p);
+    }
+
+    public bool Contains(Vector2Int cell){
+        return neighbors.Keys.Contains(cell);
+    }
+
+    public LinkedList<Vector2Int> neighborhood(Vector2Int cell){
+        return neighbors[cell];
     }
 
 }

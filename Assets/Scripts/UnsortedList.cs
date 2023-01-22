@@ -45,4 +45,20 @@ class UnsortedList<T> : IOpenList<T> {
     public void changePriority(int idx, float p){
         List[idx].Priority = p;
     }
+
+    public float getTopPriority()
+    {
+        int idx = 0; int i =0;
+        float minDH = List[0].Priority;
+        T min = List[0].Elem;
+        foreach(Pair<T,float> p in List){
+            if(minDH > p.Priority){
+                minDH = p.Priority;
+                min = p.Elem;
+                idx = i;
+            }
+            i++;
+        }
+        return minDH;
+    }
 }

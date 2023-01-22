@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class Parameters : MonoBehaviour
 {
+    public bool debug;
     public bool allowDiagonal;
     public bool doBidirectionnal;
     public Heuristics heuristic;
     public OpenSetType listType;
+    public bool useSubgoal;
     
     public IOpenList<Vector2Int> newOpenList(){
         switch(listType){

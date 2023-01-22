@@ -203,6 +203,10 @@ class PriorityQueue<T> : IOpenList<T> {
         }
         return res;
     }
+
+    public float getTopPriority(){
+        return H[0].Priority;
+    }
 }
  
 // This code is inspired by GeeksForGeeks and was contributed by Amit Katiyar 

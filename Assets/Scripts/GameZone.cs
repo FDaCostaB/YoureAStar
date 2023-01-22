@@ -13,7 +13,6 @@ public class GameZone : MonoBehaviour, IObserver
     public Parameters param;
     public float animSpeed = 0.1f;
     public int camSpeed = 1;
-    public bool debug;
     public bool redraw;
     private List<Transform> characterList;
     private Map map;
@@ -22,6 +21,7 @@ public class GameZone : MonoBehaviour, IObserver
     private Tile reachable;
     private Tile scanned;
     private Tile nodes;
+    private Tile selectedNodes;
     private Tile wall;
     private Tile water;
     private Tile npc;
@@ -32,12 +32,12 @@ public class GameZone : MonoBehaviour, IObserver
     private void Awake(){
         try {
             Debug.Log(AssetDatabase.GetAssetPath(mapFile));
+            characterList = new List<Transform>();
 			MapReader mapReader = new MapReader( AssetDatabase.GetAssetPath(mapFile));
 			map = mapReader.read();
             map.AttachParameters(param);
             map.Attach(this);
-            c = new Controller(map,cam);
-            c.setGraphicInterface(this);
+            c = new Controller(map, cam, this);
 			Debug.Log("Map size : " + map.Width() +","+ map.Height());
             tileSize = Screen.height/(2*cam.orthographicSize);
             ground = TilesResourcesLoader.GetTileByName("Ground");
@@ -45,10 +45,10 @@ public class GameZone : MonoBehaviour, IObserver
             reachable = TilesResourcesLoader.GetTileByName("reachable");
             scanned = TilesResourcesLoader.GetTileByName("scanned");
             nodes = TilesResourcesLoader.GetTileByName("nodes");
+            selectedNodes = TilesResourcesLoader.GetTileByName("selectedNodes");
             wall = TilesResourcesLoader.GetTileByName("Wall");
             npc = TilesResourcesLoader.GetTileByName("NPC");
             water = TilesResourcesLoader.GetTileByName("Water");
-            characterList = new List<Transform>();
             input = new InputAdapter(this,c);
 		} catch (Exception e) {
 			Debug.LogError(e);
@@ -69,11 +69,13 @@ public class GameZone : MonoBehaviour, IObserver
                 } else if(map.isWater(i,j)){
                     levelMap.SetTile(new Vector3Int(i,-j,0), water);
                 } else {
-                    if(debug){
+                    if(param.debug){
                         switch(map.mark(i,j)){
                             case AStar.REACHABLE:
-                            case AStar.EMPTY:
                                 levelMap.SetTile(new Vector3Int(i,-j,0), reachable );
+                                break;
+                            case AStar.EMPTY:
+                                levelMap.SetTile(new Vector3Int(i,-j,0), ground );
                                 break;
                             case AStar.SCANNED:
                                 levelMap.SetTile(new Vector3Int(i,-j,0), scanned );
@@ -83,6 +85,9 @@ public class GameZone : MonoBehaviour, IObserver
                                 break;
                             case AStar.NODES:
                                 levelMap.SetTile(new Vector3Int(i,-j,0), nodes );
+                                break;
+                            case AStar.SELECTEDNODES:
+                                levelMap.SetTile(new Vector3Int(i,-j,0), selectedNodes );
                                 break;
                             default:
                                 levelMap.SetTile(new Vector3Int(i,-j,0), ground );
@@ -106,7 +111,7 @@ public class GameZone : MonoBehaviour, IObserver
 
 
     void IObserver.Update(ISubject subject){
-        if(debug) Paint();
+        if(param.debug) Paint();
         if(c.pause) {
             for(int i =0; i < map.nbChar(); i++) characterList[i].gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
         } else {

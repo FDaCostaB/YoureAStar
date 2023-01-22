@@ -364,13 +364,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a2713295d21e4488c16b4ccc0adc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapFile: {fileID: 4900000, guid: 6d7d980fe2e74b14cb4d44fcd64c9171, type: 3}
+  mapFile: {fileID: 4900000, guid: 880c8108fa381c5439c04cce19d79001, type: 3}
   character: {fileID: 3930526818132198865, guid: 593e911fd3b17ed47973150bb7da793e, type: 3}
   cam: {fileID: 519420031}
   param: {fileID: 1054846581}
   animSpeed: 0.1
   camSpeed: 1
-  debug: 1
   redraw: 0
 --- !u!114 &1054846581
 MonoBehaviour:
@@ -384,11 +383,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d095802dadddd48a30391dbf330573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   allowDiagonal: 1
   doBidirectionnal: 0
   heuristic: 3
   listType: 1
-  enableCollisionAvoidance: 0
+  useSubgoal: 1
 --- !u!1 &1392641007
 GameObject:
   m_ObjectHideFlags: 0
