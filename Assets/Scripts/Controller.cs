@@ -64,7 +64,7 @@ public class Controller : IEventCollector {
 				mouvement[map.currentChar()]=null;
 			}
 			if(mouvement[map.currentChar()]==null){
-				Move cp = aStar.measurePath(clic.x, clic.y, map.currentChar());
+				Move cp = aStar.measurePath(clic.x, clic.y);
 				if(cp!=null) {
 					mouvement[map.currentChar()] = new AnimationMove(cp, this, gZone);
 					if(pause)mouvement[map.currentChar()].stop();
@@ -120,11 +120,6 @@ public class Controller : IEventCollector {
 
 	internal void debug(){
 		aStar.debug();
-	}
-
-	internal void debug(float x, float y){
-		Vector2Int clic = new Vector2Int((int) Math.Floor(x + cam.GetComponent<Transform>().position.x), (int) Math.Floor(y + 1 - cam.GetComponent<Transform>().position.y));
-		aStar.path(clic.x, clic.y, map.currentChar());
 	}
 
     internal void clear()

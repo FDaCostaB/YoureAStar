@@ -19,8 +19,11 @@ public class Map : Subject {
 	List<Vector2Int> characterPos = new List<Vector2Int>();
 	public Parameters parameters {get; private set;}
 
+	public String name;
 
-	public Map() {
+
+	public Map(String fileName) {
+		name = fileName;
 		content = new int[1,1];
 		width = 0;
 		height = 0;

@@ -1,0 +1,5 @@
+Map Name,Graph size,SG build time,Start,Goal,Computation time,# scanned Tiles,Max size of the Open Set,Path length ,Method,Open Set type,
+Assets/Map/bigmap.txt,228842,877, (214 - 0), (2677 - 2405),968,77573,1381,1070, FindAbstractPath - SG Graph, PriorityQueue, Octile
+Assets/Map/bigmap.txt,228842,877, (214 - 0), (2677 - 2405),628,4711,426,3632, Subgoal-TL, PriorityQueue, Octile
+Assets/Map/bigmap.txt,228842,149, (214 - 0), (2984 - 1184),116,116824,1082,1128, FindAbstractPath - SG Graph, PriorityQueue, Octile
+Assets/Map/bigmap.txt,228842,149, (214 - 0), (2984 - 1184),806,5227,253,4091, Subgoal-TL, PriorityQueue, Octile

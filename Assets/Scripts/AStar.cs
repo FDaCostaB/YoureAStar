@@ -13,15 +13,14 @@ public class AStar {
     public const int SELECTEDNODES = 0x0F0000;
     public const int EMPTY = 0xF00000;
     public const int ALL = 0xFFFFFF;
+    
     Map map;
     SubGoalGraph graph;
 
     public AStar(Map m){
         map = m;
         mark(true);
-        UnityEngine.Debug.Log("Computation of subgoal graph started");
         graph = new SubGoalGraph(map, this);
-        UnityEngine.Debug.Log("Subgoal graph computed");
     }
     
 
@@ -48,26 +47,32 @@ public class AStar {
 
     }
 
-    public Move measurePath(int toX, int toY, int agentNb){
+    public Move measurePath(int toX, int toY){
+        int fromX = map.CharacterX();
+        int fromY = map.CharacterY();
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
-        Move m = path(toX,toY, agentNb);
+        Move m = path(toX, toY);
         stopwatch.Stop();
-        TimeSpan stopwatchElapsed = stopwatch.Elapsed;
         if(m != null){
-            UnityEngine.Debug.Log("Time taken : "+ stopwatchElapsed.TotalMilliseconds);
-            UnityEngine.Debug.Log("Path Length : "+ m.Steps().Count);
-            UnityEngine.Debug.Log("Tile scanned : " + m.scanned);
+            String method;
+            if (map.parameters.useSubgoal){
+                if(graph.isTL) method = "Subgoal";
+                else method = "Subgoal-TL";
+            } else method = "Grid";
+            if (!map.parameters.debug)
+                Data.WriteLine(map.name, graph.Count, graph.buildTime,fromX, fromY, toX, toY,  stopwatch.Elapsed.Milliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, map.parameters.listType, map.parameters.heuristic);
         }
         return m;
     }
 
-    public Move path(int toX, int toY, int agentNb){
+    public Move path(int toX, int toY){
+        if(map.parameters.debug) map.eraseMark();
         if(map.parameters.useSubgoal) return graph.path(new Vector2Int(toX, toY));
-        else return pathGrid(toX, toY, agentNb);
+        else return pathGrid(toX, toY);
     }
 
-    public Move pathGrid(int toX, int toY, int agentNb){
+    public Move pathGrid(int toX, int toY){
         IOpenList<Vector2Int> explore = map.parameters.newOpenList();
         List<Vector2Int> neighborhood =  new List<Vector2Int>();
         Vector2Int[,] pred = new Vector2Int[map.Width(),map.Height()];
@@ -76,9 +81,9 @@ public class AStar {
         Vector2Int curr,min= new Vector2Int(-1,-1);
         float [,] dist;
 
-        Move cp = new Move(map, agentNb);
+        Move cp = new Move(map, map.currentChar());
 
-        map.eraseMark();
+        
         //If not reachable skip
         //TODO : FIND CLOSEST FREE GRID CELL
         if(!map.isFree(toX,toY) || map.mark(toX,toY) == EMPTY){
@@ -135,6 +140,7 @@ public class AStar {
                         explore.changePriority(idx, dist[min.x, min.y] + map.distHeuristic(next.x,next.y,toX,toY));
                     }else {
                         explore.Enqueue(next, dist[min.x, min.y] + map.distHeuristic(next.x,next.y,toX,toY));
+                        cp.setOpenSetMaxSize(explore.size);
                     }
                 }
             }
@@ -205,15 +211,15 @@ public class AStar {
             graph.AddNeighborhood(min.x,min.y,ALL,neighborhood);
 
             foreach(Vector2Int next in neighborhood){
-                map.setMark(SELECTEDNODES,next.x,next.y);
-                if( dist[min.x,min.y] + map.distHeuristic(next.x,next.y,toX,toY) < dist[next.x, next.y]){
-                    dist[next.x, next.y] = dist[min.x,min.y] + map.distHeuristic(next.x,next.y,toX,toY);
+                if( dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y) < dist[next.x, next.y]){
+                    dist[next.x, next.y] = dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y);
                     pred[next.x, next.y] = min;
                     int idx = explore.Find(p=> p.x == next.x && p.y == next.y);
                     if(idx>=0){
-                        explore.changePriority(idx, dist[min.x, min.y] + map.distHeuristic(next.x,next.y,toX,toY));
+                        explore.changePriority(idx, dist[next.x, next.y] + map.distHeuristic(next.x,next.y,toX,toY));
                     }else {
-                        explore.Enqueue(next, dist[min.x, min.y] + map.distHeuristic(next.x,next.y,toX,toY));
+                        explore.Enqueue(next, dist[next.x, next.y] + map.distHeuristic(next.x,next.y,toX,toY));
+                        cp.setOpenSetMaxSize(explore.size);
                     }
                 }
             }
@@ -225,9 +231,7 @@ public class AStar {
     }
 
     public void debug(){
-		graph.GetDirectHReachable(map.currentCharPos());
-        if(map.parameters.debug) map.Notify();
-        
+        UnityEngine.Debug.Log("Debug function called !");
 	}
 
     public void debug(int x, int y){

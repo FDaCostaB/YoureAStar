@@ -6,11 +6,13 @@ public class Move {
 	List<Step> steps;
 	public int scanned;
 	public int charNb;
-	Map map;
+	public int openSetMaxSize;
+	Map map;	
 
 	public Move(Map n, int cNb) {
 		steps = new List<Step>();
 		scanned = 0;
+		openSetMaxSize = 0;
 		map = n;
 		charNb = cNb;
 	}
@@ -22,6 +24,10 @@ public class Move {
 
 	public List<Step> Steps() {
 		return steps;
+	}
+
+	public void setOpenSetMaxSize(int size){
+		openSetMaxSize = Mathf.Max(size,openSetMaxSize);
 	}
 
 }

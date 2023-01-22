@@ -6,14 +6,15 @@ using System;
 
 public class MapReader {
 	StreamReader reader;
-
+	String fileName;
 
 	public MapReader(string path) {
-		reader = new StreamReader(path); 
+		reader = new StreamReader(path);
+		fileName = path;
 	}
 
 	public Map read() {
-		Map m = new Map();
+		Map m = new Map(fileName);
 		string line = null;
 		int i=0;
 

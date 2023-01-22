@@ -7,7 +7,8 @@ using UnityEngine;
 class Graph {
 
     Dictionary<Vector2Int, LinkedList<Vector2Int>> neighbors;
-    int currIdx;       
+    int currIdx;
+    public int Count{get {return neighbors.Keys.Count;}}     
 
     public Graph (){
         currIdx=0;

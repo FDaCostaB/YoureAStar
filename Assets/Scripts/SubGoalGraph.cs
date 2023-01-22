@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class SubGoalGraph {
@@ -8,14 +9,21 @@ public class SubGoalGraph {
     Graph graph;
 
     AStar astar;
+    public bool isTL;
+    public int buildTime {get;}
+    public int Count{get {return graph.Count;}}
 
     Directions[] dirs = {Directions.NORTHWEST,Directions.NORTH,Directions.NORTHEAST,Directions.WEST,Directions.EAST,Directions.SOUTHWEST,Directions.SOUTH,Directions.SOUTHEAST};
     Directions[] diag = {Directions.NORTHWEST, Directions.NORTHEAST, Directions.SOUTHWEST, Directions.SOUTHEAST};
     
     public SubGoalGraph(Map m, AStar pathFinder){
+        isTL=false;
         map=m;
         astar=pathFinder;
         List<Vector2Int> vertices = new List<Vector2Int>();
+
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
 
         //Compute nodes
         for(int x =0; x < map.Width(); x++){
@@ -61,7 +69,10 @@ public class SubGoalGraph {
                 graph.AddEdge(cell,cellPrime);
             }
         }
-        
+
+        stopwatch.Stop();
+        buildTime = stopwatch.Elapsed.Milliseconds;
+        UnityEngine.Debug.Log("# of nodes : "+ vertices.Count);
 
     }
 
@@ -139,9 +150,15 @@ public class SubGoalGraph {
         if(cp.Steps().Count > 0){
             return cp;
         }
-        Move globalPath = FindAbstractPath(goal);
+        int fromX = CharacterX();
+        int fromY = CharacterY();
+
+        Move globalPath = measureFindAbstractPath(goal);
+        globalPath.scanned += cp.scanned;
+
         if(globalPath.Steps().Count == 0) return null;
 
+        //TODO : Parallelize this for
         for(int i =0; i < globalPath.Steps().Count; i++){
             FindHreachablePath(cp, globalPath.Steps()[i].fromX, globalPath.Steps()[i].fromY, globalPath.Steps()[i].toX, globalPath.Steps()[i].toY);
         }
@@ -157,11 +174,17 @@ public class SubGoalGraph {
             float t = N == 0 ? 0.0f : (float) step / N;
             Vector2Int point = roundPoint(lerpPoint(map.currentCharPos(), goal, t));
             if(map.isFree(point)) {
-                //if(map.parameters.debug) map.setMark(AStar.PATH, point.x, point.y);
+                if(map.parameters.debug) map.setMark(AStar.SCANNED, point.x, point.y);
+                if(from.x != point.x && from.y != point.y){
+                    if(!map.isFree(point.x,from.y) || !map.isFree(from.x,point.y)){
+                        res.Steps().Clear();
+                        return res;
+                    }
+                }
                 res.deplace(from.x, from.y, point.x, point.y);
+                res.scanned++;
                 from = point;
-            } else{
-                Debug.Log("No direct Path !");
+            } else {
                 res.Steps().Clear();
                 return res;
             }
@@ -201,6 +224,17 @@ public class SubGoalGraph {
         return res;
     }
 
+    public Move measureFindAbstractPath(Vector2Int goal){
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        Move m = FindAbstractPath(goal);
+        stopwatch.Stop();
+        if(m != null && !map.parameters.debug){
+            Data.WriteLine(map.name, Count, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, stopwatch.Elapsed.Milliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (isTL? "SG-TL Graph": "SG Graph"), map.parameters.listType, map.parameters.heuristic);
+        }
+        return m;
+    }
+
     public Move FindHreachablePath(Move cp, int fromX, int fromY, int toX, int toY){
         IOpenList<Vector2Int> explore = map.parameters.newOpenList();
         List<Vector2Int> neighborhood =  new List<Vector2Int>();
@@ -215,19 +249,19 @@ public class SubGoalGraph {
         while(explore.size > 0){
 
             min = explore.Dequeue();
-            //map.setMark(AStar.SCANNED,min.x,min.y);
+            map.setMark(AStar.SCANNED,min.x,min.y);
             cp.scanned++;
 
             //If destination reached
             if(min.x == toX && min.y == toY){
                 curr = new Vector2Int(toX,toY);
-                //if(map.parameters.debug)map.setMark(AStar.PATH,curr.x,curr.y);
+                if(map.parameters.debug)map.setMark(AStar.PATH,curr.x,curr.y);
                 Step d;
                 while(curr.x != fromX || curr.y != fromY){
                     d = new Step(pred[curr.x, curr.y].x, pred[curr.x, curr.y].y,curr.x,curr.y);
                     cp.Steps().Insert(insertIdx, d);
                     curr = new Vector2Int(pred[curr.x,curr.y].x, pred[curr.x,curr.y].y);
-                    //if(map.parameters.debug)map.setMark(AStar.PATH,curr.x,curr.y);
+                    if(map.parameters.debug)map.setMark(AStar.PATH,curr.x,curr.y);
                 }
                 return cp;
             }
@@ -242,12 +276,18 @@ public class SubGoalGraph {
                 if(!explore.Exist(p=> p.x == next.x && p.y == next.y) && Map.Octile(min.x,min.y, toX,toY) > Map.Octile(next.x,next.y, toX,toY) ){
                     pred[next.x, next.y] = min;
                     explore.Enqueue(next, Map.Octile(next.x, next.y, toX, toY));
+                    cp.setOpenSetMaxSize(explore.size);
                 }
             }
         }
 
         UnityEngine.Debug.Log("Not hReachable" );
         return null;
+    }
+
+    //TODO
+    public void computeTL(){
+        throw new NotImplementedException();
     }
 
     public int CharacterX(){
@@ -264,7 +304,6 @@ public class SubGoalGraph {
         if(graph.Contains(cell)){
             foreach(Vector2Int p in graph.neighborhood(cell))
                 neighborhood.Add(p);
-
         }
     }
 }
