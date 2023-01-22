@@ -61,7 +61,7 @@ public class AStar {
                 else method = "Subgoal-TL";
             } else method = "Grid";
             if (!map.parameters.debug)
-                Data.WriteLine(map.name, graph.Count, graph.buildTime,fromX, fromY, toX, toY,  stopwatch.Elapsed.Milliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, map.parameters.listType, map.parameters.heuristic);
+                Data.WriteLine(map.name, graph.VertexCount, graph.EdgeCount, graph.buildTime,fromX, fromY, toX, toY,  stopwatch.Elapsed.Milliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, map.parameters.listType, map.parameters.heuristic);
         }
         return m;
     }

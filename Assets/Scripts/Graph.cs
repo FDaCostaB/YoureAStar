@@ -8,7 +8,8 @@ class Graph {
 
     Dictionary<Vector2Int, LinkedList<Vector2Int>> neighbors;
     int currIdx;
-    public int Count{get {return neighbors.Keys.Count;}}     
+    public int VertexCount{get {return neighbors.Count;}}     
+    public int EdgeCount{get {return neighbors.Aggregate(0, (acc,next) => acc +next.Value.Count, res => res/2);}}     
 
     public Graph (){
         currIdx=0;
@@ -31,10 +32,11 @@ class Graph {
 
     }
 
-    public void RemoveEdge(Vector2Int v, Vector2Int w) {            
-        if(neighbors[v].Contains(w)) neighbors[v].Remove(w);
-        if(neighbors[w].Contains(v)) neighbors[w].Remove(v);
-
+    public void RemoveEdge(Vector2Int v, Vector2Int w) {
+        if(v.x != w.x || v.y != w.y){
+            if(neighbors[v].Contains(w)) neighbors[v].Remove(w);
+            if(neighbors[w].Contains(v)) neighbors[w].Remove(v);
+        }            
     }
 
     public int AddVertex(Vector2Int p) {       
@@ -44,7 +46,7 @@ class Graph {
 
     public void RemoveVertex(Vector2Int p) {
         foreach(Vector2Int neighbor in neighbors[p]){
-            neighbors[neighbor].Remove(p);
+            if(neighbor.x != p.x || neighbor.y != p.y) neighbors[neighbor].Remove(p);
         }
         neighbors[p].Clear();
         neighbors.Remove(p);

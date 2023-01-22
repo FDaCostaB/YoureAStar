@@ -11,7 +11,8 @@ public class SubGoalGraph {
     AStar astar;
     public bool isTL;
     public int buildTime {get;}
-    public int Count{get {return graph.Count;}}
+    public int VertexCount{get {return graph.VertexCount;}}
+    public int EdgeCount{get {return graph.EdgeCount;}}
 
     Directions[] dirs = {Directions.NORTHWEST,Directions.NORTH,Directions.NORTHEAST,Directions.WEST,Directions.EAST,Directions.SOUTHWEST,Directions.SOUTH,Directions.SOUTHEAST};
     Directions[] diag = {Directions.NORTHWEST, Directions.NORTHEAST, Directions.SOUTHWEST, Directions.SOUTHEAST};
@@ -73,6 +74,7 @@ public class SubGoalGraph {
         stopwatch.Stop();
         buildTime = stopwatch.Elapsed.Milliseconds;
         UnityEngine.Debug.Log("# of nodes : "+ vertices.Count);
+        UnityEngine.Debug.Log("# of edges : "+ graph.EdgeCount);
 
     }
 
@@ -230,7 +232,7 @@ public class SubGoalGraph {
         Move m = FindAbstractPath(goal);
         stopwatch.Stop();
         if(m != null && !map.parameters.debug){
-            Data.WriteLine(map.name, Count, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, stopwatch.Elapsed.Milliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (isTL? "SG-TL Graph": "SG Graph"), map.parameters.listType, map.parameters.heuristic);
+            Data.WriteLine(map.name, VertexCount, EdgeCount, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, stopwatch.Elapsed.Milliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (isTL? "SG-TL Graph": "SG Graph"), map.parameters.listType, map.parameters.heuristic);
         }
         return m;
     }
