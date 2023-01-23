@@ -11,6 +11,7 @@ public class Parameters : MonoBehaviour
     public Heuristics heuristic;
     public OpenSetType listType;
     public bool useSubgoal;
+    public bool useTL;
     
     public IOpenList<Vector2Int> newOpenList(){
         switch(listType){
@@ -36,5 +37,5 @@ public enum Heuristics{
 public enum OpenSetType{
     UnsortedList,
     PriorityQueue
-    //TODO HotQueue, Hybrid, pairing heaps, sequence heaps, or a bucket based
+    //TODO HotQueue
 }

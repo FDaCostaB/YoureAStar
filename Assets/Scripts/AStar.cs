@@ -209,6 +209,7 @@ public class AStar {
 
             //For all neighborhood v update the distance
             neighborhood.Clear();
+            
             graph.AddNeighborhood(min.x,min.y,ALL,neighborhood);
 
             foreach(Vector2Int next in neighborhood){

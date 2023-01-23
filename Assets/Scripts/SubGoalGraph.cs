@@ -6,13 +6,14 @@ using UnityEngine;
 
 public class SubGoalGraph {
     Map map;
-    Graph graph;
+    Graph sgGraph;
+    Graph sgTLGraph;
 
     AStar astar;
     public bool isTL;
     public int buildTime {get;}
-    public int VertexCount{get {return graph.VertexCount;}}
-    public int EdgeCount{get {return graph.EdgeCount;}}
+    public int VertexCount{get {return sgGraph.VertexCount;}}
+    public int EdgeCount{get {return sgGraph.EdgeCount;}}
 
     Directions[] dirs = {Directions.NORTHWEST,Directions.NORTH,Directions.NORTHEAST,Directions.WEST,Directions.EAST,Directions.SOUTHWEST,Directions.SOUTH,Directions.SOUTHEAST};
     Directions[] diag = {Directions.NORTHWEST, Directions.NORTHEAST, Directions.SOUTHWEST, Directions.SOUTHEAST};
@@ -58,23 +59,25 @@ public class SubGoalGraph {
             }
         }
 
-        graph = new Graph();
-        // Debug.Log("Nodes nb : " + vertices.Count);
+        sgGraph = new Graph();
+        sgTLGraph = new Graph();
         foreach(Vector2Int p in vertices){
             map.setMark(AStar.NODES,p.x,p.y);
-            graph.AddVertex(p);
+            sgGraph.AddVertex(p);
+            sgTLGraph.AddVertex(p);
         }
 
-        foreach(Vector2Int cell in graph.getNodes()){
+        foreach(Vector2Int cell in sgGraph.getNodes()){
             foreach(Vector2Int cellPrime in GetDirectHReachable(cell)){
-                graph.AddEdge(cell,cellPrime);
+                sgGraph.AddEdge(cell,cellPrime);
+                sgTLGraph.AddEdge(cell,cellPrime);
             }
         }
 
         stopwatch.Stop();
         buildTime = stopwatch.Elapsed.Milliseconds;
         UnityEngine.Debug.Log("# of nodes : "+ vertices.Count);
-        UnityEngine.Debug.Log("# of edges : "+ graph.EdgeCount);
+        UnityEngine.Debug.Log("# of edges : "+ sgGraph.EdgeCount);
 
     }
 
@@ -208,10 +211,10 @@ public class SubGoalGraph {
     }
 
     void ConnectToGraph(Vector2Int cell){
-        if(!graph.Contains(cell)){
-            graph.AddVertex(cell);
+        if(!sgGraph.Contains(cell)){
+            sgGraph.AddVertex(cell);
             foreach(Vector2Int cellPrime in GetDirectHReachable(cell)){
-                graph.AddEdge(cell,cellPrime);
+                sgGraph.AddEdge(cell,cellPrime);
             }
         }
     }
@@ -221,8 +224,8 @@ public class SubGoalGraph {
         ConnectToGraph(start);
         ConnectToGraph(goal);
         Move res = astar.pathGraph(goal.x, goal.y, map.currentChar() );
-        graph.RemoveVertex(start);
-        graph.RemoveVertex(goal);
+        sgGraph.RemoveVertex(start);
+        sgGraph.RemoveVertex(goal);
         return res;
     }
 
@@ -287,9 +290,147 @@ public class SubGoalGraph {
         return null;
     }
 
-    //TODO
+    public bool isHreachable(int fromX, int fromY, int toX, int toY){
+        IOpenList<Vector2Int> explore = map.parameters.newOpenList();
+        List<Vector2Int> neighborhood =  new List<Vector2Int>();
+        Vector2Int[,] pred = new Vector2Int[map.Width(),map.Height()];
+        Vector2Int min=new Vector2Int(fromX,fromY);
+        float h = Map.Octile(fromX, fromY, toX, toY);
+
+        explore.Enqueue(min,h);
+        
+        while(explore.size > 0){
+
+            min = explore.Dequeue();
+            map.setMark(AStar.SCANNED,min.x,min.y);
+
+            //If destination reached
+            if(min.x == toX && min.y == toY){
+                return true;
+            }
+
+            neighborhood.Clear();
+
+            foreach(Vector2Int next in map.AddNeighborhood(min.x,min.y,AStar.ALL,neighborhood)){
+                if(!explore.Exist(p=> p.x == next.x && p.y == next.y) && Map.Octile(min.x,min.y, toX,toY) > Map.Octile(next.x,next.y, toX,toY) ){
+                    pred[next.x, next.y] = min;
+                    explore.Enqueue(next, Map.Octile(next.x, next.y, toX, toY));
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public float costOtherPath(Vector2Int node, Vector2Int s, Vector2Int sprime){
+
+        sgTLGraph.AddVertex(s);
+        sgTLGraph.AddVertex(sprime);
+
+        IOpenList<Vector2Int> explore = map.parameters.newOpenList();
+        List<Vector2Int> neighborhood =  new List<Vector2Int>();
+        List<Move> res =  new List<Move>();
+        Vector2Int[,] pred = new Vector2Int[map.Width(),map.Height()];
+        int fromX = s.x;
+        int fromY = s.y;
+        int toX = sprime.x;
+        int toY = sprime.y;
+        Vector2Int min= new Vector2Int(-1,-1);
+        float [,] dist;
+
+        if(node.x == s.x && node.y == s.y)
+            throw new InvalidOperationException("Invalid state");
+
+        Move cp = new Move(map, -1);
+
+        dist = new float[map.Width(), map.Height()];
+        for (int y = 0; y < map.Height(); y++) {
+            for (int x = 0; x < map.Width(); x++) {
+                dist[x,y] = 1e30f;
+            }
+        }
+
+        dist[fromX,fromY] = 0;
+        min = new Vector2Int(fromX,fromY);
+        explore.Enqueue(min,0);
+
+        while(explore.size > 0){
+
+            min = explore.Dequeue();
+
+            //If destination reached
+            if(min.x == toX && min.y == toY){
+                sgTLGraph.RemoveVertex(s);
+                sgTLGraph.RemoveVertex(sprime);
+                return dist[toX, toY];
+            }
+
+            
+
+            //For all neighborhood v update the distance
+            neighborhood.Clear();
+            AddNeighborhood(min.x, min.y, AStar.ALL, neighborhood);
+
+            foreach(Vector2Int next in neighborhood){
+                if(next.x == node.x && next.y == node.y) continue;
+                if( dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y) < dist[next.x, next.y]){
+                    dist[next.x, next.y] = dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y);
+                    pred[next.x, next.y] = min;
+                    int idx = explore.Find(p=> p.x == next.x && p.y == next.y);
+                    if(idx>=0){
+                        explore.changePriority(idx, dist[next.x, next.y] + map.distHeuristic(next.x,next.y,toX,toY));
+                    }else {
+                        explore.Enqueue(next, dist[next.x, next.y] + map.distHeuristic(next.x,next.y,toX,toY));
+                        cp.setOpenSetMaxSize(explore.size);
+                    }
+                }
+            }
+            
+        }
+
+        sgTLGraph.RemoveVertex(s);
+        sgTLGraph.RemoveVertex(sprime);
+        UnityEngine.Debug.Log("No path exist" );
+        return float.MaxValue;
+    }
+
+    bool IsNecessaryToConnect(Vector2Int node, Vector2Int s, Vector2Int sprime){
+        if(isHreachable(s.x, s.y, sprime.x, sprime.y))
+            return false;
+        if(costOtherPath(node,s,sprime) <= Map.Octile(node.x, node.y, s.x , s.y) + Map.Octile(node.x, node.y, sprime.x , sprime.y))
+            return false;
+        return true;
+    }
+
+    void PruneSubgoal(Vector2Int node){
+        foreach(Vector2Int s in sgTLGraph.neighborhood(node)){
+            foreach(Vector2Int sprime in sgTLGraph.neighborhood(node)){
+                if(Map.Octile(s.x, s.y, sprime.x, sprime.y) == Map.Octile(node.x, node.y, s.x, s.y) + Map.Octile(node.x, node.y, sprime.x, sprime.y) ){
+                    if(costOtherPath(node,s,sprime) > Map.Octile(node.x, node.y, s.x, s.y) + Map.Octile(node.x, node.y, sprime.x, sprime.y))
+                        sgTLGraph.AddEdge(s,sprime);
+                }
+            }
+        }
+        sgTLGraph.RemoveVertex(node);
+    }
+
     public void computeTL(){
-        throw new NotImplementedException();
+        isTL = true;
+        bool necessary = false;
+        foreach(Vector2Int node in sgTLGraph.getNodes()){
+            necessary = false;
+            foreach(Vector2Int s in sgTLGraph.neighborhood(node)){
+                foreach(Vector2Int sprime in sgTLGraph.neighborhood(node)){
+                    if(IsNecessaryToConnect(node,s,sprime)){
+                        necessary = true;
+                        break;
+                    }
+                }
+                if(necessary)break;
+            }
+            if(!necessary)PruneSubgoal(node);
+        }
+             
     }
 
     public int CharacterX(){
@@ -300,12 +441,18 @@ public class SubGoalGraph {
         return map.CharacterY();
     }
 
-    internal void AddNeighborhood(int x, int y, int aLL, List<Vector2Int> neighborhood)
+    internal void AddNeighborhood(int x, int y, int aLL, List<Vector2Int> neighborhood )
     {
         Vector2Int cell = new Vector2Int(x,y);
-        if(graph.Contains(cell)){
-            foreach(Vector2Int p in graph.neighborhood(cell))
+        if(sgGraph.Contains(cell)){
+            foreach(Vector2Int p in sgGraph.neighborhood(cell))
                 neighborhood.Add(p);
+        }
+        if(isTL){
+            if(sgTLGraph.Contains(cell)){
+                foreach(Vector2Int p in sgTLGraph.neighborhood(cell))
+                    neighborhood.Add(p);
+            }
         }
     }
 }
