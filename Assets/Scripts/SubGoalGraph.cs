@@ -227,12 +227,12 @@ public class SubGoalGraph {
     }
 
     public Move measureFindAbstractPath(Vector2Int goal){
-        Stopwatch stopwatch = new Stopwatch();
-        stopwatch.Start();
+        Stopwatch timer = new Stopwatch();
+        timer.Start();
         Move m = FindAbstractPath(goal);
-        stopwatch.Stop();
+        timer.Stop();
         if(m != null && !map.parameters.debug){
-            Data.WriteLine(map.name, VertexCount, EdgeCount, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, stopwatch.Elapsed.Milliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (isTL? "SG-TL Graph": "SG Graph"), map.parameters.listType, map.parameters.heuristic);
+            Data.CacheLine(map.name, VertexCount, EdgeCount, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, timer.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (isTL? "SG-TL Graph": "SG Graph"), map.parameters.listType, map.parameters.heuristic);
         }
         return m;
     }

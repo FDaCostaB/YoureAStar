@@ -5,3 +5,5 @@ Assets/Map/bigmap.txt,228842,869450,149, (214 - 0), (2984 - 1184),116,116824,108
 Assets/Map/bigmap.txt,228842,869450,149, (214 - 0), (2984 - 1184),806,5227,253,4091, Subgoal-TL, PriorityQueue, Octile
 Assets/Map/bigmap.txt,228842,869450,974, (214 - 0), (2657 - 2527),151,65266,1484,980, FindAbstractPath - SG Graph, PriorityQueue, Octile
 Assets/Map/bigmap.txt,228842,869450,974, (214 - 0), (2657 - 2527),737,4596,430,3607, Subgoal-TL, PriorityQueue, Octile
+Assets/Map/bigmap.txt,228841,869448,571, (214 - 0), (146 - 2776),71,45616,1161,707, FindAbstractPath - SG Graph, PriorityQueue, Octile
+Assets/Map/bigmap.txt,228841,869448,571, (214 - 0), (146 - 2776),92,3975,419,3147, Subgoal-TL, PriorityQueue, Octile

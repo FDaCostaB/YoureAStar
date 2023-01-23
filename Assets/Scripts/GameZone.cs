@@ -50,6 +50,7 @@ public class GameZone : MonoBehaviour, IObserver
             npc = TilesResourcesLoader.GetTileByName("NPC");
             water = TilesResourcesLoader.GetTileByName("Water");
             input = new InputAdapter(this,c);
+            Data.Init();
 		} catch (Exception e) {
 			Debug.LogError(e);
             Application.Quit();

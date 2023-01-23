@@ -21,22 +21,22 @@ class Graph {
     }
 
     public void AddEdge(Vector2Int v, Vector2Int w) {            
-        if(!neighbors[v].Contains(w)){
-            neighbors[v].AddFirst(w);
-            //Debug.Log("Edge added : " + v.x +" ,"+v.y + " <==> "+ w.x +" ,"+w.y  + " Size of neighborhood : " + neighbors[v].Count);
-        }
-        if(!neighbors[w].Contains(v)){
-            neighbors[w].AddFirst(v);
-            //Debug.Log("Edge added : " + w.x +" ,"+ w.y + " <==> "+ v.x +" ," + v.y + " Size of neighborhood : " + neighbors[w].Count );
+        if(v.x != w.x || v.y != w.y){
+            if(!neighbors[v].Contains(w)){
+                neighbors[v].AddFirst(w);
+                //Debug.Log("Edge added : " + v.x +" ,"+v.y + " <==> "+ w.x +" ,"+w.y  + " Size of neighborhood : " + neighbors[v].Count);
+            }
+            if(!neighbors[w].Contains(v)){
+                neighbors[w].AddFirst(v);
+                //Debug.Log("Edge added : " + w.x +" ,"+ w.y + " <==> "+ v.x +" ," + v.y + " Size of neighborhood : " + neighbors[w].Count );
+            }
         }
 
     }
 
     public void RemoveEdge(Vector2Int v, Vector2Int w) {
-        if(v.x != w.x || v.y != w.y){
-            if(neighbors[v].Contains(w)) neighbors[v].Remove(w);
-            if(neighbors[w].Contains(v)) neighbors[w].Remove(v);
-        }            
+        if(neighbors[v].Contains(w)) neighbors[v].Remove(w);
+        if(neighbors[w].Contains(v)) neighbors[w].Remove(v);          
     }
 
     public int AddVertex(Vector2Int p) {       

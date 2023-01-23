@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d095802dadddd48a30391dbf330573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   allowDiagonal: 1
   doBidirectionnal: 0
   heuristic: 3
