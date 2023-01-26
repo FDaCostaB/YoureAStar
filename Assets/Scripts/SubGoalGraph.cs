@@ -95,7 +95,7 @@ public class SubGoalGraph {
             }
         }
         foreach(Directions d in diag){
-            foreach(Directions c in cardinalAssociated(d)){
+            foreach(Directions c in Map.cardinalAssociated(d)){
                 int max = Clearance(cell,c);
                 int diag = Clearance(cell,d);
                 if(map.isSubgoal(Map.move(cell, c, max)))
@@ -120,29 +120,6 @@ public class SubGoalGraph {
         return hReachable;
     }
     
-    public Directions[] cardinalAssociated(Directions d){
-        if(d == Directions.NORTH || d == Directions.WEST || d == Directions.EAST || d == Directions.SOUTH) throw new InvalidOperationException();
-        Directions[] res = new Directions[2];
-        switch(d){
-            case Directions.NORTHWEST:
-                res[0] = Directions.NORTH;
-                res[1] = Directions.WEST;
-                break;
-            case Directions.SOUTHWEST:
-                res[0] = Directions.SOUTH;
-                res[1] = Directions.WEST;
-                break;
-            case Directions.NORTHEAST:
-                res[0] = Directions.NORTH;
-                res[1] = Directions.EAST;
-                break;
-            case Directions.SOUTHEAST:
-                res[0] = Directions.SOUTH;
-                res[1] = Directions.EAST;
-                break;
-        }
-        return res;
-    }
     public int Clearance(Vector2Int cell, Directions d){
         int i =0;
         while(true){
@@ -166,6 +143,7 @@ public class SubGoalGraph {
         if(globalPath.Steps().Count == 0) return null;
 
         //TODO : Parallelize this for
+        //TODO : JPS on SGTL
         //for(int i =0; i < globalPath.Steps().Count; i++){
         //    FindHreachablePath(cp, globalPath.Steps()[i].fromX, globalPath.Steps()[i].fromY, globalPath.Steps()[i].toX, globalPath.Steps()[i].toY);
         //}
@@ -181,7 +159,6 @@ public class SubGoalGraph {
             float t = N == 0 ? 0.0f : (float) step / N;
             Vector2Int point = roundPoint(lerpPoint(map.currentCharPos(), goal, t));
             if(map.isFree(point)) {
-                if(map.parameters.debug) map.setMark(AStar.SCANNED, point.x, point.y);
                 if(from.x != point.x && from.y != point.y){
                     if(!map.isFree(point.x,from.y) || !map.isFree(from.x,point.y)){
                         res.Steps().Clear();
@@ -237,13 +214,14 @@ public class SubGoalGraph {
         Move m = FindAbstractPath(goal);
         timer.Stop();
         if(m != null && !map.parameters.debug){
-            Data.CacheLine(map.name, VertexCount, EdgeCount, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, timer.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (isTL? "SG-TL Graph": "SG Graph"), map.parameters.listType, map.parameters.heuristic);
+            Data.CacheLine(map.name, VertexCount, EdgeCount, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, timer.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (isTL? "SG-TL Graph": "SG Graph"), map.parameters.listType, map.parameters.heuristic, map.parameters.heuristicMultiplier);
         }
         return m;
     }
 
     public Move FindHreachablePath(Move cp, int fromX, int fromY, int toX, int toY){
         IOpenList<Vector2Int> explore = map.parameters.newOpenList();
+        HashSet<Vector2Int> closed = new HashSet<Vector2Int>();
         List<Vector2Int> neighborhood =  new List<Vector2Int>();
         Vector2Int[,] pred = new Vector2Int[map.Width(),map.Height()];
         Vector2Int curr;
@@ -256,6 +234,7 @@ public class SubGoalGraph {
         while(explore.size > 0){
 
             min = explore.Dequeue();
+            closed.Add(min);
             map.setMark(AStar.SCANNED,min.x,min.y);
             cp.scanned++;
 
@@ -280,10 +259,7 @@ public class SubGoalGraph {
             map.AddNeighborhood(min.x,min.y,AStar.ALL,neighborhood);
 
             foreach(Vector2Int next in neighborhood){
-                //TODO
-                //REAL PROBLEM : MAP SIZE < 16k but 1M tiles scanned => 
-                //eraseMark and Mark as scanned scanned tiles and add only h(min,goal) - neigbor dist(min,next) == h(next,goal) instead of h(min,goal) > h(next,goal)
-                if(!explore.Exist(p=> p.x == next.x && p.y == next.y) && Map.Octile(min.x,min.y, toX,toY) > Map.Octile(next.x,next.y, toX,toY) ){
+                if(!closed.Contains(next) && Map.Octile(min.x,min.y, toX,toY) > Map.Octile(next.x,next.y, toX,toY) ){
                     pred[next.x, next.y] = min;
                     explore.Enqueue(next, Map.Octile(next.x, next.y, toX, toY));
                     cp.setOpenSetMaxSize(explore.size);
@@ -297,6 +273,7 @@ public class SubGoalGraph {
 
     public bool isHreachable(Vector2Int start, Vector2Int goal){
         IOpenList<Vector2Int> explore = map.parameters.newOpenList();
+        HashSet<Vector2Int> closed = new HashSet<Vector2Int>();
         List<Vector2Int> neighborhood =  new List<Vector2Int>();
         Vector2Int min=start;
         float h = Map.Octile(start.x, start.y, goal.x, goal.y);
@@ -307,6 +284,7 @@ public class SubGoalGraph {
         while(explore.size > 0 && MAX_ITER > 0){
 
             min = explore.Dequeue();
+            closed.Add(min);
 
             //If destination reached
             if(min.x == goal.x && min.y == goal.y){
@@ -316,10 +294,7 @@ public class SubGoalGraph {
             neighborhood.Clear();
 
             foreach(Vector2Int next in map.AddNeighborhood(min.x,min.y,AStar.ALL,neighborhood)){
-            //TODO
-            //REAL PROBLEM : MAP SIZE < 16k but 1M tiles scanned => 
-            //eraseMark and Mark as scanned scanned tiles and add only h(min,goal) - neigbor dist(min,next) == h(next,goal) instead of h(min,goal) > h(next,goal)
-                if(!explore.Exist(p=> p.x == next.x && p.y == next.y) && Map.Octile(min.x,min.y, goal.x, goal.y) > Map.Octile(next.x,next.y, goal.x, goal.y) ){
+                if(!closed.Contains(next) && Map.Octile(min.x,min.y, goal.x, goal.y) > Map.Octile(next.x,next.y, goal.x, goal.y) ){
                     explore.Enqueue(next, Map.Octile(next.x, next.y, goal.x, goal.y));
                 }
             }

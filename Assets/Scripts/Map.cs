@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//TODO : Transformer la map en byte[,]
 public class Map : Subject {
 	/* 	A grid cell is an int that encode WALL, WHARACTER, FREE
 		One bit encode the presence of each object
@@ -21,6 +20,7 @@ public class Map : Subject {
 
 	public String name;
 
+    Directions[] dirs = {Directions.NORTH,Directions.WEST,Directions.EAST,Directions.SOUTH,Directions.NORTHWEST,Directions.NORTHEAST,Directions.SOUTHWEST,Directions.SOUTHEAST};
 
 	public Map(String fileName) {
 		name = fileName;
@@ -28,6 +28,24 @@ public class Map : Subject {
 		width = 0;
 		height = 0;
 		parameters = null;
+	}
+
+	public Vector2Int closestFree(int x, int y){
+        int i =0;
+		while(true){
+			foreach(Directions d in dirs){
+				Vector2Int moved = Map.move(x,y,d,i+1);
+				if(isIn(moved) && isFree(moved) && mark(moved) == AStar.REACHABLE) return moved;
+				foreach(Directions card in Map.cardinalOpposite(d)){
+					for(int j = 1; j < i+1; j++){
+						Vector2Int movedPrime = Map.move(moved.x,moved.y,card,j);
+						if(isIn(movedPrime) && isFree(movedPrime) && mark(movedPrime) == AStar.REACHABLE) return movedPrime;
+					}
+
+				}
+			}
+			i++;
+		}
 	}
 
 	public void AttachParameters(Parameters param){
@@ -169,6 +187,10 @@ public class Map : Subject {
 		return x>=0 && x<Width() && y>=0 && y<Height();
 	}
 
+	public bool isIn(Vector2Int p) {
+		return isIn(p.x,p.y);
+	}
+
 	public int CharacterY() {
 		return characterPos[charcater].y;
 	}
@@ -221,6 +243,61 @@ public class Map : Subject {
 		}
 	}
 
+	public static Directions[] cardinalAssociated(Directions d){
+        if(d == Directions.NORTH || d == Directions.WEST || d == Directions.EAST || d == Directions.SOUTH) {
+			Directions[] empty = new Directions[0];
+			return empty;
+		}
+        Directions[] res = new Directions[2];
+        switch(d){
+            case Directions.NORTHWEST:
+                res[0] = Directions.NORTH;
+                res[1] = Directions.WEST;
+                break;
+            case Directions.SOUTHWEST:
+                res[0] = Directions.SOUTH;
+                res[1] = Directions.WEST;
+                break;
+            case Directions.NORTHEAST:
+                res[0] = Directions.NORTH;
+                res[1] = Directions.EAST;
+                break;
+            case Directions.SOUTHEAST:
+                res[0] = Directions.SOUTH;
+                res[1] = Directions.EAST;
+                break;
+        }
+        return res;
+    }
+
+		public static Directions[] cardinalOpposite(Directions d){
+        if(d == Directions.NORTH || d == Directions.WEST || d == Directions.EAST || d == Directions.SOUTH) {
+			Directions[] empty = new Directions[0];
+			return empty;
+		}
+        Directions[] res = new Directions[2];
+        switch(d){
+            case Directions.NORTHWEST:
+			    res[0] = Directions.SOUTH;
+                res[1] = Directions.EAST;
+                break;
+            case Directions.SOUTHWEST:
+                res[0] = Directions.NORTH;
+                res[1] = Directions.EAST;
+                break;
+            case Directions.NORTHEAST:
+                res[0] = Directions.SOUTH;
+                res[1] = Directions.WEST;
+                break;
+            case Directions.SOUTHEAST:
+			    res[0] = Directions.NORTH;
+                res[1] = Directions.WEST;
+                break;
+
+        }
+        return res;
+    }
+
 	public Step playStep(Move cp) {
 		Step d = cp.Steps()[0];
 		//if(cp.charNb == charcater)setMark(AStar.USED,d.fromX,d.fromY);
@@ -235,16 +312,16 @@ public class Map : Subject {
 
 	public float distHeuristic(int pt1x, int pt1y, int pt2x, int pt2y){
         //dist is g i.e. the cost from the start to pt1 the rest is the heuristic h
-
+		int multiplier = parameters.heuristicMultiplier;
         switch(parameters.heuristic){
             case Heuristics.Manhattan:
-                return Manhattan(pt1x, pt1y, pt2x, pt2y);
+                return multiplier * Manhattan(pt1x, pt1y, pt2x, pt2y);
             case Heuristics.Euclidean:
-                return Euclidean(pt1x, pt1y, pt2x, pt2y);
+                return multiplier * Euclidean(pt1x, pt1y, pt2x, pt2y);
             case Heuristics.Chebyshev:
-				return Chebyshev(pt1x, pt1y, pt2x, pt2y);
+				return multiplier * Chebyshev(pt1x, pt1y, pt2x, pt2y);
             case Heuristics.Octile:
-                return Octile(pt1x, pt1y, pt2x, pt2y);
+                return multiplier * Octile(pt1x, pt1y, pt2x, pt2y);
             case Heuristics.Djikstra:
                 return 1;
             default:

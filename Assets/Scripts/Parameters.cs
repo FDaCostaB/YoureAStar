@@ -9,6 +9,7 @@ public class Parameters : MonoBehaviour
     public bool allowDiagonal;
     public bool lockCam;
     public bool doBidirectionnal;
+    public int heuristicMultiplier =1;
     public Heuristics heuristic;
     public OpenSetType listType;
     public bool useSubgoal;

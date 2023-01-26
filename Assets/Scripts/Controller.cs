@@ -55,6 +55,7 @@ public class Controller : IEventCollector {
 	// Clic dans la case (l, c)
 	public void mouseClic(float x, float y) {
 		Vector2Int clic = new Vector2Int((int) Math.Floor(x + cam.GetComponent<Transform>().position.x), (int) Math.Floor(y + 1 - cam.GetComponent<Transform>().position.y));
+		//aStar.debug(clic.x, clic.y); return;
 		if( clic.x > map.Width() || clic.x < 0  || clic.y > map.Height() || clic.y < 0 ) return;
 		if(map.isCharacter(clic.x,clic.y) && (pause || isSelectable(map.findChar(clic.x,clic.y)))){
 			map.selectChar(clic.x,clic.y);

@@ -24,7 +24,6 @@ public class AStar {
     }
     
 
-    //TODO : MARK REACHABLE ONCE AND PLACE WALL ON NON REACHABLE FLOOR
     public void mark(bool doRefresh) {
         int characterX = map.CharacterX();
         int characterY = map.CharacterY();
@@ -61,7 +60,7 @@ public class AStar {
                 else method = "Subgoal-TL";
             } else method = "Grid";
             if (!map.parameters.debug)
-                Data.CacheLine(map.name, graph.VertexCount, graph.EdgeCount, graph.buildTime,fromX, fromY, toX, toY,  stopwatch.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, map.parameters.listType, map.parameters.heuristic);
+                Data.CacheLine(map.name, graph.VertexCount, graph.EdgeCount, graph.buildTime,fromX, fromY, toX, toY,  stopwatch.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, map.parameters.listType, map.parameters.heuristic, map.parameters.heuristicMultiplier);
         }
         Data.flush();
         return m;
@@ -84,12 +83,11 @@ public class AStar {
 
         Move cp = new Move(map, map.currentChar());
 
-        
-        //If not reachable skip
-        //TODO : FIND CLOSEST FREE GRID CELL
-        if(!map.isFree(toX,toY) || map.mark(toX,toY) == EMPTY){
-            UnityEngine.Debug.Log("No path exist" );
-            return null;
+        //If not reachable FindClosestFree(toX,toY)
+        if(!map.isFree(toX,toY)){
+            Vector2Int newDest = map.closestFree(toX, toY);
+            toX=newDest.x;
+            toY=newDest.y;
         }
 
         dist = new float[map.Width(), map.Height()];
@@ -166,11 +164,11 @@ public class AStar {
         //mark(true);
         Move cp = new Move(map, agentNb);
 
-        //If not reachable skip
-        //TODO : FIND CLOSEST FREE GRID CELL
+        //If not reachable FindClosestFree(toX,toY)
         if(!map.isFree(toX,toY)){
-            UnityEngine.Debug.Log("No path exist" );
-            return null;
+            Vector2Int newDest = map.closestFree(toX, toY);
+            toX=newDest.x;
+            toY=newDest.y;
         }
 
 
@@ -239,10 +237,9 @@ public class AStar {
 
     public void debug(int x, int y){
         map.eraseMark();
-        //graph.TryDirectPath(new Vector2Int(x,y));
-        //graph.FindHreachablePath(new Move(map, map.currentChar()),map.currentCharPos().x, map.currentCharPos().y, x,y);
+        Vector2Int res = map.closestFree(x,y);
+        map.setMark(AStar.PATH, res.x, res.y);
         map.Notify();
-        //throw new NotImplementedException();
 	}
 
 }

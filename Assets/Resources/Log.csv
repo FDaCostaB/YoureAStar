@@ -1,183 +1,199 @@
-Map Name,# of nodes,# of edge,SG build time,Start,Goal,Computation time,# scanned Tiles,Max size of the Open Set,Path length ,Method,Open Set type,
-Assets/Map/bigmap.txt,228842,869450,877, (214 - 0), (2677 - 2405),968,77573,1381,1070, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,869450,877, (214 - 0), (2677 - 2405),628,4711,426,3632, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,869450,149, (214 - 0), (2984 - 1184),116,116824,1082,1128, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,869450,149, (214 - 0), (2984 - 1184),806,5227,253,4091, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,869450,974, (214 - 0), (2657 - 2527),151,65266,1484,980, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,869450,974, (214 - 0), (2657 - 2527),737,4596,430,3607, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,869448,571, (214 - 0), (146 - 2776),71,45616,1161,707, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,869448,571, (214 - 0), (146 - 2776),92,3975,419,3147, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 122), (35 - 154),3,4,10,3, FindAbstractPath - SG-TL Graph, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 122), (35 - 154),8,102,50,73, Subgoal, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,19, (107 - 122), (82 - 97),0,26,0,26, Subgoal, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),7,4,10,3, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),12,104,50,68, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),7,4,10,3, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),12,104,50,68, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (101 - 128), (107 - 125),0,7,0,7, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),7,4,10,3, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),12,104,50,68, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (101 - 128), (107 - 125),0,7,0,7, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 125), (38 - 153),1,4,9,3, FindAbstractPath - SG-TL Graph, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 125), (38 - 153),1,96,55,72, Subgoal, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),7,4,10,3, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),12,104,50,68, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (101 - 128), (107 - 125),0,7,0,7, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 125), (38 - 153),1,4,9,3, FindAbstractPath - SG-TL Graph, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (107 - 125), (38 - 153),1,96,55,72, Subgoal, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (38 - 153), (163 - 17),0,14,12,8, FindAbstractPath - SG-TL Graph, PriorityQueue, Octile
-Assets/Map/house1.txt,25,60,20, (38 - 153), (163 - 17),1,199,102,171, Subgoal, PriorityQueue, Octile
-Assets/Map/Flat.txt,52,142,16, (104 - 2), (121 - 23),1,22,0,22, Subgoal, PriorityQueue, Octile
-Assets/Map/Flat.txt,52,142,16, (104 - 2), (121 - 23),1,22,0,22, Subgoal, PriorityQueue, Octile
-Assets/Map/Flat.txt,52,142,16, (121 - 23), (9 - 64),2,11,20,6, FindAbstractPath - SG-TL Graph, PriorityQueue, Octile
-Assets/Map/Flat.txt,52,142,16, (121 - 23), (9 - 64),4,205,122,121, Subgoal, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,739, (258 - 44), (253 - 51),0,8,0,8, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),95,4,9,3, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),113,6,9,3, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),95,4,9,3, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),113,6,9,3, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755018,889, (447 - 2611), (438 - 2603),0,10,0,10, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),95,4,9,3, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),113,6,9,3, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755018,889, (447 - 2611), (438 - 2603),0,10,0,10, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755019,889, (438 - 2603), (449 - 2613),0,12,0,12, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),95,4,9,3, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),113,6,9,3, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755018,889, (447 - 2611), (438 - 2603),0,10,0,10, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755019,889, (438 - 2603), (449 - 2613),0,12,0,12, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755015,889, (449 - 2613), (412 - 2599),204,63,18,28, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755015,889, (449 - 2613), (412 - 2599),235,68,18,28, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),95,4,9,3, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),113,6,9,3, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755018,889, (447 - 2611), (438 - 2603),0,10,0,10, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755019,889, (438 - 2603), (449 - 2613),0,12,0,12, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755015,889, (449 - 2613), (412 - 2599),204,63,18,28, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228841,755015,889, (449 - 2613), (412 - 2599),235,68,18,28, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755011,889, (412 - 2599), (444 - 2609),182,48,21,24, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755011,889, (412 - 2599), (444 - 2609),213,50,21,24, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228840,755011,889, (412 - 2599), (452 - 2618),304,79,20,30, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile
-Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile
+Map Name,# of nodes,# of edge,SG build time,Start,Goal,Computation time,# scanned Tiles,Max size of the Open Set,Path length ,Method,Open Set type,Heuristic,Heuristic multiplier
+Assets/Map/bigmap.txt,228842,869450,877, (214 - 0), (2677 - 2405),968,77573,1381,1070, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,869450,877, (214 - 0), (2677 - 2405),628,4711,426,3632, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,869450,149, (214 - 0), (2984 - 1184),116,116824,1082,1128, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,869450,149, (214 - 0), (2984 - 1184),806,5227,253,4091, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,869450,974, (214 - 0), (2657 - 2527),151,65266,1484,980, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,869450,974, (214 - 0), (2657 - 2527),737,4596,430,3607, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,869448,571, (214 - 0), (146 - 2776),71,45616,1161,707, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,869448,571, (214 - 0), (146 - 2776),92,3975,419,3147, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 122), (35 - 154),3,4,10,3, FindAbstractPath - SG-TL Graph, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 122), (35 - 154),8,102,50,73, Subgoal, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,19, (107 - 122), (82 - 97),0,26,0,26, Subgoal, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),7,4,10,3, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),12,104,50,68, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),7,4,10,3, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),12,104,50,68, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (101 - 128), (107 - 125),0,7,0,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),7,4,10,3, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),12,104,50,68, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (101 - 128), (107 - 125),0,7,0,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 125), (38 - 153),1,4,9,3, FindAbstractPath - SG-TL Graph, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 125), (38 - 153),1,96,55,72, Subgoal, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),7,4,10,3, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 122), (39 - 146),12,104,50,68, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (101 - 128), (107 - 125),0,7,0,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 125), (38 - 153),1,4,9,3, FindAbstractPath - SG-TL Graph, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (107 - 125), (38 - 153),1,96,55,72, Subgoal, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (38 - 153), (163 - 17),0,14,12,8, FindAbstractPath - SG-TL Graph, PriorityQueue, Octile,
+Assets/Map/house1.txt,25,60,20, (38 - 153), (163 - 17),1,199,102,171, Subgoal, PriorityQueue, Octile,
+Assets/Map/Flat.txt,52,142,16, (104 - 2), (121 - 23),1,22,0,22, Subgoal, PriorityQueue, Octile,
+Assets/Map/Flat.txt,52,142,16, (104 - 2), (121 - 23),1,22,0,22, Subgoal, PriorityQueue, Octile,
+Assets/Map/Flat.txt,52,142,16, (121 - 23), (9 - 64),2,11,20,6, FindAbstractPath - SG-TL Graph, PriorityQueue, Octile,
+Assets/Map/Flat.txt,52,142,16, (121 - 23), (9 - 64),4,205,122,121, Subgoal, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,739, (258 - 44), (253 - 51),0,8,0,8, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),95,4,9,3, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),113,6,9,3, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),95,4,9,3, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),113,6,9,3, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755018,889, (447 - 2611), (438 - 2603),0,10,0,10, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),95,4,9,3, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),113,6,9,3, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755018,889, (447 - 2611), (438 - 2603),0,10,0,10, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755019,889, (438 - 2603), (449 - 2613),0,12,0,12, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),95,4,9,3, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),113,6,9,3, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755018,889, (447 - 2611), (438 - 2603),0,10,0,10, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755019,889, (438 - 2603), (449 - 2613),0,12,0,12, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755015,889, (449 - 2613), (412 - 2599),204,63,18,28, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755015,889, (449 - 2613), (412 - 2599),235,68,18,28, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),88,8,14,4, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,889, (448 - 2613), (437 - 2603),123,15,14,4, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),159,3,6,2, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755023,889, (437 - 2603), (446 - 2612),173,6,6,2, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755025,889, (438 - 2604), (433 - 2598),0,7,0,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),187,13,17,10, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755020,889, (433 - 2598), (447 - 2607),239,16,17,10, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),95,4,9,3, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755016,889, (447 - 2607), (447 - 2611),113,6,9,3, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755018,889, (447 - 2611), (438 - 2603),0,10,0,10, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755019,889, (438 - 2603), (449 - 2613),0,12,0,12, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755015,889, (449 - 2613), (412 - 2599),204,63,18,28, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755015,889, (449 - 2613), (412 - 2599),235,68,18,28, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755011,889, (412 - 2599), (444 - 2609),182,48,21,24, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755011,889, (412 - 2599), (444 - 2609),213,50,21,24, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228840,755011,889, (412 - 2599), (452 - 2618),304,79,20,30, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),217,66,27,27, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (405 - 2600), (448 - 2613),244,68,27,27, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2576,43938,885,611, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,889, (214 - 0), (405 - 2600),2719,44078,885,611, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,141, (214 - 0), (270 - 35),246,13,17,7, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,141, (214 - 0), (270 - 35),274,21,17,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,141, (214 - 0), (270 - 35),246,13,17,7, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,141, (214 - 0), (270 - 35),274,21,17,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,141, (270 - 35), (101 - 2673),1209,29752,1020,451, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,141, (270 - 35), (101 - 2673),1268,29776,1020,451, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,141, (214 - 0), (270 - 35),246,13,17,7, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228842,755033,141, (214 - 0), (270 - 35),274,21,17,7, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,141, (270 - 35), (101 - 2673),1209,29752,1020,451, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228841,755029,141, (270 - 35), (101 - 2673),1268,29776,1020,451, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228839,755016,141, (270 - 300), (96 - 2674),586,27910,1034,459, FindAbstractPath - SG Graph, PriorityQueue, Octile,
+Assets/Map/bigmap.txt,228839,755016,141, (270 - 300), (96 - 2674),602,27917,1034,459, Subgoal-TL, PriorityQueue, Octile,
+Assets/Map/bigmap.txt, 228842, 755033, 364, (214 - 0), (2425 - 2075), 2441, 77053, 960, 946, FindAbstractPath - SG Graph, PriorityQueue, Octile, 10
+Assets/Map/bigmap.txt, 228842, 755033, 364, (214 - 0), (2425 - 2075), 2512, 77063, 960, 946, Subgoal-TL, PriorityQueue, Octile, 10
+Assets/Map/bigmap.txt, 228842, 755033, 364, (214 - 0), (2424 - 2075), 980, 77041, 963, 946, FindAbstractPath - SG Graph, PriorityQueue, Octile, 10
+Assets/Map/bigmap.txt, 228842, 755033, 364, (214 - 0), (2424 - 2075), 1000, 77051, 963, 946, Subgoal-TL, PriorityQueue, Octile, 10
