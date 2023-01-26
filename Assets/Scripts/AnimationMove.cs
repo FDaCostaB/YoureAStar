@@ -31,12 +31,12 @@ public class AnimationMove : Animation {
 			stepFinished = false;
 		}
 		if(!stepFinished){
-			float dX = (d.fromX - d.toX)*(1 - progress);
-			float dY = (d.fromY - d.toY)*(1 - progress);
+			float dX = (d.fromX - d.toX)* (1 - progress);
+			float dY = (d.fromY - d.toY)* (1 - progress);
 			gZone.shift(dX, -dY, mv.charNb);
 		}
 		if(!pause || !stepFinished){
-			progress += animSpeed;
+			progress += animSpeed/d.length;
 			if (progress > 1) {
 				progress = 0;
 				stepFinished = true;

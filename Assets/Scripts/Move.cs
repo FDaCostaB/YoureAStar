@@ -34,21 +34,13 @@ public class Move {
 
 public class Step {
 	public int fromX, fromY, toX, toY;
+	public float length;
 
-	public Step(int dX, int dY, int vX, int vY) {
+	public Step(int dX, int dY, int vX, int vY, float l = 1) {
 		fromX = dX;
 		fromY = dY;
 		toX = vX;
 		toY = vY;
+		length = l;
 	}
-}
-
-public class Mark {
-    public int line, column, value;
-
-    public Mark(int x, int y, int val) {
-        line = y;
-        column = x;
-        value = val;
-    }
 }

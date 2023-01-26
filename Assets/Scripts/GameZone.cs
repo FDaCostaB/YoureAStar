@@ -132,6 +132,12 @@ public class GameZone : MonoBehaviour, IObserver
             redraw=false;
             Paint();
         }
+        
+        if(param.lockCam)c.centerCam();
+    }
+
+    public Vector3 currentCharPos(){
+        return characterList[map.currentChar()].gameObject.GetComponent<Transform>().position;
     }
 
     internal void updateTileSize()

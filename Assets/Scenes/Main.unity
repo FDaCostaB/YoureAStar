@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a2713295d21e4488c16b4ccc0adc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapFile: {fileID: 4900000, guid: 8612e28dcc6c53746abecef2cff1a35b, type: 3}
+  mapFile: {fileID: 4900000, guid: 6d7d980fe2e74b14cb4d44fcd64c9171, type: 3}
   character: {fileID: 3930526818132198865, guid: 593e911fd3b17ed47973150bb7da793e, type: 3}
   cam: {fileID: 519420031}
   param: {fileID: 1054846581}
@@ -385,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 1
   allowDiagonal: 1
+  lockCam: 0
   doBidirectionnal: 0
   heuristic: 3
   listType: 1

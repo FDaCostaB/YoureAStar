@@ -44,7 +44,7 @@ public class InputAdapter {
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            control.centerCam();
+            control.lockCam();
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {

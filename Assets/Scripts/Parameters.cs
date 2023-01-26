@@ -7,6 +7,7 @@ public class Parameters : MonoBehaviour
 {
     public bool debug;
     public bool allowDiagonal;
+    public bool lockCam;
     public bool doBidirectionnal;
     public Heuristics heuristic;
     public OpenSetType listType;

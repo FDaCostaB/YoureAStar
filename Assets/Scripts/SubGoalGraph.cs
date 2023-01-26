@@ -166,10 +166,10 @@ public class SubGoalGraph {
         if(globalPath.Steps().Count == 0) return null;
 
         //TODO : Parallelize this for
-        for(int i =0; i < globalPath.Steps().Count; i++){
-            FindHreachablePath(cp, globalPath.Steps()[i].fromX, globalPath.Steps()[i].fromY, globalPath.Steps()[i].toX, globalPath.Steps()[i].toY);
-        }
-        return cp;
+        //for(int i =0; i < globalPath.Steps().Count; i++){
+        //    FindHreachablePath(cp, globalPath.Steps()[i].fromX, globalPath.Steps()[i].fromY, globalPath.Steps()[i].toX, globalPath.Steps()[i].toY);
+        //}
+        return globalPath;
     }
 
     public Move TryDirectPath(Vector2Int goal){

@@ -14,11 +14,13 @@ public static class Data
     {
         Debug.Log(method + " - Computation time : " + computationTime + "\n# scanned cell : " + nbScannedTiles + "\nMax size of Open Set : " + openSetMaxSize + "\nPath length : " + pathLength);
         buffer += mapName + ", " + vertexCount+ ", " + edgeCount + ", " + buildTime + ", " + "("+fromX+" - "+fromY+")" + ", " + "("+toX+" - "+toY+")" + ", " + computationTime + ", " + nbScannedTiles + ", " + openSetMaxSize + ", " + pathLength + ", " + method + ", " + setType.ToString() + ", " + heuristics.ToString() +"\n";
+        Debug.Log(buffer);
     }
 
     public static void flush(){
         string path = "Assets/Resources/Log.csv";
         StreamWriter writer = new StreamWriter(path, true);
+        Debug.Log(buffer);
         writer.Write(buffer);
         writer.Close();
     }

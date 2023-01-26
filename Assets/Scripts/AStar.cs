@@ -197,7 +197,7 @@ public class AStar {
                 map.setMark(PATH,toX,toY);
                 Step d;
                 while( curr.x != fromX || curr.y != fromY){
-                    d = new Step(pred[curr.x, curr.y].x, pred[curr.x, curr.y].y,curr.x,curr.y);
+                    d = new Step(pred[curr.x, curr.y].x, pred[curr.x, curr.y].y,curr.x,curr.y, Map.Octile(pred[curr.x, curr.y].x, pred[curr.x, curr.y].y,curr.x,curr.y));
                     cp.Steps().Insert(0, d);
                     curr = new Vector2Int(pred[curr.x,curr.y].x, pred[curr.x,curr.y].y);
                     map.setMark(PATH,curr.x,curr.y);
