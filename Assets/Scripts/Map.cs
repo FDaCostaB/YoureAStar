@@ -268,6 +268,7 @@ public class Map : Subject {
 		return (Mathf.Abs(pt2x - pt1x) + Mathf.Abs(pt2y - pt1y)) + (1.4f - 2) * (Mathf.Abs(pt2x - pt1x) > Mathf.Abs(pt2y - pt1y) ? Mathf.Abs(pt2y - pt1y) : Mathf.Abs(pt2x - pt1x));
 	}
 
+	//Check if caller might benits from bidirectionnal
     public List<Vector2Int> AddNeighborhood(int x, int y, int color, List<Vector2Int> res, bool doMark = false){
         byte neighborhood = 0x0;
         for(int i=0; i<8;i++){

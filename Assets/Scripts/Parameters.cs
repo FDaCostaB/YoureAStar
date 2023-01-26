@@ -11,7 +11,7 @@ public class Parameters : MonoBehaviour
     public Heuristics heuristic;
     public OpenSetType listType;
     public bool useSubgoal;
-    public bool useTL;
+    //public bool useTL;
     
     public IOpenList<Vector2Int> newOpenList(){
         switch(listType){

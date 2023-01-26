@@ -234,6 +234,7 @@ public class AStar {
 
     public void debug(){
         UnityEngine.Debug.Log("Debug function called !");
+        graph.computeTL();
 	}
 
     public void debug(int x, int y){
