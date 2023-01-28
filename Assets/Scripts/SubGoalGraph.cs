@@ -511,9 +511,9 @@ public class SubGoalGraph {
     internal void AddNeighborhood(int x, int y, List<Vector2Int> neighborhood, bool onlyGlobal = false )
     {
         Vector2Int cell = new Vector2Int(x,y);
-        if( (!onlyGlobal || sgTLGraph.Contains(cell)) && sgGraph.Contains(cell)){
+        if( !onlyGlobal && sgGraph.Contains(cell)){
             foreach(Vector2Int p in sgGraph.neighborhood(cell))
-                    if(!onlyGlobal || sgTLGraph.Contains(p)) neighborhood.Add(p);
+                    neighborhood.Add(p);
         }
         if(isTL){
             if(sgTLGraph.Contains(cell)){

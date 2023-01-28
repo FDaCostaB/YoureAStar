@@ -44,11 +44,6 @@ class Graph {
     }
 
     public void RemoveVertex(Vector2Int p) {
-        foreach(Vector2Int neighbor in neighbors[p]){
-            if(neighbors.ContainsKey(neighbor) && neighbors[neighbor].Contains(p)) neighbors[neighbor].Remove(p);
-        }
-        neighbors[p].Clear();
-        neighbors.Remove(p);
         vertex.Remove(p);
     }
 
