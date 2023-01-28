@@ -45,6 +45,13 @@ class PriorityQueue<T> : IOpenList<T> {
         return -1;
     }
 
+    public T FindItem(Predicate<T> p)
+    {
+        for (int i = 0; i < size; i++)
+            if (p(H[i].Elem)) return H[i].Elem;
+        return default(T);
+    }
+
     // Function to return the index of the
     // parent node of a given node
     int parent(int i)
@@ -71,7 +78,7 @@ class PriorityQueue<T> : IOpenList<T> {
     // the heap property
     void shiftUp(int i)
     {
-        while (i > 0 && H[parent(i)].Priority > H[i].Priority)
+        while (i > 0 && H[parent(i)].ElemB > H[i].ElemB)
         {
             
             // Swap parent and current node
@@ -91,7 +98,7 @@ class PriorityQueue<T> : IOpenList<T> {
         // Left Child
         int l = leftChild(i);
         
-        if (l < size && H[l].Priority < H[maxIndex].Priority)
+        if (l < size && H[l].ElemB < H[maxIndex].ElemB)
         {
             maxIndex = l;
         }
@@ -99,7 +106,7 @@ class PriorityQueue<T> : IOpenList<T> {
         // Right Child
         int r = rightChild(i);
         
-        if (r < size && H[r].Priority < H[maxIndex].Priority)
+        if (r < size && H[r].ElemB < H[maxIndex].ElemB)
         {
             maxIndex = r;
         }
@@ -147,8 +154,8 @@ class PriorityQueue<T> : IOpenList<T> {
     // Function to change the priority
     // of an element
     public void changePriority(int i, float p)    {
-        float oldp = H[i].Priority;
-        H[i].Priority = p;
+        float oldp = H[i].ElemB;
+        H[i].ElemB = p;
         
         if (p < oldp)
         {
@@ -164,14 +171,14 @@ class PriorityQueue<T> : IOpenList<T> {
     // the current maximum element
     float getMax()
     {
-        return H[0].Priority;
+        return H[0].ElemB;
     }
     
     // Function to remove the element
     // located at given index
     void Remove(int i)
     {
-        H[i].Priority = getMax() + 1;
+        H[i].ElemB = getMax() + 1;
         
         // Shift the node to the root
         // of the heap
@@ -185,9 +192,9 @@ class PriorityQueue<T> : IOpenList<T> {
     {
         Pair<T, float> temp = new Pair<T, float>(H[i]);
         H[i].Elem = H[j].Elem;
-        H[i].Priority = H[j].Priority;
+        H[i].ElemB = H[j].ElemB;
         H[j].Elem = temp.Elem;
-        H[j].Priority = temp.Priority;
+        H[j].ElemB = temp.ElemB;
     }
 
     public override String ToString(){
@@ -205,7 +212,7 @@ class PriorityQueue<T> : IOpenList<T> {
     }
 
     public float getTopPriority(){
-        return H[0].Priority;
+        return H[0].ElemB;
     }
 }
  

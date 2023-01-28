@@ -26,6 +26,12 @@ public class InputAdapter {
             Vector2 clicCase = new Vector2( (mousePos.x - Screen.width/2) / gameZone.tileSize, (-mousePos.y + Screen.height/2) / gameZone.tileSize);
             control.mouseClic( clicCase.x , clicCase.y );
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            Vector2 clicCase = new Vector2((mousePos.x - Screen.width / 2) / gameZone.tileSize, (-mousePos.y + Screen.height / 2) / gameZone.tileSize);
+            control.debugClic(clicCase.x, clicCase.y);
+        }
         if (Input.GetKeyDown(KeyCode.W))
         {
             control.up();

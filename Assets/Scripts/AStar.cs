@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 
 public class AStar {
@@ -84,7 +86,8 @@ public class AStar {
         Move cp = new Move(map, map.currentChar());
 
         //If not reachable FindClosestFree(toX,toY)
-        if(!map.isFree(toX,toY)){
+        if(!map.isFree(toX,toY) && map.mark(toX, toY) != AStar.EMPTY)
+        {
             Vector2Int newDest = map.closestFree(toX, toY);
             toX=newDest.x;
             toY=newDest.y;
@@ -165,7 +168,8 @@ public class AStar {
         Move cp = new Move(map, agentNb);
 
         //If not reachable FindClosestFree(toX,toY)
-        if(!map.isFree(toX,toY)){
+        if(!map.isFree(toX,toY) && map.mark(toX, toY) != AStar.EMPTY)
+        {
             Vector2Int newDest = map.closestFree(toX, toY);
             toX=newDest.x;
             toY=newDest.y;
@@ -208,7 +212,7 @@ public class AStar {
             //For all neighborhood v update the distance
             neighborhood.Clear();
             
-            graph.AddNeighborhood(min.x,min.y,ALL,neighborhood);
+            graph.AddNeighborhood(min.x,min.y,neighborhood, graph.isTL);
 
             foreach(Vector2Int next in neighborhood){
                 if( dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y) < dist[next.x, next.y]){
@@ -232,13 +236,29 @@ public class AStar {
 
     public void debug(){
         UnityEngine.Debug.Log("Debug function called !");
+        map.eraseMark();
         graph.computeTL();
-	}
+        graph.markGlobal();
+        map.Notify();
+    }
 
     public void debug(int x, int y){
+        if (!map.isIn(x, y)) return;
+        UnityEngine.Debug.Log("( "+x+", "+y+" ) clicked");
         map.eraseMark();
-        Vector2Int res = map.closestFree(x,y);
-        map.setMark(AStar.PATH, res.x, res.y);
+        if (map.isSubgoal(x, y))
+        {
+            map.setMark(AStar.SELECTEDNODES, x, y);
+            LinkedList<Vector2Int> toDisplay = graph.isTL && graph.Contains(x,y) ?  graph.linkedNodesTL(x, y) : graph.Neighborhood(x, y);
+            if (!graph.Contains(x, y)) toDisplay.Clear();
+            foreach (Vector2Int p in toDisplay)
+            {
+                map.setMark(AStar.SELECTEDNODES,p.x,p.y);
+            }
+        } else
+        {
+            graph.GetDirectHReachable(new Vector2Int(x, y), true);
+        }
         map.Notify();
 	}
 

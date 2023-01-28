@@ -6,9 +6,10 @@ using UnityEngine;
 public class Parameters : MonoBehaviour
 {
     public bool debug;
-    public bool allowDiagonal;
-    public bool lockCam;
-    public bool doBidirectionnal;
+    public bool allowDiagonal = true;
+    public bool lockCam = false ;
+    public bool doBidirectionnal = false;
+    public bool skipHreachable = false;
     public int heuristicMultiplier =1;
     public Heuristics heuristic;
     public OpenSetType listType;

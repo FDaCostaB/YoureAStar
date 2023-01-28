@@ -30,31 +30,26 @@ public class GameZone : MonoBehaviour, IObserver
     private Controller c;
 
     private void Awake(){
-        try {
-            Debug.Log(AssetDatabase.GetAssetPath(mapFile));
-            characterList = new List<Transform>();
-			MapReader mapReader = new MapReader( AssetDatabase.GetAssetPath(mapFile));
-			map = mapReader.read();
-            map.AttachParameters(param);
-            map.Attach(this);
-            c = new Controller(map, cam, this);
-			Debug.Log("Map size : " + map.Width() +","+ map.Height());
-            tileSize = Screen.height/(2*cam.orthographicSize);
-            ground = TilesResourcesLoader.GetTileByName("Ground");
-            path = TilesResourcesLoader.GetTileByName("path");
-            reachable = TilesResourcesLoader.GetTileByName("reachable");
-            scanned = TilesResourcesLoader.GetTileByName("scanned");
-            nodes = TilesResourcesLoader.GetTileByName("nodes");
-            selectedNodes = TilesResourcesLoader.GetTileByName("selectedNodes");
-            wall = TilesResourcesLoader.GetTileByName("Wall");
-            npc = TilesResourcesLoader.GetTileByName("NPC");
-            water = TilesResourcesLoader.GetTileByName("Water");
-            input = new InputAdapter(this,c);
-            Data.Init();
-		} catch (Exception e) {
-			Debug.LogError(e);
-            Application.Quit();
-		}
+        Debug.Log(AssetDatabase.GetAssetPath(mapFile));
+        characterList = new List<Transform>();
+		MapReader mapReader = new MapReader( AssetDatabase.GetAssetPath(mapFile));
+		map = mapReader.read();
+        map.AttachParameters(param);
+        map.Attach(this);
+        c = new Controller(map, cam, this);
+		Debug.Log("Map size : " + map.Width() +","+ map.Height());
+        tileSize = Screen.height/(2*cam.orthographicSize);
+        ground = TilesResourcesLoader.GetTileByName("Ground");
+        path = TilesResourcesLoader.GetTileByName("path");
+        reachable = TilesResourcesLoader.GetTileByName("reachable");
+        scanned = TilesResourcesLoader.GetTileByName("scanned");
+        nodes = TilesResourcesLoader.GetTileByName("nodes");
+        selectedNodes = TilesResourcesLoader.GetTileByName("selectedNodes");
+        wall = TilesResourcesLoader.GetTileByName("Wall");
+        npc = TilesResourcesLoader.GetTileByName("NPC");
+        water = TilesResourcesLoader.GetTileByName("Water");
+        input = new InputAdapter(this,c);
+        Data.Init();
         Paint(true);
     }
 

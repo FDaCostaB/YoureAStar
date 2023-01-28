@@ -16,11 +16,11 @@ class UnsortedList<T> : IOpenList<T> {
 
     public T Dequeue(){
         int idx = 0; int i =0;
-        float minDH = List[0].Priority;
+        float minDH = List[0].ElemB;
         T min = List[0].Elem;
         foreach(Pair<T,float> p in List){
-            if(minDH > p.Priority){
-                minDH = p.Priority;
+            if(minDH > p.ElemB){
+                minDH = p.ElemB;
                 min = p.Elem;
                 idx = i;
             }
@@ -43,17 +43,17 @@ class UnsortedList<T> : IOpenList<T> {
         return -1;
     }
     public void changePriority(int idx, float p){
-        List[idx].Priority = p;
+        List[idx].ElemB = p;
     }
 
     public float getTopPriority()
     {
         int idx = 0; int i =0;
-        float minDH = List[0].Priority;
+        float minDH = List[0].ElemB;
         T min = List[0].Elem;
         foreach(Pair<T,float> p in List){
-            if(minDH > p.Priority){
-                minDH = p.Priority;
+            if(minDH > p.ElemB){
+                minDH = p.ElemB;
                 min = p.Elem;
                 idx = i;
             }
