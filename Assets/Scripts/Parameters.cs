@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Parameters : MonoBehaviour
 {
+    public static Parameters instance;
+
     public bool debug;
-    public bool allowDiagonal = true;
     public bool lockCam = false ;
     public bool doBidirectionnal = false;
     public bool skipHreachable = false;
@@ -14,8 +15,13 @@ public class Parameters : MonoBehaviour
     public Heuristics heuristic;
     public OpenSetType listType;
     public bool useSubgoal;
-    //public bool useTL;
-    
+    public bool useTL;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public IOpenList<Vector2Int> newOpenList(){
         switch(listType){
             case OpenSetType.UnsortedList:

@@ -24,7 +24,7 @@ public class InputAdapter {
         if (Input.GetMouseButtonDown(0)){
             Vector3 mousePos = Input.mousePosition;
             Vector2 clicCase = new Vector2( (mousePos.x - Screen.width/2) / gameZone.tileSize, (-mousePos.y + Screen.height/2) / gameZone.tileSize);
-            control.mouseClic( clicCase.x , clicCase.y );
+            if(!control.pause)control.mouseClic( clicCase.x , clicCase.y );
         }
         if (Input.GetMouseButtonDown(1))
         {
@@ -51,11 +51,6 @@ public class InputAdapter {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             control.lockCam();
-        }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            control.clear();
-            control.tooglePause();
         }
         if (Input.GetKeyDown(KeyCode.Backspace))
         {

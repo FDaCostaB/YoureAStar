@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 
 
@@ -16,7 +17,6 @@ public class Map : Subject {
 	int width, height;
     int charcater = 0;
 	List<Vector2Int> characterPos = new List<Vector2Int>();
-	public Parameters parameters {get; private set;}
 
 	public String name;
 
@@ -27,7 +27,6 @@ public class Map : Subject {
 		content = new int[1,1];
 		width = 0;
 		height = 0;
-		parameters = null;
 	}
 
 	public Vector2Int closestFree(int x, int y){
@@ -46,10 +45,6 @@ public class Map : Subject {
 			}
 			i++;
 		}
-	}
-
-	public void AttachParameters(Parameters param){
-		parameters = param;
 	}
 
 	int adjust(int c, int i) {
@@ -312,8 +307,8 @@ public class Map : Subject {
 
 	public float distHeuristic(int pt1x, int pt1y, int pt2x, int pt2y){
         //dist is g i.e. the cost from the start to pt1 the rest is the heuristic h
-		int multiplier = parameters.heuristicMultiplier;
-        switch(parameters.heuristic){
+		int multiplier = Parameters.instance.heuristicMultiplier;
+        switch(Parameters.instance.heuristic){
             case Heuristics.Manhattan:
                 return multiplier * Manhattan(pt1x, pt1y, pt2x, pt2y);
             case Heuristics.Euclidean:
@@ -354,14 +349,19 @@ public class Map : Subject {
         }
         for(int i=0; i<8;i++){
             Directions d = (Directions)(1<<i);
-            if( (neighborhood | MaskFree.maskFree[i]) == 0xFF){
-                if(parameters.allowDiagonal || d == Directions.NORTH || d == Directions.EAST || d==Directions.SOUTH || d==Directions.WEST ){
-                    res.Add(new Vector2Int(Map.moveX(x,d), Map.moveY(y,d)));
-                    if(doMark) setMark(AStar.REACHABLE, Map.moveX(x,d), Map.moveY(y,d));
-                }
-            }
+			if( (neighborhood | MaskFree.maskFree[i]) == 0xFF){
+				res.Add(new Vector2Int(Map.moveX(x,d), Map.moveY(y,d)));
+				if(doMark) setMark(AStar.REACHABLE, Map.moveX(x,d), Map.moveY(y,d));
+			}
         }
         return res;
 		}
+
+	public void clear()
+	{
+        for (int j = 0; j < height; j++)
+            for (int i = 0; i < width; i++)
+                content[i, j] = 0;
+    }
 
 }

@@ -24,7 +24,7 @@ public class SubGoalGraph {
     Directions[] dirs = {Directions.NORTHWEST,Directions.NORTH,Directions.NORTHEAST,Directions.WEST,Directions.EAST,Directions.SOUTHWEST,Directions.SOUTH,Directions.SOUTHEAST};
     Directions[] diag = {Directions.NORTHWEST, Directions.NORTHEAST, Directions.SOUTHWEST, Directions.SOUTHEAST};
     
-    public SubGoalGraph(Map m, AStar pathFinder){
+    public SubGoalGraph(Map m, AStar pathFinder, bool computeSGTL){
         isTL=false;
         tempGlobalGoal = new HashSet<Vector2Int>();
         map =m;
@@ -82,9 +82,22 @@ public class SubGoalGraph {
         }
 
         stopwatch.Stop();
-        buildTime = stopwatch.Elapsed.Milliseconds;
+        UnityEngine.Debug.Log("Computation time for Subgoal: " + stopwatch.ElapsedMilliseconds + " ms");
         UnityEngine.Debug.Log("# of nodes : "+ VertexCount);
         UnityEngine.Debug.Log("# of edges : "+ EdgeCount);
+
+        if (computeSGTL)
+        {
+            stopwatch.Start();
+            computeTL();
+            stopwatch.Stop();
+            UnityEngine.Debug.Log("Computation time for SubgoalTL: " + stopwatch.ElapsedMilliseconds + " ms");
+            markGlobal();
+        }
+        else
+        {
+            UnityEngine.Debug.Log("Computation of SubgoalTL skipped");
+        }
 
     }
 
@@ -147,9 +160,8 @@ public class SubGoalGraph {
 
         if(globalPath.Steps().Count == 0) return null;
 
-        //TODO : Parallelize this for
-        //TODO : JPS FindHreachablePath on SGTL
-        if (isTL || !map.parameters.skipHreachable)
+        //TODO : Parallelize - O | classic - X | JPS - O | skip - X | 
+        if (!Parameters.instance.skipHreachable)
         {
             for (int i = 0; i < globalPath.Steps().Count; i++)
                 FindHreachablePath(cp, globalPath.Steps()[i].fromX, globalPath.Steps()[i].fromY, globalPath.Steps()[i].toX, globalPath.Steps()[i].toY);
@@ -232,7 +244,7 @@ public class SubGoalGraph {
 
     Move FindAbstractPath(Vector2Int goal){
         Vector2Int start = map.currentCharPos();
-        if (isTL)
+        if (Parameters.instance.useTL)
         {
             ConnectToGraphTL(start);
             ConnectToGraphTL(goal);
@@ -244,7 +256,7 @@ public class SubGoalGraph {
         Move res = astar.pathGraph(goal.x, goal.y, map.currentChar() );
         foreach(Vector2Int temp in tempGlobalGoal)
         {
-            if (isTL) sgTLGraph.RemoveVertex(temp);
+            if (Parameters.instance.useTL) sgTLGraph.RemoveVertex(temp);
             else sgGraph.RemoveVertex(temp);
         }
         tempGlobalGoal.Clear();
@@ -256,17 +268,17 @@ public class SubGoalGraph {
         timer.Start();
         Move m = FindAbstractPath(goal);
         timer.Stop();
-        if(m != null && !map.parameters.debug){
-            Data.CacheLine(map.name, VertexCount, EdgeCount, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, timer.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (isTL? "SG-TL Graph": "SG Graph"), map.parameters.listType, map.parameters.heuristic, map.parameters.heuristicMultiplier);
+        if(m != null && !Parameters.instance.debug){
+            Data.CacheLine(map.name, VertexCount, EdgeCount, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, timer.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (Parameters.instance.useTL? "SG-TL Graph": "SG Graph"), Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
         }
         return m;
     }
 
     public Move FindHreachablePath(Move cp, int fromX, int fromY, int toX, int toY)
     {
-        IOpenList<Vector2Int> explore = map.parameters.newOpenList();
+        IOpenList<Vector2Int> explore = Parameters.instance.newOpenList();
         List<Vector2Int> neighborhood = new List<Vector2Int>();
-        Vector2Int[,] pred = new Vector2Int[map.Width(), map.Height()];
+        Dictionary<Vector2Int, Vector2Int> pred = new Dictionary<Vector2Int, Vector2Int>();
         Vector2Int curr, min = new Vector2Int(fromX, fromY);
         Dictionary<Vector2Int, float> dist = new Dictionary<Vector2Int, float>();
 
@@ -289,9 +301,9 @@ public class SubGoalGraph {
                 Step d;
                 while (curr.x != fromX || curr.y != fromY)
                 {
-                    d = new Step(pred[curr.x, curr.y].x, pred[curr.x, curr.y].y, curr.x, curr.y);
+                    d = new Step(pred[curr].x, pred[curr].y, curr.x, curr.y);
                     cp.Steps().Insert(insertIdx, d);
-                    curr = new Vector2Int(pred[curr.x, curr.y].x, pred[curr.x, curr.y].y);
+                    curr = new Vector2Int(pred[curr].x, pred[curr].y);
                     map.setMark(AStar.PATH, curr.x, curr.y);
                 }
                 return cp;
@@ -309,7 +321,8 @@ public class SubGoalGraph {
                 {
                     if (!dist.ContainsKey(next)) dist.Add(next, dist[min] + neighborhoodDist);
                     else dist[next] = dist[min] + neighborhoodDist;
-                    pred[next.x, next.y] = min;
+                    if (!pred.ContainsKey(next)) pred.Add(next, min);
+                    else pred[next] = min;
 
                     int idx = explore.Find(p => p.x == next.x && p.y == next.y);
                     if (idx >= 0)
@@ -331,7 +344,7 @@ public class SubGoalGraph {
     }
 
     public bool isHreachable(Vector2Int start, Vector2Int goal){
-        IOpenList<Vector2Int> explore = map.parameters.newOpenList();
+        IOpenList<Vector2Int> explore = Parameters.instance.newOpenList();
         HashSet<Vector2Int> closed = new HashSet<Vector2Int>();
         List<Vector2Int> neighborhood =  new List<Vector2Int>();
         Vector2Int min=start;
@@ -376,7 +389,7 @@ public class SubGoalGraph {
 
     public float costOtherPath(Vector2Int node, Vector2Int s, Vector2Int sprime){
 
-        IOpenList<Vector2Int> explore = map.parameters.newOpenList();
+        IOpenList<Vector2Int> explore = Parameters.instance.newOpenList();
         List<Vector2Int> neighborhood =  new List<Vector2Int>();
         List<Move> res =  new List<Move>();
         Vector2Int[,] pred = new Vector2Int[map.Width(),map.Height()];
@@ -515,7 +528,7 @@ public class SubGoalGraph {
             foreach(Vector2Int p in sgGraph.neighborhood(cell))
                     neighborhood.Add(p);
         }
-        if(isTL){
+        if(Parameters.instance.useTL){
             if(sgTLGraph.Contains(cell)){
                 foreach(Vector2Int p in sgTLGraph.neighborhood(cell))
                     if(!neighborhood.Contains(p)) neighborhood.Add(p);
@@ -539,18 +552,18 @@ public class SubGoalGraph {
 
     public bool Contains(int x, int y)
     {
-        return (isTL ? sgTLGraph.Contains(new Vector2Int(x, y)) : sgGraph.Contains(new Vector2Int(x, y)) );
+        return (Parameters.instance.useTL ? sgTLGraph.Contains(new Vector2Int(x, y)) : sgGraph.Contains(new Vector2Int(x, y)) );
     }
 
     public bool isSubgoal(int x, int y)
     {
-        if (isTL) return isGlobalSubgoal(x, y);
+        if (Parameters.instance.useTL) return isGlobalSubgoal(x, y);
         else return map.isSubgoal(x, y);
     }
 
     public bool isSubgoal(Vector2Int p)
     {
-        if (isTL) return isGlobalSubgoal(p.x, p.y);
+        if (Parameters.instance.useTL) return isGlobalSubgoal(p.x, p.y);
         else return map.isSubgoal(p.x, p.y);
     }
 

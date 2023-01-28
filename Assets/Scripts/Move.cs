@@ -7,6 +7,7 @@ public class Move {
 	public int scanned;
 	public int charNb;
 	public int openSetMaxSize;
+	public long time;
 	Map map;	
 
 	public Move(Map n, int cNb) {
@@ -15,6 +16,7 @@ public class Move {
 		openSetMaxSize = 0;
 		map = n;
 		charNb = cNb;
+		time = -1;
 	}
 
 	public void deplace(int dX, int dY, int vX, int vY) {

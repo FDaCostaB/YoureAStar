@@ -11,7 +11,6 @@ public class Controller : IEventCollector {
 	List<AnimationMove> mouvement;
 	GameZone gZone;
 	Camera cam;
-	float tileSize;
 
 	public Controller(Map m, Camera c, GameZone gz) {
 		cam = c;
@@ -20,14 +19,9 @@ public class Controller : IEventCollector {
 		gZone = gz;
 		aStar = new AStar(map);
 		mouvement = new List<AnimationMove>();
-		tileSize = (int) ((float)Screen.height/(2*cam.orthographicSize));
 		for(int i =0; i<map.nbChar();i++){
 			mouvement.Add(null);
 		}
-	}
-
-	public void setGraphicInterface() {
-		
 	}
 
     public void clock(){
@@ -45,12 +39,22 @@ public class Controller : IEventCollector {
 	public Step playStep(Move cp) {
 		if (cp != null) {
 			Step d = map.playStep(cp);
+			gZone.updateStart(map.CharacterX(), map.CharacterY());
 			return d;
 		} else {
 			Debug.LogError("Empty Coup");
 			return null;
 		}
 	}
+
+	public void cancelMove()
+	{
+        if (mouvement[map.currentChar()] != null)
+        {
+            mouvement[map.currentChar()].stop();
+            mouvement[map.currentChar()] = null;
+        }
+    }
 
 	// Clic dans la case (l, c)
 	public void mouseClic(float x, float y) {
@@ -65,6 +69,7 @@ public class Controller : IEventCollector {
 			}
 			if(mouvement[map.currentChar()]==null){
 				Move cp = aStar.measurePath(clic.x, clic.y);
+				gZone.displayDebug(cp);
 				if(cp!=null) {
 					mouvement[map.currentChar()] = new AnimationMove(cp, this, gZone);
 					if(pause)mouvement[map.currentChar()].stop();
@@ -74,7 +79,13 @@ public class Controller : IEventCollector {
 		map.Notify();
 	}
 
-	public void debugClic(float x, float y)
+	public void hover(float x, float y)
+	{
+		Vector2Int hoverTile = new Vector2Int((int)Math.Floor(x + cam.GetComponent<Transform>().position.x), (int)Math.Floor(y + 1 - cam.GetComponent<Transform>().position.y));
+        if(map.isFree(hoverTile.x, hoverTile.y)) 
+			gZone.highlightTile(hoverTile.x, hoverTile.y);
+	}
+        public void debugClic(float x, float y)
 	{
         Vector2Int clic = new Vector2Int((int)Math.Floor(x + cam.GetComponent<Transform>().position.x), (int)Math.Floor(y + 1 - cam.GetComponent<Transform>().position.y));
         aStar.debug(clic.x, clic.y); 
@@ -86,7 +97,7 @@ public class Controller : IEventCollector {
 	}
 
 	internal void lockCam(){
-		gZone.param.lockCam = !gZone.param.lockCam;
+        Parameters.instance.lockCam = !Parameters.instance.lockCam;
 	}
 
     internal void up()

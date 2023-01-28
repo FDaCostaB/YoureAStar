@@ -197,3 +197,9 @@ Assets/Map/bigmap.txt, 228842, 755033, 364, (214 - 0), (2425 - 2075), 2441, 7705
 Assets/Map/bigmap.txt, 228842, 755033, 364, (214 - 0), (2425 - 2075), 2512, 77063, 960, 946, Subgoal-TL, PriorityQueue, Octile, 10
 Assets/Map/bigmap.txt, 228842, 755033, 364, (214 - 0), (2424 - 2075), 980, 77041, 963, 946, FindAbstractPath - SG Graph, PriorityQueue, Octile, 10
 Assets/Map/bigmap.txt, 228842, 755033, 364, (214 - 0), (2424 - 2075), 1000, 77051, 963, 946, Subgoal-TL, PriorityQueue, Octile, 10
+Assets/Map/Amsterdam.txt, 228842, 755052, 0, (303 - 7), (256 - 26), 129, 11, 10, 6, FindAbstractPath - SG Graph, PriorityQueue, Octile, 1
+Assets/Map/Amsterdam.txt, 228842, 755052, 0, (303 - 7), (256 - 26), 165, 83, 5, 61, Subgoal-TL, PriorityQueue, Octile, 1
+Assets/Map/Amsterdam.txt, 228842, 755052, 0, (303 - 7), (256 - 26), 129, 11, 10, 6, FindAbstractPath - SG Graph, PriorityQueue, Octile, 1
+Assets/Map/Amsterdam.txt, 228842, 755052, 0, (303 - 7), (256 - 26), 165, 83, 5, 61, Subgoal-TL, PriorityQueue, Octile, 1
+Assets/Map/Amsterdam.txt, 228842, 755060, 0, (268 - 7), (461 - 108), 132, 153, 68, 47, FindAbstractPath - SG Graph, PriorityQueue, Octile, 1
+Assets/Map/Amsterdam.txt, 228842, 755060, 0, (268 - 7), (461 - 108), 162, 548, 4, 380, Subgoal-TL, PriorityQueue, Octile, 1

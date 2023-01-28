@@ -2,10 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using UnityEngine.UIElements;
 
 
 public class AStar {
@@ -23,11 +20,7 @@ public class AStar {
     public AStar(Map m){
         map = m;
         mark(true);
-        Stopwatch stopwatch = new Stopwatch();
-        stopwatch.Start();
-        graph = new SubGoalGraph(map, this);
-        stopwatch.Stop();
-        UnityEngine.Debug.Log("Computation time for Subgoal: " + stopwatch.ElapsedMilliseconds + " ms");
+        graph = new SubGoalGraph(map, this, m.Width() * m.Height() < 500000);
     }
     
 
@@ -56,31 +49,34 @@ public class AStar {
     public Move measurePath(int toX, int toY){
         int fromX = map.CharacterX();
         int fromY = map.CharacterY();
+        CursorController.instance.SetLoading();
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
         Move m = path(toX, toY);
         stopwatch.Stop();
-        if(m != null){
+        m.time = stopwatch.ElapsedMilliseconds;
+        CursorController.instance.SetNormal();
+        if (m != null){
             String method;
-            if (map.parameters.useSubgoal){
+            if (Parameters.instance.useSubgoal){
                 if(graph.isTL) method = "Subgoal";
                 else method = "Subgoal-TL";
             } else method = "Grid";
-            if (!map.parameters.debug)
-                Data.CacheLine(map.name, graph.VertexCount, graph.EdgeCount, graph.buildTime,fromX, fromY, toX, toY,  stopwatch.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, map.parameters.listType, map.parameters.heuristic, map.parameters.heuristicMultiplier);
+            if (!Parameters.instance.debug)
+                Data.CacheLine(map.name, graph.VertexCount, graph.EdgeCount, graph.buildTime,fromX, fromY, toX, toY,  stopwatch.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
         }
         Data.flush();
         return m;
     }
 
     public Move path(int toX, int toY){
-        if(map.parameters.debug) map.eraseMark();
-        if(map.parameters.useSubgoal) return graph.path(new Vector2Int(toX, toY));
+        if(Parameters.instance.debug) map.eraseMark();
+        if(Parameters.instance.useSubgoal) return graph.path(new Vector2Int(toX, toY));
         else return pathGrid(toX, toY);
     }
 
     public Move pathGrid(int toX, int toY){
-        IOpenList<Vector2Int> explore = map.parameters.newOpenList();
+        IOpenList<Vector2Int> explore = Parameters.instance.newOpenList();
         List<Vector2Int> neighborhood =  new List<Vector2Int>();
         Vector2Int[,] pred = new Vector2Int[map.Width(),map.Height()];
         int fromX = map.CharacterX();
@@ -134,7 +130,7 @@ public class AStar {
             //For all neighborhood v update the distance
             neighborhood.Clear();
             map.AddNeighborhood(min.x,min.y,ALL,neighborhood);
-            float diagDist = map.parameters.heuristic == Heuristics.Chebyshev ? 1f : map.parameters.heuristic == Heuristics.Manhattan ? 2f : 1.4f;
+            float diagDist = Parameters.instance.heuristic == Heuristics.Chebyshev ? 1f : Parameters.instance.heuristic == Heuristics.Manhattan ? 2f : 1.4f;
             float neighborhoodDist;
             foreach(Vector2Int next in neighborhood){
                 if(min.x != next.x && min.y != next.y ) neighborhoodDist = diagDist;
@@ -159,7 +155,7 @@ public class AStar {
     }
 
     public Move pathGraph(int toX, int toY, int agentNb){
-        IOpenList<Vector2Int> explore = map.parameters.newOpenList();
+        IOpenList<Vector2Int> explore = Parameters.instance.newOpenList();
         List<Vector2Int> neighborhood =  new List<Vector2Int>();
         List<Move> res =  new List<Move>();
         Vector2Int[,] pred = new Vector2Int[map.Width(),map.Height()];
@@ -217,7 +213,7 @@ public class AStar {
             //For all neighborhood v update the distance
             neighborhood.Clear();
             
-            graph.AddNeighborhood(min.x,min.y,neighborhood, graph.isTL);
+            graph.AddNeighborhood(min.x,min.y,neighborhood, Parameters.instance.useTL);
 
             foreach(Vector2Int next in neighborhood){
                 if( dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y) < dist[next.x, next.y]){
@@ -241,13 +237,7 @@ public class AStar {
 
     public void debug(){
         UnityEngine.Debug.Log("Debug function called !");
-        map.eraseMark();
-        Stopwatch stopwatch = new Stopwatch();
-        stopwatch.Start();
-        graph.computeTL();
-        stopwatch.Stop();
-        UnityEngine.Debug.Log("Computation time for SubgoalTL: " + stopwatch.ElapsedMilliseconds+" ms");
-        graph.markGlobal();
+        if(Parameters.instance.useTL) graph.markGlobal();
         map.Notify();
     }
 
@@ -258,7 +248,7 @@ public class AStar {
         if (map.isSubgoal(x, y))
         {
             map.setMark(AStar.SELECTEDNODES, x, y);
-            LinkedList<Vector2Int> toDisplay = graph.isTL && graph.Contains(x,y) ?  graph.linkedNodesTL(x, y) : graph.Neighborhood(x, y);
+            LinkedList<Vector2Int> toDisplay = Parameters.instance.useTL && graph.Contains(x,y) ?  graph.linkedNodesTL(x, y) : graph.Neighborhood(x, y);
             if (!graph.Contains(x, y)) toDisplay.Clear();
             foreach (Vector2Int p in toDisplay)
             {
