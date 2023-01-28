@@ -25,7 +25,7 @@ public class GameZone : MonoBehaviour, IObserver
     private Tile wall;
     private Tile water;
     private Tile npc;
-    public float tileSize {get; private set;}
+    public float tileSize {get; private set;} 
     private InputAdapter input;
     private Controller c;
 
