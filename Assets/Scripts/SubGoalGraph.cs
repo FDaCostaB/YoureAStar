@@ -19,7 +19,7 @@ public class SubGoalGraph {
     public int VertexCount{get {return sgGraph.VertexCount;}}
     public int VertexCountTL{get {return sgTLGraph.VertexCount;}}
     public int EdgeCount{get {return sgGraph.EdgeCount;}}
-    public int EdgeCountTL{get {return sgTLGraph.RawEdgeCount;}}
+    public int EdgeCountTL{get {return sgTLGraph.EdgeCount; }}
 
     Directions[] dirs = {Directions.NORTHWEST,Directions.NORTH,Directions.NORTHEAST,Directions.WEST,Directions.EAST,Directions.SOUTHWEST,Directions.SOUTH,Directions.SOUTHEAST};
     Directions[] diag = {Directions.NORTHWEST, Directions.NORTHEAST, Directions.SOUTHWEST, Directions.SOUTHEAST};

@@ -5,6 +5,7 @@ using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UIElements;
 
 
 public class AStar {
@@ -22,7 +23,11 @@ public class AStar {
     public AStar(Map m){
         map = m;
         mark(true);
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
         graph = new SubGoalGraph(map, this);
+        stopwatch.Stop();
+        UnityEngine.Debug.Log("Computation time for Subgoal: " + stopwatch.ElapsedMilliseconds + " ms");
     }
     
 
@@ -237,7 +242,11 @@ public class AStar {
     public void debug(){
         UnityEngine.Debug.Log("Debug function called !");
         map.eraseMark();
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
         graph.computeTL();
+        stopwatch.Stop();
+        UnityEngine.Debug.Log("Computation time for SubgoalTL: " + stopwatch.ElapsedMilliseconds+" ms");
         graph.markGlobal();
         map.Notify();
     }

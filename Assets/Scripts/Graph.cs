@@ -8,9 +8,8 @@ class Graph {
     Dictionary<Vector2Int, LinkedList<Vector2Int>> neighbors;
     HashSet<Vector2Int> vertex;
     int currIdx;
-    public int VertexCount{get {return neighbors.Count;}}     
-    public int EdgeCount{get {return neighbors.Aggregate(0, (acc,next) => acc +next.Value.Count, res => res/2);}}     
-    public int RawEdgeCount{get {return neighbors.Aggregate(0, (acc,next) => acc +next.Value.Count);}}     
+    public int VertexCount{get {return vertex.Count;}}     
+    public int EdgeCount{get {return neighbors.Aggregate(0, (acc,next) => acc +next.Value.Count, res => res/2);}}  
 
     public Graph (){
         currIdx=0;
