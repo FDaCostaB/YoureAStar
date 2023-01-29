@@ -16,6 +16,7 @@ public class Map : Subject {
 	int [,] content;
 	int width, height;
     int charcater = 0;
+	public int FreeTiles = 0;
 	List<Vector2Int> characterPos = new List<Vector2Int>();
 
 	public String name;
@@ -76,6 +77,7 @@ public class Map : Subject {
 			width = x+1;
 		if (height <= y)
 			height = y+1;
+		if (element == 0) FreeTiles++;
 	}
 
 	public void delete(int element, int i, int j) {
@@ -92,6 +94,7 @@ public class Map : Subject {
 	public void addCharacter(int x, int y) { 
 		add(CHARACTER, x, y);
 		characterPos.Add(new Vector2Int(x,y));
+		FreeTiles++;
 	}
 
 	public void selectChar(int x, int y) {
@@ -173,7 +176,12 @@ public class Map : Subject {
 		return isFree(p.x,p.y);
 	}
 
-	public bool isFree(int x, int y, Directions d) {
+    public bool isFree(GridTile p)
+    {
+        return isFree(p.x, p.y);
+    }
+
+    public bool isFree(int x, int y, Directions d) {
 		int newX = moveX(x,d); int newY = moveY(y,d);
 		return newX>=0 && newX<Width() && newY>=0 && newY<Height() && isFree(newX,newY);
 	}
