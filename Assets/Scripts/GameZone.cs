@@ -90,7 +90,6 @@ public class GameZone : MonoBehaviour, IObserver
 
     public void selectAlgo(int value)
     {
-        Debug.Log(value);
         switch (value)
         {
             case 0:
@@ -104,10 +103,14 @@ public class GameZone : MonoBehaviour, IObserver
             case 2:
                 Parameters.instance.useSubgoal = true;
                 Parameters.instance.useTL = true;
+                
                 break;
             default: 
-                break;
+                break;      
         }
+        CursorController.instance.SetLoading();
+        map.Notify();
+        CursorController.instance.SetNormal();
     }
 
     public void updateHeuristics(int value)
@@ -238,8 +241,8 @@ public class GameZone : MonoBehaviour, IObserver
                                 else levelMap.SetTile(new Vector3Int(i, -j, 0), reachable);
                                 break;
                             case AStar.SELECTEDNODES:
-                                if (Parameters.instance.useSubgoal) levelMap.SetTile(new Vector3Int(i, -j, 0), selectedNodes);
-                                else levelMap.SetTile(new Vector3Int(i, -j, 0), reachable);
+                                if (Parameters.instance.useTL) levelMap.SetTile(new Vector3Int(i, -j, 0), selectedNodes);
+                                else levelMap.SetTile(new Vector3Int(i, -j, 0), nodes);
                                 break;
                             default:
                                 levelMap.SetTile(new Vector3Int(i,-j,0), ground );

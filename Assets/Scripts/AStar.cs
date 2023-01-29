@@ -70,9 +70,18 @@ public class AStar {
     }
 
     public Move path(int toX, int toY){
-        if(Parameters.instance.debug) map.eraseMark();
-        if(Parameters.instance.useSubgoal) return graph.path(new Vector2Int(toX, toY));
-        else return pathGrid(toX, toY);
+        int newToX = toX;
+        int newToY = toY;
+        //If not reachable FindClosestFree(toX,toY)
+        if (!map.isFree(toX, toY) || map.mark(toX, toY) == AStar.EMPTY)
+        {
+            Vector2Int newDest = map.closestFree(toX, toY);
+            newToX = newDest.x;
+            newToY = newDest.y;
+        }
+        if (Parameters.instance.debug) map.eraseMark();
+        if(Parameters.instance.useSubgoal) return graph.path(new Vector2Int(newToX, newToY));
+        else return pathGrid(newToX, newToY);
     }
 
     public Move pathGrid(int toX, int toY){
@@ -85,14 +94,6 @@ public class AStar {
         float [,] dist;
 
         Move cp = new Move(map, map.currentChar());
-
-        //If not reachable FindClosestFree(toX,toY)
-        if(!map.isFree(toX,toY) && map.mark(toX, toY) != AStar.EMPTY)
-        {
-            Vector2Int newDest = map.closestFree(toX, toY);
-            toX=newDest.x;
-            toY=newDest.y;
-        }
 
         dist = new float[map.Width(), map.Height()];
         for (int y = 0; y < map.Height(); y++) {
@@ -138,9 +139,9 @@ public class AStar {
                 if( dist[min.x,min.y] + neighborhoodDist < dist[next.x, next.y]){
                     dist[next.x, next.y] = dist[min.x,min.y] + neighborhoodDist;
                     pred[next.x, next.y] = min;
-                    int idx = explore.Find(p=> p.x == next.x && p.y == next.y);
-                    if(idx>=0){
-                        explore.changePriority(idx, dist[min.x, min.y] + map.distHeuristic(next.x,next.y,toX,toY));
+                    if(explore.Contains(next))
+                    {
+                        explore.changePriority(next, dist[min.x, min.y] + map.distHeuristic(next.x,next.y,toX,toY));
                     }else {
                         explore.Enqueue(next, dist[min.x, min.y] + map.distHeuristic(next.x,next.y,toX,toY));
                         cp.setOpenSetMaxSize(explore.size);
@@ -219,9 +220,8 @@ public class AStar {
                 if( dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y) < dist[next.x, next.y]){
                     dist[next.x, next.y] = dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y);
                     pred[next.x, next.y] = min;
-                    int idx = explore.Find(p=> p.x == next.x && p.y == next.y);
-                    if(idx>=0){
-                        explore.changePriority(idx, dist[next.x, next.y] + map.distHeuristic(next.x,next.y,toX,toY));
+                    if(explore.Contains(next)){
+                        explore.changePriority(next, dist[next.x, next.y] + map.distHeuristic(next.x,next.y,toX,toY));
                     }else {
                         explore.Enqueue(next, dist[next.x, next.y] + map.distHeuristic(next.x,next.y,toX,toY));
                         cp.setOpenSetMaxSize(explore.size);

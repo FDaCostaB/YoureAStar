@@ -28,6 +28,8 @@ public class Parameters : MonoBehaviour
                 return new UnsortedList<Vector2Int>();
             case OpenSetType.PriorityQueue:
                 return new PriorityQueue<Vector2Int>();
+            case OpenSetType.HotQueue:
+                return new HOTBucketOpenSet<Vector2Int>();
             default:
                 return null;
         }
@@ -45,6 +47,6 @@ public enum Heuristics{
 
 public enum OpenSetType{
     UnsortedList,
-    PriorityQueue
-    //TODO HotQueue
+    PriorityQueue,
+    HotQueue
 }

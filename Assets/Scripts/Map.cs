@@ -233,7 +233,6 @@ public class Map : Subject {
 		for (int y = 0; y < Height(); y++) {
 			for (int x = 0; x < Width(); x++) {
 				if(!isSubgoal(x,y) && mark(x,y) != AStar.EMPTY) setMark(AStar.REACHABLE, x, y);
-				if(mark(x,y) == AStar.SELECTEDNODES) setMark(AStar.NODES,x,y);
 			}
 		}
 	}

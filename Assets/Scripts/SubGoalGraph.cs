@@ -324,10 +324,9 @@ public class SubGoalGraph {
                     if (!pred.ContainsKey(next)) pred.Add(next, min);
                     else pred[next] = min;
 
-                    int idx = explore.Find(p => p.x == next.x && p.y == next.y);
-                    if (idx >= 0)
+                    if (explore.Contains(next))
                     {
-                        explore.changePriority(idx, dist[min] + Map.Octile(next.x, next.y, toX, toY));
+                        explore.changePriority(next, dist[min] + Map.Octile(next.x, next.y, toX, toY));
                     }
                     else
                     {
@@ -347,14 +346,15 @@ public class SubGoalGraph {
         IOpenList<Vector2Int> explore = Parameters.instance.newOpenList();
         HashSet<Vector2Int> closed = new HashSet<Vector2Int>();
         List<Vector2Int> neighborhood =  new List<Vector2Int>();
+        Dictionary<Vector2Int, float> dist = new Dictionary<Vector2Int, float>();
         Vector2Int min=start;
         float h = Map.Octile(start.x, start.y, goal.x, goal.y);
 
         explore.Enqueue(min,h);
+        dist.Add(min, 0);
 
         while (explore.size > 0){
 
-            float currh = explore.getTopPriority();
             min = explore.Dequeue();
             closed.Add(min);
 
@@ -369,16 +369,17 @@ public class SubGoalGraph {
             foreach (Vector2Int next in map.AddNeighborhood(min.x,min.y,AStar.ALL,neighborhood)){
                 if (min.x != next.x && min.y != next.y) neighborhoodDist = 1.4f;
                 else neighborhoodDist = 1;
-                if (!closed.Contains(next) && currh-neighborhoodDist + 0.01f >= 0 && Map.Octile(min.x,min.y,next.x,next.y) + Map.Octile(next.x, next.y, goal.x, goal.y) <= Map.Octile(min.x, min.y, goal.x, goal.y) + 0.01f)
+                if ((!dist.ContainsKey(next) || dist[min] + neighborhoodDist < dist[next] + 0.01f) && dist[min] + neighborhoodDist < h + 0.01f && Map.Octile(min.x, min.y, next.x, next.y) + Map.Octile(next.x, next.y, goal.x, goal.y) <= Map.Octile(min.x, min.y, goal.x, goal.y) + 0.01f)
                 {
-                    int idx = explore.Find(p => p.x == next.x && p.y == next.y);
-                    if (idx >= 0)
+                    if (!dist.ContainsKey(next)) dist.Add(next, dist[min] + neighborhoodDist);
+                    else dist[next] = dist[min] + neighborhoodDist;
+                    if (explore.Contains(next))
                     {
-                        explore.changePriority(idx, currh - neighborhoodDist);
+                        explore.changePriority(next, dist[min] + Map.Octile(next.x, next.y, goal.x, goal.y));
                     }
                     else
                     {
-                        explore.Enqueue(next, currh - neighborhoodDist);
+                        explore.Enqueue(next, dist[min] + Map.Octile(next.x, next.y, goal.x, goal.y));
                     }
                 }
             }
@@ -428,9 +429,9 @@ public class SubGoalGraph {
                 if( dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y) < dist[next.x, next.y]){
                     dist[next.x, next.y] = dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y);
                     pred[next.x, next.y] = min;
-                    int idx = explore.Find(p=> p.x == next.x && p.y == next.y);
-                    if(idx>=0){
-                        explore.changePriority(idx, dist[next.x, next.y] + map.distHeuristic(next.x,next.y,toX,toY));
+                    if(explore.Contains(next))
+                    {
+                        explore.changePriority(next, dist[next.x, next.y] + map.distHeuristic(next.x,next.y,toX,toY));
                     }else {
                         explore.Enqueue(next, dist[next.x, next.y] + map.distHeuristic(next.x,next.y,toX,toY));
                     }

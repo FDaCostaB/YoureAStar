@@ -42,7 +42,8 @@ class UnsortedList<T> : IOpenList<T> {
         }
         return -1;
     }
-    public void changePriority(int idx, float p){
+    public void changePriority(T item, float p){
+        int idx = Find(listItem => listItem.Equals(item));
         List[idx].ElemB = p;
     }
 
@@ -60,5 +61,10 @@ class UnsortedList<T> : IOpenList<T> {
             i++;
         }
         return minDH;
+    }
+
+    public bool Contains(T elem)
+    {
+        return Exist(curr => curr.Equals(elem));
     }
 }

@@ -153,7 +153,8 @@ class PriorityQueue<T> : IOpenList<T> {
     
     // Function to change the priority
     // of an element
-    public void changePriority(int i, float p)    {
+    public void changePriority(T item, float p)    {
+        int i = Find(listItem => listItem.Equals(item));
         float oldp = H[i].ElemB;
         H[i].ElemB = p;
         
@@ -213,6 +214,11 @@ class PriorityQueue<T> : IOpenList<T> {
 
     public float getTopPriority(){
         return H[0].ElemB;
+    }
+
+    public bool Contains(T elem)
+    {
+        return Exist(curr => curr.Equals(elem));
     }
 }
  

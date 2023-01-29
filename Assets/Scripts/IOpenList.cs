@@ -7,8 +7,6 @@ public interface IOpenList<T>{
     public int size {get;}
     public void Enqueue(T elem, float p);
     public T Dequeue();
-    public bool Exist(Predicate<T> p);
-    public int Find(Predicate<T> p);
-    public void changePriority(int i, float p);
-    public float getTopPriority();
+    public bool Contains(T elem);
+    public void changePriority(T item, float p);
 }
