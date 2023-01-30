@@ -15,7 +15,7 @@ public class Pathfinder {
         return Mathf.Sqrt(Mathf.Pow(tile2.x - tile1.x, 2) + Mathf.Pow(tile2.y - tile1.y, 2));
     }
 
-    public static LinkedList<Edge> FindPath(Node start, Node dest, Boundaries boundaries = null)
+    public static LinkedList<Edge> FindPath(Map map, Node start, Node dest, Boundaries boundaries = null, bool doMark = false)
     {
         HashSet<GridTile> Visited = new HashSet<GridTile>();
         Dictionary<GridTile, Edge> Parent = new Dictionary<GridTile, Edge>();
@@ -32,6 +32,7 @@ public class Pathfinder {
         while(pq.Count > 0)
         {
             current = pq.Dequeue();
+            if(doMark)map.setMark(AStar.SCANNED, current.pos.x, current.pos.y);
             if (current.pos.Equals(dest.pos))
                 //Rebuild path and return it
                 return RebuildPath(Parent, current);

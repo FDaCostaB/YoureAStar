@@ -232,8 +232,8 @@ public class Map : Subject {
 		return isSubgoal(p.x,p.y);
 	}
 
-	public void setMark(int m, int x, int y) {
-		if(!isSubgoal(x,y) || m == AStar.SELECTEDNODES || m == AStar.NODES)
+	public void setMark(int m, int x, int y, bool force = false) {
+		if(!isSubgoal(x,y) || m == AStar.SELECTEDNODES || m == AStar.NODES ||force)
 			content[x,y] = (content[x,y] & 0xFF) | (m << 8);
 	}
 
@@ -241,11 +241,23 @@ public class Map : Subject {
 		for (int y = 0; y < Height(); y++) {
 			for (int x = 0; x < Width(); x++) {
 				if(!isSubgoal(x,y) && mark(x,y) != AStar.EMPTY) setMark(AStar.REACHABLE, x, y);
-			}
+                if (mark(x, y) == AStar.SELECTEDNODES) setMark(AStar.NODES, x, y);
+            }
 		}
 	}
 
-	public static Directions[] cardinalAssociated(Directions d){
+    public void eraseNodes()
+    {
+        for (int y = 0; y < Height(); y++)
+        {
+            for (int x = 0; x < Width(); x++)
+            {
+                if (mark(x, y) == AStar.NODES || mark(x, y) == AStar.SELECTEDNODES) setMark(AStar.REACHABLE, x, y, true);
+            }
+        }
+    }
+
+    public static Directions[] cardinalAssociated(Directions d){
         if(d == Directions.NORTH || d == Directions.WEST || d == Directions.EAST || d == Directions.SOUTH) {
 			Directions[] empty = new Directions[0];
 			return empty;

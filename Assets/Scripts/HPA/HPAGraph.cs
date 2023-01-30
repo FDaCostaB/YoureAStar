@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class HPAGraph
 {
     public static float SQRT2 = Mathf.Sqrt(2f);
 
+    Map map;
     public int depth;
     //List of clusters for every level of abstraction
     public List<Cluster>[] C;
@@ -21,20 +24,26 @@ public class HPAGraph
     /// <summary>
     /// Construct a graph from the map
     /// </summary>
-    public HPAGraph(Map map, int MaxLevel, int clusterSize)
+    public HPAGraph(Map map)
     {
-        depth = MaxLevel;
+
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+
+        int clusterSize = Parameters.instance.clusterSize;
+        depth = Parameters.instance.layerNb;
+        UnityEngine.Debug.Log("HPA Cluster size : " + clusterSize + " - HPA layer nb : " + depth);
         AddedNodes = new List<Node>();
 
         nodes = CreateMapRepresentation(map);
         width = map.Width();
         height = map.Height();
-
+        this.map = map;
         int ClusterWidth, ClusterHeight;
 
-        C = new List<Cluster>[MaxLevel];
+        C = new List<Cluster>[depth];
 
-        for (int i = 0; i < MaxLevel; ++i)
+        for (int i = 0; i < depth; ++i)
         {
             if (i != 0)
                 //Increment cluster size for higher levels
@@ -54,12 +63,35 @@ public class HPAGraph
 
             C[i] = BuildClusters(i, clusterSize, ClusterWidth, ClusterHeight);
         }
+
+        stopwatch.Stop();
+        UnityEngine.Debug.Log("Computation time for HPA: " + stopwatch.ElapsedMilliseconds + " ms");
     }
 
-    public LinkedList<Edge> GetPath(GridTile start, GridTile dest, bool useHPA)
+    public void markNodes()
     {
-            var path = HierarchicalPathfinder.FindHierarchicalPath(this, start, dest);
-            return HierarchicalPathfinder.GetLayerPathFromHPA(path, depth);
+        foreach(Cluster c in C[0])
+        {
+            foreach(GridTile node in c.Nodes.Keys)
+                map.setMark(AStar.NODES, node.x, node.y);
+        }
+    }
+
+    public LinkedList<Vector2Int> Neighborhood(int x,int y)
+    {
+        LinkedList<Vector2Int> res = new LinkedList<Vector2Int>();
+        foreach (Cluster c in C[0])
+        {
+            if (c.Nodes.ContainsKey(new GridTile(x, y))) foreach (Edge edge in c.Nodes[new GridTile(x, y)].edges)
+                    res.AddFirst(new Vector2Int(edge.end.pos.x, edge.end.pos.y));
+        }
+        return res;
+    }
+
+    public Move GetPath(GridTile start, GridTile dest)
+    {
+        LinkedList<Edge> path = HierarchicalPathfinder.FindHierarchicalPath(map, this, start, dest);
+        return HierarchicalPathfinder.GetLayerPathFromHPA(map, path, depth);
     }
     
     /// <summary>
@@ -242,7 +274,7 @@ public class HPAGraph
 
         float weight = 0f;
 
-        path = Pathfinder.FindPath(n1.child, n2.child, c.Boundaries);
+        path = Pathfinder.FindPath(map, n1.child, n2.child, c.Boundaries);
 
         if (path.Count > 0)
         {

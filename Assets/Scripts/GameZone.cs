@@ -95,15 +95,26 @@ public class GameZone : MonoBehaviour, IObserver
             case 0:
                 Parameters.instance.useSubgoal = false;
                 Parameters.instance.useTL = false;
+                Parameters.instance.useHPA = false;
+                c.UpdateNodes();
                 break; 
             case 1:
                 Parameters.instance.useSubgoal = true;
                 Parameters.instance.useTL = false;
+                Parameters.instance.useHPA = false;
+                c.UpdateNodes();
                 break;
             case 2:
                 Parameters.instance.useSubgoal = true;
                 Parameters.instance.useTL = true;
-                
+                Parameters.instance.useHPA = false;
+                c.UpdateNodes();
+                break;
+            case 3:
+                Parameters.instance.useSubgoal = false;
+                Parameters.instance.useTL = false;
+                Parameters.instance.useHPA = true;
+                c.UpdateNodes();
                 break;
             default: 
                 break;      
@@ -183,6 +194,22 @@ public class GameZone : MonoBehaviour, IObserver
         Parameters.instance.heuristicMultiplier = (int)value;
     }
 
+    public void updateLayerNb(String value)
+    {
+        Parameters.instance.layerNb = int.Parse(value);
+        CursorController.instance.SetLoading();
+        c.RebuildHPA();
+        CursorController.instance.SetNormal();
+    }
+
+    public void updateClusterSize(String value)
+    {
+        Parameters.instance.clusterSize = int.Parse(value);
+        CursorController.instance.SetLoading();
+        c.RebuildHPA();
+        CursorController.instance.SetNormal();
+    }
+
     public void updateStart(int x, int y)
     {
         xStart.text = x.ToString();
@@ -208,7 +235,7 @@ public class GameZone : MonoBehaviour, IObserver
             levelMap.ClearAllTiles();
             foreach(Transform character in characterList)
             {
-                UnityEngine.Object.Destroy(character.gameObject);
+                Destroy(character.gameObject);
             }
             characterList.Clear();
 
@@ -237,12 +264,11 @@ public class GameZone : MonoBehaviour, IObserver
                                 levelMap.SetTile(new Vector3Int(i,-j,0), path );
                                 break;
                             case AStar.NODES:
-                                if (Parameters.instance.useSubgoal) levelMap.SetTile(new Vector3Int(i, -j, 0), nodes);
+                                if (Parameters.instance.useSubgoal || Parameters.instance.useHPA) levelMap.SetTile(new Vector3Int(i, -j, 0), nodes);
                                 else levelMap.SetTile(new Vector3Int(i, -j, 0), reachable);
                                 break;
                             case AStar.SELECTEDNODES:
-                                if (Parameters.instance.useTL) levelMap.SetTile(new Vector3Int(i, -j, 0), selectedNodes);
-                                else levelMap.SetTile(new Vector3Int(i, -j, 0), nodes);
+                                levelMap.SetTile(new Vector3Int(i, -j, 0), selectedNodes);
                                 break;
                             default:
                                 levelMap.SetTile(new Vector3Int(i,-j,0), ground );

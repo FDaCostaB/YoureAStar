@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public static class HierarchicalPathfinder
 {
 
-    public static LinkedList<Edge> FindHierarchicalPath(HPAGraph graph, GridTile start, GridTile dest)
+    public static LinkedList<Edge> FindHierarchicalPath(Map map, HPAGraph graph, GridTile start, GridTile dest)
     {
         Node nStart, nDest;
 
@@ -14,7 +14,7 @@ public static class HierarchicalPathfinder
 
         LinkedList<Edge> path;
         //2. search for path in the highest level
-        path = Pathfinder.FindPath(nStart, nDest); //TODO : Upgrade AStar path to take start and goal
+        path = Pathfinder.FindPath(map, nStart, nDest, null, true);
 
 
         //3. Remove all created nodes from the graph
@@ -23,17 +23,9 @@ public static class HierarchicalPathfinder
         return path;
     }
 
-    public static LinkedList<Edge> FindLowlevelPath(HPAGraph graph, GridTile start, GridTile dest)
+    public static Move GetLayerPathFromHPA(Map map, LinkedList<Edge> hpa, int layer)
     {
-        Node nStart = graph.nodes[start],
-            nDest = graph.nodes[dest];
-
-        return Pathfinder.FindPath(nStart, nDest);
-    }
-
-    public static LinkedList<Edge> GetLayerPathFromHPA(LinkedList<Edge> hpa, int layer)
-    {
-        LinkedList<Edge> res = new LinkedList<Edge>();
+        Move res = new Move(map, map.currentChar());
 
         //Iterate through all edges as a breadth-first-search on parent-child connections between edges
         //we start at value layers, and add children to the queue while decrementing the layer value.
@@ -48,10 +40,13 @@ public static class HierarchicalPathfinder
         while (queue.Count > 0)
         {
             current = queue.Dequeue();
+            map.setMark(AStar.SCANNED, current.Item2.end.pos.x, current.Item2.end.pos.y);
 
             if (current.Item1 == 0)
             {
-                res.AddLast(current.Item2);
+                res.deplace(current.Item2.start.pos.x, current.Item2.start.pos.y, current.Item2.end.pos.x, current.Item2.end.pos.y);
+                map.setMark(AStar.PATH, current.Item2.end.pos.x, current.Item2.end.pos.y);
+                
             }
             else if (current.Item2.type == EdgeType.INTER)
             {

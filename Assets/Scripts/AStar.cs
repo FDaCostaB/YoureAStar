@@ -15,12 +15,31 @@ public class AStar {
     public const int ALL = 0xFFFFFF;
     
     Map map;
-    SubGoalGraph graph;
+    SubGoalGraph sgGraph;
+    HPAGraph hpaGraph;
 
     public AStar(Map m){
         map = m;
         mark(true);
-        graph = new SubGoalGraph(map, this, m.Width() * m.Height() < 500000);
+        sgGraph = new SubGoalGraph(map, this, m.Width() * m.Height() < 500000);
+        hpaGraph = new HPAGraph(map);
+    }
+
+    public void UpdateNodes()
+    {
+        map.eraseNodes();
+        if (Parameters.instance.useSubgoal)
+            sgGraph.markNodes();
+        else if(Parameters.instance.useHPA)
+            hpaGraph.markNodes();
+
+    }
+
+    public void RebuildHPA()
+    {
+        hpaGraph = new HPAGraph(map);
+        UpdateNodes();
+        map.Notify();
     }
     
 
@@ -58,12 +77,15 @@ public class AStar {
         CursorController.instance.SetNormal();
         if (m != null){
             String method;
-            if (Parameters.instance.useSubgoal){
-                if(graph.isTL) method = "Subgoal";
+            if (Parameters.instance.useSubgoal)
+            {
+                if (sgGraph.isTL) method = "Subgoal";
                 else method = "Subgoal-TL";
-            } else method = "Grid";
+            }
+            else if (Parameters.instance.useHPA) method = "HPA";
+            else method = "Grid";
             if (!Parameters.instance.debug)
-                Data.CacheLine(map.name, graph.VertexCount, graph.EdgeCount, graph.buildTime,fromX, fromY, toX, toY,  stopwatch.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
+                Data.CacheLine(map.name, sgGraph.VertexCount, sgGraph.EdgeCount, sgGraph.buildTime,fromX, fromY, toX, toY,  stopwatch.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
         }
         Data.flush();
         return m;
@@ -80,7 +102,8 @@ public class AStar {
             newToY = newDest.y;
         }
         if (Parameters.instance.debug) map.eraseMark();
-        if(Parameters.instance.useSubgoal) return graph.path(new Vector2Int(newToX, newToY));
+        if (Parameters.instance.useSubgoal) return sgGraph.path(new Vector2Int(newToX, newToY));
+        else if (Parameters.instance.useHPA) return hpaGraph.GetPath(new GridTile(map.CharacterX(), map.CharacterY()), new GridTile(newToX, newToY)) ;
         else return pathGrid(newToX, newToY);
     }
 
@@ -160,8 +183,8 @@ public class AStar {
         List<Vector2Int> neighborhood =  new List<Vector2Int>();
         List<Move> res =  new List<Move>();
         Vector2Int[,] pred = new Vector2Int[map.Width(),map.Height()];
-        int fromX = graph.CharacterX();
-        int fromY = graph.CharacterY();
+        int fromX = sgGraph.CharacterX();
+        int fromY = sgGraph.CharacterY();
         Vector2Int curr,min= new Vector2Int(-1,-1);
         float [,] dist;
 
@@ -214,7 +237,7 @@ public class AStar {
             //For all neighborhood v update the distance
             neighborhood.Clear();
             
-            graph.AddNeighborhood(min.x,min.y,neighborhood, Parameters.instance.useTL);
+            sgGraph.AddNeighborhood(min.x,min.y,neighborhood, Parameters.instance.useTL);
 
             foreach(Vector2Int next in neighborhood){
                 if( dist[min.x,min.y] + map.distHeuristic(min.x, min.y, next.x,next.y) < dist[next.x, next.y]){
@@ -237,26 +260,31 @@ public class AStar {
 
     public void debug(){
         UnityEngine.Debug.Log("Debug function called !");
-        if(Parameters.instance.useTL) graph.markGlobal();
+        if(Parameters.instance.useTL) sgGraph.markGlobal();
         map.Notify();
     }
 
     public void debug(int x, int y){
         if (!map.isIn(x, y)) return;
-        UnityEngine.Debug.Log("( "+x+", "+y+" ) clicked");
         map.eraseMark();
         if (map.isSubgoal(x, y))
         {
             map.setMark(AStar.SELECTEDNODES, x, y);
-            LinkedList<Vector2Int> toDisplay = Parameters.instance.useTL && graph.Contains(x,y) ?  graph.linkedNodesTL(x, y) : graph.Neighborhood(x, y);
-            if (!graph.Contains(x, y)) toDisplay.Clear();
+            LinkedList<Vector2Int> toDisplay = null;
+            if (Parameters.instance.useTL)
+                toDisplay = sgGraph.linkedNodesTL(x, y);
+            else if (Parameters.instance.useSubgoal)
+                toDisplay = sgGraph.Neighborhood(x, y);
+            else if(Parameters.instance.useHPA)
+                toDisplay = hpaGraph.Neighborhood(x, y);
+            if (toDisplay == null) return;
             foreach (Vector2Int p in toDisplay)
             {
                 map.setMark(AStar.SELECTEDNODES,p.x,p.y);
             }
-        } else
-        {
-            graph.GetDirectHReachable(new Vector2Int(x, y), true);
+        } else {
+            if (Parameters.instance.useTL)
+                sgGraph.markGlobal();
         }
         map.Notify();
 	}

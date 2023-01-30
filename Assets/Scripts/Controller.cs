@@ -24,6 +24,16 @@ public class Controller : IEventCollector {
 		}
 	}
 
+	public void UpdateNodes()
+	{
+		aStar.UpdateNodes();
+	}
+
+    public void RebuildHPA()
+    {
+        aStar.RebuildHPA();
+    }
+
     public void clock(){
 		for(int i =0; i<map.nbChar();i++){
 			if(mouvement[i]!=null){

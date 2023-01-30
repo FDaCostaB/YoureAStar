@@ -101,6 +101,17 @@ public class SubGoalGraph {
 
     }
 
+    public void markNodes(){
+        foreach(Vector2Int p in sgGraph.getNodes()){
+            map.setMark(AStar.NODES,p.x,p.y);
+        }
+
+        foreach (Vector2Int p in sgTLGraph.getNodes())
+        {
+            map.setMark(AStar.SELECTEDNODES, p.x, p.y);
+        }
+    }
+
     public List<Vector2Int> GetDirectHReachable(Vector2Int cell, bool doDebug = false){
 
        List<Vector2Int> hReachable = new List<Vector2Int>();
