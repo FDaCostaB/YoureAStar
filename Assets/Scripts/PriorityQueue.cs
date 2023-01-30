@@ -169,8 +169,8 @@ class PriorityQueue<T> : IOpenList<T> {
     }
     
     // Function to get value of
-    // the current maximum element
-    float getMax()
+    // the current minimum element
+    float getMin()
     {
         return H[0].ElemB;
     }
@@ -179,7 +179,7 @@ class PriorityQueue<T> : IOpenList<T> {
     // located at given index
     void Remove(int i)
     {
-        H[i].ElemB = getMax() + 1;
+        H[i].ElemB = getMin() + 1;
         
         // Shift the node to the root
         // of the heap
@@ -214,6 +214,11 @@ class PriorityQueue<T> : IOpenList<T> {
 
     public float FirstPrio(){
         return H[0].ElemB;
+    }
+
+    public T First()
+    {
+        return H[0].Elem;
     }
 
     public bool Contains(T elem)

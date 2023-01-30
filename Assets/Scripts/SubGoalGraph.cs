@@ -280,7 +280,7 @@ public class SubGoalGraph {
         timer.Start();
         Move m = FindAbstractPath(goal);
         timer.Stop();
-        if(m != null && !Parameters.instance.debug){
+        if(m != null){
             Data.CacheLine(map.name, VertexCount, EdgeCount, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, timer.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (Parameters.instance.useTL? "SG-TL Graph": "SG Graph"), Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
         }
         return m;

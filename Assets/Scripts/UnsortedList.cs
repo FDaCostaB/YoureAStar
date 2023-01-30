@@ -63,6 +63,24 @@ class UnsortedList<T> : IOpenList<T> {
         return minDH;
     }
 
+    public T First()
+    {
+        int idx = 0; int i = 0;
+        float minDH = List[0].ElemB;
+        T min = List[0].Elem;
+        foreach (Pair<T, float> p in List)
+        {
+            if (minDH > p.ElemB)
+            {
+                minDH = p.ElemB;
+                min = p.Elem;
+                idx = i;
+            }
+            i++;
+        }
+        return min;
+    }
+
     public bool Contains(T elem)
     {
         return Exist(curr => curr.Equals(elem));

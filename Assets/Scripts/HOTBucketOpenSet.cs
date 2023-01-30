@@ -46,4 +46,9 @@ public class HOTBucketOpenSet<T> : IOpenList<T>
     {
         return HotQueue.FirstPrio;
     }
+
+    public T First()
+    {
+        return HotQueue.First;
+    }
 }
