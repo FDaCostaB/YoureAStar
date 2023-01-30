@@ -378,9 +378,10 @@ public class SubGoalGraph {
             }
 
             neighborhood.Clear();
+            map.AddNeighborhood(min.x, min.y, AStar.ALL, neighborhood);
             float neighborhoodDist;
             //TODO :Parallelize for
-            foreach (Vector2Int next in map.AddNeighborhood(min.x,min.y,AStar.ALL,neighborhood)){
+            foreach (Vector2Int next in neighborhood){
                 if (min.x != next.x && min.y != next.y) neighborhoodDist = 1.4f;
                 else neighborhoodDist = 1;
                 if ((!dist.ContainsKey(next) || dist[min] + neighborhoodDist < dist[next] + 0.01f) && dist[min] + neighborhoodDist < h + 0.01f && Map.Octile(min.x, min.y, next.x, next.y) + Map.Octile(next.x, next.y, goal.x, goal.y) <= Map.Octile(min.x, min.y, goal.x, goal.y) + 0.01f)
