@@ -37,7 +37,7 @@ public class Parameters : MonoBehaviour
                 return null;
         }
     }
-    
+
 }
 
 public enum Heuristics{

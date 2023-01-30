@@ -12,9 +12,11 @@ public class HOTBucketOpenSet<T> : IOpenList<T>
             void Remove(TItem node);
             void UpdatePriority(TItem node, TPriority priority);
             TItem First { get; }
+            TPriority FirstPrio { get; }
             int Count { get; }    */
 
-    private SimplePriorityQueue<T> HotQueue;
+    private SimplePriorityQueue<T,float> HotQueue;
+
     public HOTBucketOpenSet() {
         HotQueue = new SimplePriorityQueue<T>();
     }
@@ -40,4 +42,8 @@ public class HOTBucketOpenSet<T> : IOpenList<T>
         return HotQueue.Contains(node);
     }
 
+    public float FirstPrio()
+    {
+        return HotQueue.FirstPrio;
+    }
 }

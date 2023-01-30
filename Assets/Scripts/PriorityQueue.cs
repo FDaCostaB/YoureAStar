@@ -212,7 +212,7 @@ class PriorityQueue<T> : IOpenList<T> {
         return res;
     }
 
-    public float getTopPriority(){
+    public float FirstPrio(){
         return H[0].ElemB;
     }
 
@@ -220,6 +220,7 @@ class PriorityQueue<T> : IOpenList<T> {
     {
         return Exist(curr => curr.Equals(elem));
     }
+
 }
  
 // This code is inspired by GeeksForGeeks and was contributed by Amit Katiyar 

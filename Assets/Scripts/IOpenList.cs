@@ -7,6 +7,7 @@ public interface IOpenList<T>{
     public int size {get;}
     public void Enqueue(T elem, float p);
     public T Dequeue();
+    public float FirstPrio();
     public bool Contains(T elem);
     public void changePriority(T item, float p);
 }

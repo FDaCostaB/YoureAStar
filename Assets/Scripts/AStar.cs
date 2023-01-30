@@ -179,6 +179,91 @@ public class AStar {
         return null;
     }
 
+    public Move bipathGrid(int toX, int toY)
+    {
+        int fromX = map.CharacterX();
+        int fromY = map.CharacterY();
+        List<Vector2Int> neighborhood = new List<Vector2Int>();
+        Vector2Int curr, min;
+        Move cp = new Move(map, map.currentChar());
+        float[,] dist;
+        dist = new float[map.Width(), map.Height()];
+        for (int y = 0; y < map.Height(); y++)
+        {
+            for (int x = 0; x < map.Width(); x++)
+            {
+                dist[x, y] = 1e30f;
+            }
+        }
+
+        IOpenList<Vector2Int> exploreF = Parameters.instance.newOpenList();
+        IOpenList<Vector2Int> exploreB = Parameters.instance.newOpenList();
+        Vector2Int[,] pred = new Vector2Int[map.Width(), map.Height()];
+
+        dist[fromX, fromY] = 0;
+        dist[toX, toY] = 0;
+        min = new Vector2Int(fromX, fromY);
+        exploreF.Enqueue(min, 0);
+        min = new Vector2Int(toX, toY);
+        exploreB.Enqueue(min, 0);
+        float u = float.MaxValue;
+
+        while (exploreF.size + exploreB.size > 0)
+        {
+            IOpenList<Vector2Int> explore = exploreF;
+            min = exploreF.Dequeue();
+            cp.scanned++;
+            map.setMark(SCANNED, min.x, min.y);
+
+            //If destination reached
+            if (u <=  1)
+            {
+                curr = new Vector2Int(toX, toY);
+                map.setMark(PATH, toX, toY);
+                Step d;
+                while (curr.x != fromX || curr.y != fromY)
+                {
+                    d = new Step(pred[curr.x, curr.y].x, pred[curr.x, curr.y].y, curr.x, curr.y);
+                    cp.Steps().Insert(0, d);
+                    curr = new Vector2Int(pred[curr.x, curr.y].x, pred[curr.x, curr.y].y);
+                    map.setMark(PATH, curr.x, curr.y);
+                }
+                return cp;
+            }
+
+
+
+            //For all neighborhood v update the distance
+            neighborhood.Clear();
+            map.AddNeighborhood(min.x, min.y, ALL, neighborhood);
+            float diagDist = Parameters.instance.heuristic == Heuristics.Chebyshev ? 1f : Parameters.instance.heuristic == Heuristics.Manhattan ? 2f : 1.4f;
+            float neighborhoodDist;
+            foreach (Vector2Int next in neighborhood)
+            {
+                if (min.x != next.x && min.y != next.y) neighborhoodDist = diagDist;
+                else neighborhoodDist = 1;
+                if (dist[min.x, min.y] + neighborhoodDist < dist[next.x, next.y])
+                {
+                    dist[next.x, next.y] = dist[min.x, min.y] + neighborhoodDist;
+                    pred[next.x, next.y] = min;
+                    if (explore.Contains(next))
+                    {
+                        explore.changePriority(next, dist[min.x, min.y] + map.distHeuristic(next.x, next.y, toX, toY));
+                    }
+                    else
+                    {
+                        explore.Enqueue(next, dist[min.x, min.y] + map.distHeuristic(next.x, next.y, toX, toY));
+                        cp.setOpenSetMaxSize(explore.size);
+                    }
+                }
+            }
+
+        }
+
+        UnityEngine.Debug.Log("No path exist");
+        return null;
+    }
+
     public Move pathGraph(int toX, int toY, int agentNb){
         IOpenList<Vector2Int> explore = Parameters.instance.newOpenList();
         List<Vector2Int> neighborhood =  new List<Vector2Int>();

@@ -47,7 +47,7 @@ class UnsortedList<T> : IOpenList<T> {
         List[idx].ElemB = p;
     }
 
-    public float getTopPriority()
+    public float FirstPrio()
     {
         int idx = 0; int i =0;
         float minDH = List[0].ElemB;
@@ -67,4 +67,5 @@ class UnsortedList<T> : IOpenList<T> {
     {
         return Exist(curr => curr.Equals(elem));
     }
+
 }
