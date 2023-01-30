@@ -82,9 +82,10 @@ public class SubGoalGraph {
         }
 
         stopwatch.Stop();
+        UnityEngine.Debug.Log("# of nodes : " + VertexCount);
+        UnityEngine.Debug.Log("# of edges : " + EdgeCount);
         UnityEngine.Debug.Log("Computation time for Subgoal: " + stopwatch.ElapsedMilliseconds + " ms");
-        UnityEngine.Debug.Log("# of nodes : "+ VertexCount);
-        UnityEngine.Debug.Log("# of edges : "+ EdgeCount);
+
 
         if (computeSGTL)
         {
@@ -489,9 +490,6 @@ public class SubGoalGraph {
         int count = 0;
         isTL = true;
         bool necessary = false;
-
-        UnityEngine.Debug.Log("# of nodes : "+ VertexCountTL);
-        UnityEngine.Debug.Log("# of edges : "+ EdgeCountTL);
         List<Vector2Int> neighborhood = new List<Vector2Int>();
         foreach (Vector2Int node in sgTLGraph.getNodes()){
             if(!sgTLGraph.Contains(node)) continue;

@@ -32,7 +32,7 @@ public class Pathfinder {
         while(pq.Count > 0)
         {
             current = pq.Dequeue();
-            if(doMark)map.setMark(AStar.SCANNED, current.pos.x, current.pos.y);
+            if(doMark)map.setMark(AStar.SELECTEDNODES, current.pos.x, current.pos.y);
             if (current.pos.Equals(dest.pos))
                 //Rebuild path and return it
                 return RebuildPath(Parent, current);

@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Controller : IEventCollector {
 	Map map;
-	public bool pause;
 	AStar aStar;
 	List<AnimationMove> mouvement;
 	GameZone gZone;
@@ -15,7 +14,6 @@ public class Controller : IEventCollector {
 	public Controller(Map m, Camera c, GameZone gz) {
 		cam = c;
 		map = m;
-		pause = false;
 		gZone = gz;
 		aStar = new AStar(map);
 		mouvement = new List<AnimationMove>();
@@ -70,7 +68,7 @@ public class Controller : IEventCollector {
 	public void mouseClic(float x, float y) {
 		Vector2Int clic = new Vector2Int((int) Math.Floor(x + cam.GetComponent<Transform>().position.x), (int) Math.Floor(y + 1 - cam.GetComponent<Transform>().position.y));
 		if( clic.x > map.Width() || clic.x < 0  || clic.y > map.Height() || clic.y < 0 ) return;
-		if(map.isCharacter(clic.x,clic.y) && (pause || isSelectable(map.findChar(clic.x,clic.y)))){
+		if (map.isCharacter(clic.x, clic.y) && (Parameters.instance.pause || isSelectable(map.findChar(clic.x,clic.y)))){
 			map.selectChar(clic.x,clic.y);
 		} else {
 			if(mouvement[map.currentChar()]!=null){
@@ -82,7 +80,7 @@ public class Controller : IEventCollector {
 				gZone.displayDebug(cp);
 				if(cp!=null) {
 					mouvement[map.currentChar()] = new AnimationMove(cp, this, gZone);
-					if(pause)mouvement[map.currentChar()].stop();
+					if(Parameters.instance.pause) mouvement[map.currentChar()].stop();
 				}
 			}
 		}
@@ -140,10 +138,10 @@ public class Controller : IEventCollector {
 
     internal void tooglePause()
     {
-        pause = !pause;
+        Parameters.instance.pause = !Parameters.instance.pause;
 		for(int i =0; i<map.nbChar();i++){
 			if(mouvement[i]!=null){
-				if(pause)mouvement[i].stop();
+				if(Parameters.instance.pause) mouvement[i].stop();
 				else mouvement[i].start();
 			}
 		}

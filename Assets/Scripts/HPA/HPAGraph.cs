@@ -21,6 +21,8 @@ public class HPAGraph
     //We keep track of added nodes to remove them afterwards
     List<Node> AddedNodes;
 
+    int VertexCount { get { return NodesNb(); } }
+
     /// <summary>
     /// Construct a graph from the map
     /// </summary>
@@ -65,6 +67,12 @@ public class HPAGraph
         }
 
         stopwatch.Stop();
+        for (int i = 0; i < depth; ++i)
+        {
+            UnityEngine.Debug.Log("# of nodes (Layer " + i +"): " + VertexCount);
+            UnityEngine.Debug.Log("# of edge (Layer "+ i +") : " + EdgeNb(i));
+        }
+        UnityEngine.Debug.Log("# of Layer : " + depth);
         UnityEngine.Debug.Log("Computation time for HPA: " + stopwatch.ElapsedMilliseconds + " ms");
     }
 
@@ -75,6 +83,25 @@ public class HPAGraph
             foreach(GridTile node in c.Nodes.Keys)
                 map.setMark(AStar.NODES, node.x, node.y);
         }
+    }
+
+    public int NodesNb()
+    {
+        int res = 0;
+        foreach (Cluster c in C[0])
+            res += c.Nodes.Count;
+        return res;
+    }
+
+    public int EdgeNb(int i)
+    {
+        int res = 0;
+        foreach (Cluster c in C[i])
+        {
+            foreach (Node node in c.Nodes.Values)
+                res += node.edges.Count;
+        }
+        return res/2;
     }
 
     public LinkedList<Vector2Int> Neighborhood(int x,int y)

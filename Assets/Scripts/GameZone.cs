@@ -293,7 +293,7 @@ public class GameZone : MonoBehaviour, IObserver
 
     void IObserver.Update(ISubject subject){
         if(Parameters.instance.debug) Paint();
-        if(c.pause) {
+        if(Parameters.instance.pause) {
             for(int i =0; i < map.nbChar(); i++) characterList[i].gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
         } else {
             for(int i =0; i < map.nbChar(); i++) characterList[i].gameObject.GetComponent<SpriteRenderer>().color = c.isSelectable(i) ? Color.yellow : Color.red;

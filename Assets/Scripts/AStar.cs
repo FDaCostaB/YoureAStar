@@ -23,6 +23,7 @@ public class AStar {
         mark(true);
         sgGraph = new SubGoalGraph(map, this, m.Width() * m.Height() < 500000);
         hpaGraph = new HPAGraph(map);
+        UpdateNodes();
     }
 
     public void UpdateNodes()
