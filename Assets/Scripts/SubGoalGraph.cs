@@ -256,6 +256,7 @@ public class SubGoalGraph {
 
     Move FindAbstractPath(Vector2Int goal){
         Vector2Int start = map.currentCharPos();
+        Move res;
         if (Parameters.instance.useTL)
         {
             ConnectToGraphTL(start);
@@ -265,7 +266,8 @@ public class SubGoalGraph {
             ConnectToGraph(start);
             ConnectToGraph(goal);
         }
-        Move res = astar.pathGraph(goal.x, goal.y, map.currentChar() );
+        if (Parameters.instance.doBidirectionnal) res = astar.bipathGraph(goal.x, goal.y);
+        else res = astar.pathGraph(goal.x, goal.y );
         foreach(Vector2Int temp in tempGlobalGoal)
         {
             if (Parameters.instance.useTL) sgTLGraph.RemoveVertex(temp);
