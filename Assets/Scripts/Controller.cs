@@ -32,6 +32,11 @@ public class Controller : IEventCollector {
         aStar.RebuildHPA();
     }
 
+    public void readPaths()
+    {
+        aStar.readPaths();
+    }
+
     public void clock(){
 		for(int i =0; i<map.nbChar();i++){
 			if(mouvement[i]!=null){
@@ -77,11 +82,15 @@ public class Controller : IEventCollector {
 			}
 			if(mouvement[map.currentChar()]==null){
 				Move cp = aStar.measurePath(clic.x, clic.y);
-				gZone.displayDebug(cp);
 				if(cp!=null) {
-					mouvement[map.currentChar()] = new AnimationMove(cp, this, gZone);
+                    gZone.displayDebug(cp);
+                    mouvement[map.currentChar()] = new AnimationMove(cp, this, gZone);
 					if(Parameters.instance.pause) mouvement[map.currentChar()].stop();
-				}
+				} else
+				{
+					gZone.displayTimedOut();
+
+                }
 			}
 		}
 		map.Notify();

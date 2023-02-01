@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Linq;
 using UnityEngine;
 
@@ -20,15 +21,43 @@ public class Map : Subject {
 	List<Vector2Int> characterPos = new List<Vector2Int>();
 
 	public String name;
+	public String pathFile;
 
     Directions[] dirs = {Directions.NORTH,Directions.WEST,Directions.EAST,Directions.SOUTH,Directions.NORTHWEST,Directions.NORTHEAST,Directions.SOUTHWEST,Directions.SOUTHEAST};
 
 	public Map(String fileName) {
 		name = fileName;
-		content = new int[1,1];
+        string newFile = Path.GetFileName(name);
+        pathFile = "Assets/Map/Paths/" + newFile.Split(".")[0] + ".paths";
+
+        content = new int[1,1];
 		width = 0;
 		height = 0;
 	}
+
+	public void GenerateBenchmark()
+	{
+		StreamWriter writer = new StreamWriter(pathFile);
+        System.Random rand = new System.Random();
+		float avg = 0;
+		float max = 0;
+        for (int i =0; i<16; i++)
+		{
+            Vector2Int start = new Vector2Int(rand.Next(width), rand.Next(height));
+			start = closestFree(start.x, start.y);
+            for (int j = 0; j < 16; j++)
+            {
+                Vector2Int goal = new Vector2Int(rand.Next(width), rand.Next(height));
+                goal = closestFree(goal.x, goal.y);
+				writer.WriteLine(start.x.ToString() + " " + start.y.ToString() + " " + goal.x.ToString() + " " + goal.y.ToString());
+				float dist = Map.Octile(goal.x, start.y, goal.x, goal.y);
+				max = Math.Max(max, dist);
+				avg += dist;
+            }
+        }
+		writer.Close();
+		Debug.Log("Avg : " + avg / 1024 + " Max : " + max);
+    }
 
 	public Vector2Int closestFree(int x, int y){
         int i =0;
@@ -324,7 +353,13 @@ public class Map : Subject {
 		return d;
 	}
 
-	public float distHeuristic(int pt1x, int pt1y, int pt2x, int pt2y){
+    public void setStart(int x, int y)
+    {
+        if (isFree(x, y))
+			characterPos[charcater] = new Vector2Int(x, y);
+    }
+
+    public float distHeuristic(int pt1x, int pt1y, int pt2x, int pt2y){
         //dist is g i.e. the cost from the start to pt1 the rest is the heuristic h
 		int multiplier = Parameters.instance.heuristicMultiplier;
         switch(Parameters.instance.heuristic){

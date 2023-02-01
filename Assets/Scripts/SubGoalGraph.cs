@@ -172,7 +172,7 @@ public class SubGoalGraph {
 
         if(globalPath.Steps().Count == 0) return null;
 
-        //TODO : Parallelize - O | classic - X | JPS - O | skip - X | 
+        //TODO : State that extra time from measureFindAbstract can be skipped (give a direction and a length (path not magnetize to grid))
         if (!Parameters.instance.skipHreachable)
         {
             for (int i = 0; i < globalPath.Steps().Count; i++)
@@ -283,7 +283,7 @@ public class SubGoalGraph {
         Move m = FindAbstractPath(goal);
         timer.Stop();
         if(m != null){
-            Data.CacheLine(map.name, VertexCount, EdgeCount, buildTime, map.CharacterX(), map.CharacterY(), goal.x, goal.y, timer.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (Parameters.instance.useTL? "SG-TL Graph": "SG Graph"), Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
+            Data.CacheLine(map.name, map.CharacterX(), map.CharacterY(), goal.x, goal.y, timer.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, "FindAbstractPath - " + (Parameters.instance.useTL? "SG-TL Graph": "SG Graph"), Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
         }
         return m;
     }

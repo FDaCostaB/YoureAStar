@@ -2,7 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using Unity.Mathematics;
+using Unity.PlasticSCM.Editor.WebApi;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -22,12 +26,48 @@ public class AStar {
     public AStar(Map m){
         map = m;
         mark(true);
-        sgGraph = new SubGoalGraph(map, this, m.Width() * m.Height() < 500000);
+        sgGraph = new SubGoalGraph(map, this, m.Width() * m.Height() < 200_000);
         hpaGraph = new HPAGraph(map);
         UpdateNodes();
     }
 
-    public void UpdateNodes()
+    public void readPaths()
+    {
+        Map m = new Map(map.pathFile);
+        StreamReader reader = new StreamReader(map.pathFile);
+        string line = null;
+        int[] intRead = { 0, 0, 0, 0 };
+        bool saveDebug = Parameters.instance.debug;
+        Parameters.instance.debug = false;
+        Vector2Int charPos = map.currentCharPos();
+
+        line = reader.ReadLine();
+        while (line != null && line.Count() > 0)
+        {
+            int j = 0;
+
+            for (int i = 0; i < line.Count(); i++)
+            {
+                if (line[i] == ' ')
+                {
+                    j++;
+                    continue;
+                }
+
+                intRead[j] = intRead[j] * 10 + (line[i] - '0');
+            }
+            map.setStart(intRead[0], intRead[1]);
+            measurePath(intRead[2], intRead[3]);
+            for (int k = 0; k < 4; k++)
+                intRead[k] = 0;
+            line = reader.ReadLine();
+        }
+        Parameters.instance.debug = saveDebug;
+        map.setStart(charPos.x, charPos.y);
+
+    }
+
+        public void UpdateNodes()
     {
         map.eraseNodes();
         if (Parameters.instance.useSubgoal)
@@ -71,26 +111,35 @@ public class AStar {
         int fromX = map.CharacterX();
         int fromY = map.CharacterY();
         CursorController.instance.SetLoading();
+
+        String method;
+        if (Parameters.instance.useSubgoal)
+        {
+            if (sgGraph.isTL) method = "Subgoal";
+            else method = "Subgoal-TL";
+            if (Parameters.instance.doBidirectionnal) method = "Bidirectionnal " + method;
+        }
+        else if (Parameters.instance.useHPA) method = "HPA";
+        else if (Parameters.instance.doBidirectionnal) method = "Bidirectionnal Grid";
+        else method = "Unidirectionnal Grid";
+
+
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
         Move m = path(toX, toY);
         stopwatch.Stop();
-        m.time = stopwatch.ElapsedMilliseconds;
-        CursorController.instance.SetNormal();
+        if(m==null) {
+            Data.CacheLine(map.name, fromX, fromY, toX, toY, -1, -1, -1, -1, method, Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
+            return null;
+        }
+        
         if (m != null){
-            String method;
-            if (Parameters.instance.useSubgoal)
-            {
-                if (sgGraph.isTL) method = "Subgoal";
-                else method = "Subgoal-TL";
-                if (Parameters.instance.doBidirectionnal) method = "Bidirectionnal " + method;
-            }
-            else if (Parameters.instance.useHPA) method = "HPA";
-            else if(Parameters.instance.doBidirectionnal) method = "Bidirectionnal Grid";
-            else method = "Unidirectionnal Grid";
-            Data.CacheLine(map.name, sgGraph.VertexCount, sgGraph.EdgeCount, sgGraph.buildTime,fromX, fromY, toX, toY,  stopwatch.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
+            m.time = stopwatch.ElapsedMilliseconds;
+            Data.CacheLine(map.name, fromX, fromY, toX, toY,  stopwatch.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
         }
         Data.flush();
+
+        CursorController.instance.SetNormal();
         return m;
     }
 
@@ -133,7 +182,10 @@ public class AStar {
         min=new Vector2Int(fromX,fromY);
         explore.Enqueue(min,0);
 
-        while(explore.size > 0){
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        while (explore.size > 0 && stopwatch.ElapsedMilliseconds < 10_000)
+        {
 
             min = explore.Dequeue();
             cp.scanned++;
@@ -177,8 +229,9 @@ public class AStar {
             }
             
         }
-
-        UnityEngine.Debug.Log("No path exist" );
+        stopwatch.Stop();
+        if (stopwatch.ElapsedMilliseconds >= 10_000) UnityEngine.Debug.Log("Timed out");
+        else UnityEngine.Debug.Log("No path exist" );
         return null;
     }
 
@@ -222,7 +275,9 @@ public class AStar {
         exploreB.Enqueue(new Vector2Int(toX, toY), 0);
         float u = float.MaxValue;
 
-        while (exploreF.size + exploreB.size > 0)
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        while (exploreF.size + exploreB.size > 0 && stopwatch.ElapsedMilliseconds<10_000)
         {
             float c = Math.Min(exploreF.FirstPrio(), exploreB.FirstPrio());
 
@@ -339,7 +394,9 @@ public class AStar {
             
         }
 
-        UnityEngine.Debug.Log("No path exist");
+        stopwatch.Stop();
+        if (stopwatch.ElapsedMilliseconds >= 10_000) UnityEngine.Debug.Log("Timed out");
+        else UnityEngine.Debug.Log("No path exist");
         return null;
     }
 
@@ -368,7 +425,11 @@ public class AStar {
         min=new Vector2Int(fromX,fromY);
         explore.Enqueue(min,0);
 
-        while(explore.size > 0){
+
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        while (explore.size > 0 && stopwatch.ElapsedMilliseconds < 10_000)
+        {
 
             min = explore.Dequeue();
             cp.scanned++;
@@ -410,7 +471,9 @@ public class AStar {
             
         }
 
-        UnityEngine.Debug.Log("No path exist" );
+        stopwatch.Stop();
+        if (stopwatch.ElapsedMilliseconds >= 10_000) UnityEngine.Debug.Log("Timed out");
+        else UnityEngine.Debug.Log("No path exist");
         return null;
     }
 

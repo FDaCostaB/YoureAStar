@@ -118,6 +118,7 @@ public class HPAGraph
     public Move GetPath(GridTile start, GridTile dest)
     {
         LinkedList<Edge> path = HierarchicalPathfinder.FindHierarchicalPath(map, this, start, dest);
+        if (path == null) return null;
         return HierarchicalPathfinder.GetLayerPathFromHPA(map, path, depth);
     }
     

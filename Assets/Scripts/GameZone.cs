@@ -74,6 +74,17 @@ public class GameZone : MonoBehaviour, IObserver
     {
         mapPath = AssetDatabase.GetAssetPath(maps[value]);
     }
+
+    public void generatePaths()
+    {
+        map.GenerateBenchmark();
+    }
+
+    public void readPaths()
+    {
+        c.readPaths();
+    }
+
     public void loadMap()
     {
         CursorController.instance.SetLoading();
@@ -228,8 +239,14 @@ public class GameZone : MonoBehaviour, IObserver
         tilesScan.text = m.scanned.ToString()+" tiles";
     }
 
-    private void Paint(bool initPaint = false){
+    public void displayTimedOut()
+    {
+        computationTime.text = "Timed out";
+        pathLength.text = "Timed out";
+        tilesScan.text = "Timed out";
+    }
 
+    private void Paint(bool initPaint = false){
         if (initPaint)
         {
             levelMap.ClearAllTiles();

@@ -10,10 +10,10 @@ public static class Data
     public static void Init(){
         buffer = "";
     }
-    public static void CacheLine(String mapName, int vertexCount, int edgeCount, int buildTime, int fromX, int fromY, int toX, int toY,  long computationTime, int nbScannedTiles, int openSetMaxSize, int pathLength, String method, OpenSetType setType, Heuristics heuristics, int  heuristicMultiplier)
+    public static void CacheLine(String mapName, int fromX, int fromY, int toX, int toY,  long computationTime, int nbScannedTiles, int openSetMaxSize, int pathLength, String method, OpenSetType setType, Heuristics heuristics, int  heuristicMultiplier)
     {
         Debug.Log(method + " - Computation time : " + computationTime + "\n# scanned cell : " + nbScannedTiles + "\nMax size of Open Set : " + openSetMaxSize + "\nPath length : " + pathLength);
-        if (!Parameters.instance.debug) buffer += mapName + ", " + vertexCount+ ", " + edgeCount + ", " + buildTime + ", " + "("+fromX+" - "+fromY+")" + ", " + "("+toX+" - "+toY+")" + ", " + computationTime + ", " + nbScannedTiles + ", " + openSetMaxSize + ", " + pathLength + ", " + method + ", " + setType.ToString() + ", " + heuristics.ToString() + ", " + heuristicMultiplier.ToString() +"\n";
+        if (!Parameters.instance.debug) buffer += mapName + ", " + "("+fromX+" - "+fromY+")" + ", " + "("+toX+" - "+toY+")" + ", " + computationTime + ", " + nbScannedTiles + ", " + openSetMaxSize + ", " + pathLength + ", " + method + ", " + setType.ToString() + ", " + heuristics.ToString() + ", " + heuristicMultiplier.ToString() +"\n";
     }
 
     public static void flush(){

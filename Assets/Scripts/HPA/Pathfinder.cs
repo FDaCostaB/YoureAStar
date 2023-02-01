@@ -1,5 +1,6 @@
 ﻿using Priority_Queue;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Pathfinder {
@@ -29,7 +30,9 @@ public class Pathfinder {
         pq.Enqueue(start, EuclidianDistance(start, dest));
         Node current;
 
-        while(pq.Count > 0)
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        while (pq.Count > 0 && stopwatch.ElapsedMilliseconds < 10_000)
         {
             current = pq.Dequeue();
             if(doMark)map.setMark(AStar.SELECTEDNODES, current.pos.x, current.pos.y);
@@ -64,7 +67,12 @@ public class Pathfinder {
                 pq.Enqueue(e.end, temp_gCost + EuclidianDistance(e.end, dest));
             }
         }
-        
+        stopwatch.Stop();
+        if (stopwatch.ElapsedMilliseconds >= 10_000)
+        {
+            UnityEngine.Debug.Log("Timed out");
+            return null;
+        }
         return new LinkedList<Edge>();
     }
 
