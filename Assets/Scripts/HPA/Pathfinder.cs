@@ -32,7 +32,7 @@ public class Pathfinder {
 
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
-        while (pq.Count > 0 && stopwatch.ElapsedMilliseconds < 10_000)
+        while (pq.Count > 0 && (stopwatch.ElapsedMilliseconds < 10_000 || !Parameters.instance.benchmark))
         {
             current = pq.Dequeue();
             if(doMark)map.setMark(AStar.SELECTEDNODES, current.pos.x, current.pos.y);

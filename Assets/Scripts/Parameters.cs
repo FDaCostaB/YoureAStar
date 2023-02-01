@@ -11,6 +11,7 @@ public class Parameters : MonoBehaviour
     public bool lockCam = false ;
     public bool doBidirectionnal = false;
     public bool skipHreachable = false;
+    public bool benchmark = false;
     public bool pause = false;
     public int heuristicMultiplier =1;
     public Heuristics heuristic;

@@ -2223,3 +2223,13 @@ Assets/Map/House.txt, (55 - 139), (49 - 106), 1, 114, 81, 33, Unidirectionnal Gr
 Assets/Map/House.txt, (55 - 139), (51 - 111), 0, 51, 67, 28, Unidirectionnal Grid, HotQueue, Octile, 1
 Assets/Map/House.txt, (55 - 139), (18 - 112), 3, 200, 155, 37, Unidirectionnal Grid, HotQueue, Octile, 1
 Assets/Map/House.txt, (55 - 139), (32 - 118), 0, 30, 91, 23, Unidirectionnal Grid, HotQueue, Octile, 1
+Assets/Map/House.txt, (107 - 122), (117 - 107), 1, 16, 0, 16, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (117 - 107), (160 - 37), 6, 7, 12, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (117 - 107), (160 - 37), 15, 480, 36, 113, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (99 - 81), (17 - 49), 4, 17, 11, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (99 - 81), (17 - 49), 7, 245, 26, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (83 - 65), (30 - 121), 4, 5, 12, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (83 - 65), (30 - 121), 10, 223, 18, 70, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (66 - 99), (54 - 73), 0, 27, 0, 27, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (60 - 85), (163 - 18), 3, 13, 15, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (60 - 85), (163 - 18), 5, 172, 19, 122, Subgoal, HotQueue, Octile, 1

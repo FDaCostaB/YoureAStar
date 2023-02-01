@@ -39,6 +39,7 @@ public class AStar {
         int[] intRead = { 0, 0, 0, 0 };
         bool saveDebug = Parameters.instance.debug;
         Parameters.instance.debug = false;
+        Parameters.instance.benchmark = true;
         Vector2Int charPos = map.currentCharPos();
 
         line = reader.ReadLine();
@@ -63,6 +64,7 @@ public class AStar {
             line = reader.ReadLine();
         }
         Parameters.instance.debug = saveDebug;
+        Parameters.instance.benchmark = false;
         map.setStart(charPos.x, charPos.y);
 
     }
@@ -184,7 +186,7 @@ public class AStar {
 
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
-        while (explore.size > 0 && stopwatch.ElapsedMilliseconds < 10_000)
+        while (explore.size > 0 && (stopwatch.ElapsedMilliseconds < 10_000 || !Parameters.instance.benchmark) )
         {
 
             min = explore.Dequeue();
@@ -277,7 +279,7 @@ public class AStar {
 
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
-        while (exploreF.size + exploreB.size > 0 && stopwatch.ElapsedMilliseconds<10_000)
+        while (exploreF.size + exploreB.size > 0 && (stopwatch.ElapsedMilliseconds < 10_000 || !Parameters.instance.benchmark) )
         {
             float c = Math.Min(exploreF.FirstPrio(), exploreB.FirstPrio());
 
@@ -428,7 +430,7 @@ public class AStar {
 
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
-        while (explore.size > 0 && stopwatch.ElapsedMilliseconds < 10_000)
+        while (explore.size > 0 && (stopwatch.ElapsedMilliseconds < 10_000 || !Parameters.instance.benchmark) )
         {
 
             min = explore.Dequeue();
