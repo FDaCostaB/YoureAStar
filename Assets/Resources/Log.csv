@@ -2233,3 +2233,901 @@ Assets/Map/House.txt, (83 - 65), (30 - 121), 10, 223, 18, 70, Subgoal, HotQueue,
 Assets/Map/House.txt, (66 - 99), (54 - 73), 0, 27, 0, 27, Subgoal, HotQueue, Octile, 1
 Assets/Map/House.txt, (60 - 85), (163 - 18), 3, 13, 15, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
 Assets/Map/House.txt, (60 - 85), (163 - 18), 5, 172, 19, 122, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (107 - 122), (25 - 82), 7, 6, 8, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (107 - 122), (25 - 82), 16, 274, 32, 82, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (99 - 114), (157 - 31), 4, 7, 13, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (99 - 114), (157 - 31), 7, 269, 19, 118, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (37 - 126), 7, 4, 15, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (37 - 126), 9, 112, 8, 52, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (171 - 38), 6, 13, 16, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (171 - 38), 18, 712, 19, 151, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (47 - 148), 6, 4, 16, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (47 - 148), 8, 73, 9, 49, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (97 - 8), 0, 127, 0, 127, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (94 - 157), 0, 24, 0, 24, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (31 - 104), 0, 59, 0, 59, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (151 - 138), 0, 63, 0, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (141 - 114), 0, 53, 0, 53, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (171 - 60), 6, 12, 15, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (171 - 60), 20, 888, 9, 151, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (166 - 29), 4, 13, 18, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (166 - 29), 12, 693, 19, 146, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (171 - 157), 0, 83, 0, 83, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (69 - 23), 6, 6, 23, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (69 - 23), 9, 286, 16, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (97 - 56), 0, 79, 0, 79, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (123 - 6), 5, 6, 21, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (123 - 6), 20, 959, 35, 128, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (126 - 69), 0, 66, 0, 66, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (139 - 128), 0, 51, 0, 51, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (141 - 45), 1, 7, 12, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (141 - 45), 6, 298, 12, 138, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (127 - 83), 3, 10, 20, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (127 - 83), 6, 257, 24, 136, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (117 - 35), 1, 7, 13, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (117 - 35), 5, 267, 12, 114, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (67 - 71), 1, 20, 19, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (67 - 71), 5, 245, 3, 156, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (105 - 5), 1, 13, 11, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (105 - 5), 7, 336, 12, 139, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (8 - 148), 1, 15, 23, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (8 - 148), 6, 338, 57, 196, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (124 - 91), 4, 8, 21, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (124 - 91), 8, 236, 24, 133, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (66 - 82), 1, 16, 22, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (66 - 82), 5, 242, 3, 145, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (30 - 5), 1, 3, 5, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (30 - 5), 4, 117, 6, 52, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (42 - 52), 1, 11, 8, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (42 - 52), 6, 308, 12, 114, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (144 - 46), 1, 7, 16, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (144 - 46), 7, 342, 12, 141, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (64 - 150), 1, 18, 28, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (64 - 150), 6, 333, 20, 197, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (121 - 155), 4, 10, 23, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (121 - 155), 211, 9448, 178, 193, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (21 - 87), 1, 18, 24, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (21 - 87), 5, 368, 6, 182, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (60 - 18), 2, 3, 6, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (60 - 18), 4, 179, 18, 57, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (27 - 68), 1, 22, 24, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (27 - 68), 5, 340, 22, 176, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (8 - 87), 4, 5, 23, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (8 - 87), 7, 211, 9, 75, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (171 - 83), 0, 90, 0, 90, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (124 - 120), 0, 43, 0, 43, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (140 - 95), 0, 59, 0, 59, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (59 - 63), 4, 6, 26, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (59 - 63), 6, 165, 12, 44, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (23 - 111), 4, 5, 21, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (23 - 111), 8, 155, 14, 60, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (113 - 35), 5, 3, 11, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (113 - 35), 6, 109, 17, 47, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (118 - 36), 4, 3, 12, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (118 - 36), 6, 98, 16, 46, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (43 - 125), 0, 44, 0, 44, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (94 - 137), 0, 56, 0, 56, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (96 - 85), 0, 15, 0, 15, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (163 - 144), 0, 82, 0, 82, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (145 - 123), 0, 64, 0, 64, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (18 - 146), 6, 3, 19, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (18 - 146), 8, 129, 56, 65, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (14 - 80), 4, 5, 26, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (14 - 80), 10, 403, 10, 69, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (152 - 101), 0, 71, 0, 71, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 143), 3, 10, 29, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 143), 8, 353, 14, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 114), 4, 7, 30, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 114), 6, 93, 19, 82, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (59 - 86), 3, 10, 35, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (59 - 86), 5, 96, 6, 74, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (93 - 39), 0, 21, 0, 21, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (168 - 164), 4, 4, 28, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (168 - 164), 40, 1811, 72, 107, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (123 - 7), 3, 10, 19, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (123 - 7), 9, 407, 33, 67, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (50 - 151), 3, 8, 36, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (50 - 151), 7, 213, 20, 119, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (152 - 18), 3, 18, 18, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (152 - 18), 6, 246, 12, 98, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (153 - 68), 8, 11, 33, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (153 - 68), 10, 140, 1, 67, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (157 - 107), 5, 9, 35, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (157 - 107), 15, 621, 40, 71, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (169 - 85), 5, 12, 35, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (169 - 85), 14, 642, 18, 83, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (107 - 17), 8, 10, 20, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (107 - 17), 14, 371, 15, 57, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (120 - 161), 9, 4, 32, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (120 - 161), 77, 3213, 51, 104, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (111 - 155), 4, 4, 33, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (111 - 155), 39, 2175, 73, 98, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (87 - 144), 4, 9, 39, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (87 - 144), 8, 333, 14, 112, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 87), 4, 5, 21, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 87), 8, 243, 19, 55, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (124 - 136), 5, 4, 31, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (124 - 136), 9, 269, 46, 79, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (124 - 94), 5, 4, 32, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (124 - 94), 22, 1191, 28, 79, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (77 - 5), 3, 13, 44, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (77 - 5), 5, 167, 20, 115, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (52 - 49), 3, 14, 37, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (52 - 49), 5, 135, 20, 87, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (101 - 156), 5, 6, 41, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (101 - 156), 11, 477, 33, 84, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (24 - 134), 4, 4, 30, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (24 - 134), 6, 104, 31, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (80 - 32), 4, 11, 40, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (80 - 32), 6, 136, 20, 88, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (8 - 163), 5, 7, 34, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (8 - 163), 10, 342, 38, 91, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (108 - 75), 5, 4, 34, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (108 - 75), 11, 469, 29, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (128 - 128), 5, 4, 35, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (128 - 128), 26, 1242, 82, 83, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (45 - 5), 4, 14, 49, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (45 - 5), 6, 150, 29, 116, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (44 - 68), 0, 5, 0, 5, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (8 - 63), 0, 38, 0, 38, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (158 - 100), 5, 4, 36, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (158 - 100), 26, 1399, 29, 113, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (123 - 15), 3, 17, 57, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (123 - 15), 5, 159, 21, 105, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (81 - 32), 4, 11, 44, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (81 - 32), 6, 137, 20, 88, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (35 - 6), 4, 12, 53, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (35 - 6), 40, 2287, 61, 148, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (74 - 51), 0, 92, 0, 92, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (171 - 147), 0, 37, 0, 37, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (62 - 108), 0, 74, 0, 74, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (168 - 112), 0, 34, 0, 34, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (171 - 147), 0, 37, 0, 37, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (90 - 71), 0, 72, 0, 72, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (163 - 87), 0, 56, 0, 56, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (43 - 10), 4, 11, 49, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (43 - 10), 39, 2205, 61, 140, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (142 - 81), 0, 62, 0, 62, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (31 - 116), 0, 105, 0, 105, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (100 - 47), 4, 4, 43, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (100 - 47), 37, 2144, 61, 95, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (97 - 6), 4, 5, 47, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (97 - 6), 37, 2165, 61, 136, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (21 - 116), 0, 115, 0, 115, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (97 - 79), 0, 64, 0, 64, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (84 - 158), 0, 52, 0, 52, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (171 - 162), 5, 5, 48, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (171 - 162), 285, 11481, 222, 153, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (97 - 49), 4, 11, 58, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (97 - 49), 13, 661, 20, 98, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (87 - 143), 4, 4, 49, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (87 - 143), 7, 235, 22, 79, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (74 - 101), 0, 57, 0, 57, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (10 - 89), 2, 6, 40, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (10 - 89), 10, 631, 20, 97, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (78 - 21), 3, 13, 60, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (78 - 21), 12, 715, 20, 126, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (153 - 77), 4, 6, 37, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (153 - 77), 99, 5639, 76, 135, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (121 - 38), 3, 9, 57, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (121 - 38), 11, 693, 20, 114, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (150 - 63), 3, 23, 57, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (150 - 63), 13, 829, 20, 143, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (70 - 45), 5, 11, 51, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (70 - 45), 13, 689, 20, 102, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (119 - 83), 4, 6, 39, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (119 - 83), 27, 1733, 28, 101, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (85 - 20), 3, 16, 61, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (85 - 20), 12, 695, 20, 127, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (133 - 159), 5, 4, 54, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (133 - 159), 12, 543, 27, 115, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (133 - 110), 0, 116, 0, 116, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (18 - 77), 2, 4, 37, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (18 - 77), 19, 1277, 28, 89, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (34 - 5), 3, 21, 65, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (34 - 5), 13, 757, 29, 154, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (77 - 160), 0, 71, 0, 71, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (171 - 159), 0, 25, 0, 25, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (107 - 159), 0, 41, 0, 41, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (12 - 89), 4, 8, 61, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (12 - 89), 18, 971, 62, 135, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (113 - 165), 0, 35, 0, 35, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (150 - 71), 0, 82, 0, 82, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (31 - 109), 0, 117, 0, 117, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (8 - 52), 4, 60, 57, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (8 - 52), 425, 15924, 276, 185, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (112 - 13), 4, 8, 65, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (112 - 13), 448, 15974, 276, 139, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (97 - 128), 0, 51, 0, 51, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (165 - 82), 0, 71, 0, 71, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (85 - 70), 0, 83, 0, 83, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (98 - 85), 0, 68, 0, 68, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (18 - 128), 5, 7, 57, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (18 - 128), 13, 506, 23, 129, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (89 - 99), 0, 59, 0, 59, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (67 - 70), 4, 4, 44, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (67 - 70), 17, 876, 62, 101, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (18 - 122), 0, 39, 0, 39, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (46 - 151), 0, 10, 0, 10, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (139 - 73), 4, 9, 54, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (139 - 73), 11, 453, 53, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (36 - 15), 2, 37, 63, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (36 - 15), 8, 471, 20, 165, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (153 - 82), 3, 3, 26, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (153 - 82), 8, 324, 67, 102, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (50 - 53), 2, 25, 56, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (50 - 53), 5, 294, 20, 129, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (150 - 16), 2, 54, 78, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (150 - 16), 5, 275, 20, 179, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (115 - 132), 4, 3, 27, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (115 - 132), 8, 298, 19, 62, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (150 - 18), 2, 55, 79, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (150 - 18), 6, 273, 20, 177, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (85 - 9), 2, 12, 68, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (85 - 9), 5, 243, 20, 151, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (171 - 158), 0, 119, 0, 119, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (84 - 92), 5, 4, 29, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (84 - 92), 10, 360, 38, 68, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (67 - 15), 2, 21, 83, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (67 - 15), 5, 275, 20, 145, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (151 - 50), 3, 41, 58, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (151 - 50), 35, 2245, 47, 157, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (12 - 6), 2, 51, 56, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (12 - 6), 18, 1129, 29, 189, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (106 - 71), 4, 4, 30, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (106 - 71), 14, 657, 52, 89, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (110 - 46), 1, 8, 45, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (110 - 46), 4, 226, 12, 88, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (18 - 123), 3, 32, 65, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (18 - 123), 6, 332, 20, 166, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (53 - 16), 0, 32, 0, 32, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (100 - 139), 4, 12, 70, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (100 - 139), 10, 459, 24, 158, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (112 - 165), 3, 14, 73, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (112 - 165), 120, 6901, 88, 184, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (24 - 37), 0, 3, 0, 3, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (123 - 8), 1, 27, 32, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (123 - 8), 7, 537, 32, 117, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (19 - 119), 3, 33, 66, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (19 - 119), 6, 337, 16, 165, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (135 - 45), 1, 8, 47, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (135 - 45), 5, 272, 12, 113, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (166 - 39), 2, 12, 52, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (166 - 39), 5, 317, 12, 144, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (171 - 15), 1, 30, 35, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (171 - 15), 6, 334, 22, 152, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (44 - 119), 3, 15, 73, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (44 - 119), 6, 261, 29, 140, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (90 - 115), 4, 14, 72, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (90 - 115), 7, 236, 17, 134, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (105 - 150), 4, 12, 73, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (105 - 150), 15, 858, 24, 169, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (15 - 148), 1, 25, 79, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (15 - 148), 5, 335, 57, 170, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (159 - 143), 4, 10, 76, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (159 - 143), 19, 869, 63, 162, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (84 - 60), 3, 10, 57, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (84 - 60), 6, 213, 11, 70, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (123 - 16), 1, 21, 92, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (123 - 16), 3, 210, 21, 114, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (143 - 62), 2, 23, 78, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (143 - 62), 6, 366, 6, 119, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (88 - 23), 2, 15, 69, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (88 - 23), 3, 179, 15, 107, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (55 - 81), 0, 21, 0, 21, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (73 - 27), 2, 14, 82, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (73 - 27), 4, 174, 6, 103, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (55 - 143), 1, 5, 60, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (55 - 143), 2, 79, 1, 74, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (34 - 57), 1, 24, 65, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (34 - 57), 4, 242, 6, 115, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (50 - 53), 1, 18, 71, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (50 - 53), 4, 194, 6, 99, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (87 - 149), 6, 5, 81, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (87 - 149), 12, 396, 33, 80, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (43 - 88), 0, 9, 0, 9, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (8 - 56), 2, 52, 81, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (8 - 56), 6, 327, 18, 167, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (39 - 104), 3, 4, 49, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (39 - 104), 4, 55, 1, 51, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (91 - 111), 4, 5, 28, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (91 - 111), 6, 97, 21, 56, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (142 - 136), 4, 14, 60, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (142 - 136), 190, 7474, 175, 107, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (15 - 46), 1, 45, 77, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (15 - 46), 5, 306, 11, 157, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (93 - 124), 4, 19, 78, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (93 - 124), 8, 325, 20, 157, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (171 - 112), 4, 21, 94, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (171 - 112), 139, 5993, 197, 175, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (83 - 93), 4, 12, 54, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (83 - 93), 10, 524, 10, 126, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (131 - 139), 5, 19, 86, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (131 - 139), 156, 6564, 187, 172, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (139 - 127), 4, 10, 88, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (139 - 127), 31, 1601, 87, 160, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (52 - 56), 1, 18, 30, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (52 - 56), 4, 239, 13, 99, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (60 - 123), 4, 16, 86, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (60 - 123), 9, 434, 15, 156, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (125 - 112), 4, 10, 89, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (125 - 112), 9, 398, 29, 145, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (95 - 96), 4, 12, 58, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (95 - 96), 21, 1246, 54, 129, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (64 - 50), 1, 12, 32, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (64 - 50), 5, 247, 7, 87, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (55 - 158), 2, 20, 102, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (55 - 158), 6, 386, 20, 191, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (59 - 67), 2, 54, 88, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (59 - 67), 7, 396, 12, 155, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (155 - 32), 1, 26, 48, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (155 - 32), 6, 449, 12, 149, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (153 - 140), 4, 14, 94, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (153 - 140), 21, 1162, 57, 173, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (61 - 83), 1, 39, 84, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (61 - 83), 5, 290, 7, 139, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (72 - 21), 0, 65, 0, 65, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (58 - 75), 4, 49, 82, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (58 - 75), 27, 1201, 27, 131, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (69 - 103), 4, 16, 92, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (69 - 103), 20, 1167, 27, 120, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (151 - 156), 4, 20, 91, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (151 - 156), 46, 2801, 55, 173, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (27 - 68), 2, 55, 90, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (27 - 68), 18, 1269, 27, 155, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (133 - 44), 1, 7, 51, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (133 - 44), 18, 1207, 27, 109, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (8 - 149), 2, 35, 107, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (8 - 149), 20, 1287, 57, 175, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (48 - 130), 3, 18, 97, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (48 - 130), 21, 1343, 27, 147, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (171 - 21), 2, 28, 49, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (171 - 21), 18, 1321, 27, 147, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (49 - 84), 3, 44, 94, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (49 - 84), 19, 1199, 27, 133, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (163 - 121), 4, 17, 100, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (163 - 121), 41, 2313, 91, 151, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (156 - 97), 5, 24, 103, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (156 - 97), 86, 4818, 90, 144, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (72 - 94), 4, 14, 99, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (72 - 94), 20, 1140, 27, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (140 - 45), 1, 7, 52, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (140 - 45), 18, 1250, 27, 116, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (124 - 151), 4, 20, 97, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (124 - 151), 38, 2393, 45, 168, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (87 - 46), 2, 5, 26, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (87 - 46), 16, 1107, 27, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (63 - 26), 0, 40, 0, 40, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (74 - 42), 1, 5, 28, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (74 - 42), 3, 130, 6, 47, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (50 - 153), 2, 22, 115, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (50 - 153), 6, 321, 20, 158, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (129 - 71), 3, 23, 103, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (129 - 71), 6, 234, 24, 105, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (27 - 150), 4, 18, 102, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (27 - 150), 12, 540, 48, 155, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (34 - 10), 0, 19, 0, 19, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (65 - 165), 2, 35, 120, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (65 - 165), 6, 296, 20, 170, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (164 - 13), 1, 39, 44, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (164 - 13), 5, 359, 15, 140, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (155 - 34), 1, 22, 55, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (155 - 34), 5, 326, 12, 119, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (39 - 150), 4, 24, 116, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (39 - 150), 8, 277, 20, 155, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (38 - 69), 3, 55, 89, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (38 - 69), 7, 297, 23, 132, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (50 - 124), 3, 18, 108, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (50 - 124), 8, 269, 27, 129, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (16 - 148), 2, 25, 123, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (16 - 148), 6, 282, 57, 155, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (147 - 96), 4, 21, 106, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (147 - 96), 9, 362, 29, 123, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (41 - 41), 1, 26, 30, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (41 - 41), 4, 186, 6, 82, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (163 - 78), 4, 37, 93, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (163 - 78), 14, 787, 24, 139, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (162 - 147), 4, 13, 101, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (162 - 147), 38, 1495, 109, 152, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (64 - 118), 0, 104, 0, 104, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (151 - 60), 1, 3, 25, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (151 - 60), 3, 130, 22, 52, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (139 - 81), 3, 25, 107, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (139 - 81), 9, 427, 18, 95, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (101 - 164), 3, 8, 105, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (101 - 164), 11, 671, 18, 149, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (69 - 55), 1, 8, 72, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (69 - 55), 4, 198, 18, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (34 - 133), 3, 9, 117, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (34 - 133), 8, 301, 41, 118, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (62 - 103), 3, 9, 118, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (62 - 103), 6, 221, 18, 88, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (8 - 46), 1, 25, 84, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (8 - 46), 6, 359, 18, 124, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (11 - 76), 1, 46, 133, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (11 - 76), 29, 1846, 42, 139, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (167 - 132), 3, 25, 102, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (167 - 132), 12, 579, 65, 123, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (158 - 111), 4, 27, 108, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (158 - 111), 27, 1436, 71, 114, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (37 - 75), 2, 42, 139, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (37 - 75), 5, 275, 18, 113, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (15 - 23), 1, 12, 53, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (15 - 23), 6, 391, 18, 117, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (35 - 151), 4, 13, 118, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (35 - 151), 16, 816, 40, 136, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (171 - 122), 3, 30, 106, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (171 - 122), 23, 1180, 55, 127, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (27 - 81), 1, 42, 143, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (27 - 81), 6, 389, 18, 123, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (123 - 28), 2, 17, 118, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (123 - 28), 5, 202, 27, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (64 - 150), 1, 3, 27, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (64 - 150), 2, 23, 1, 20, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (20 - 122), 0, 36, 0, 36, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (150 - 50), 2, 45, 120, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (150 - 50), 31, 1999, 47, 135, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (62 - 117), 3, 3, 52, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (62 - 117), 5, 79, 8, 22, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (111 - 5), 2, 37, 147, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (111 - 5), 12, 833, 22, 134, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (41 - 104), 0, 36, 0, 36, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (39 - 107), 0, 33, 0, 33, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (74 - 76), 4, 10, 93, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (74 - 76), 6, 114, 20, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (166 - 148), 4, 5, 72, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (166 - 148), 7, 280, 3, 122, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (37 - 116), 0, 24, 0, 24, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (88 - 65), 4, 12, 93, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (88 - 65), 6, 137, 20, 74, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (49 - 106), 0, 34, 0, 34, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (51 - 111), 0, 29, 0, 29, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (18 - 112), 0, 38, 0, 38, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (32 - 118), 0, 24, 0, 24, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (37 - 126), 5, 4, 113, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (37 - 126), 7, 112, 8, 52, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (171 - 38), 5, 53, 104, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (171 - 38), 17, 712, 19, 151, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (47 - 148), 5, 5, 113, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (47 - 148), 6, 73, 9, 49, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (97 - 8), 0, 127, 0, 127, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (94 - 157), 0, 24, 0, 24, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (31 - 104), 0, 59, 0, 59, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (151 - 138), 0, 63, 0, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (141 - 114), 0, 53, 0, 53, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (171 - 60), 5, 60, 91, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (171 - 60), 16, 888, 9, 151, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (166 - 29), 5, 51, 106, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (166 - 29), 14, 693, 19, 146, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (171 - 157), 0, 83, 0, 83, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (69 - 23), 5, 10, 113, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (69 - 23), 8, 286, 16, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (97 - 56), 0, 79, 0, 79, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (123 - 6), 11, 17, 118, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (123 - 6), 27, 959, 35, 128, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (126 - 69), 0, 66, 0, 66, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (89 - 134), (139 - 128), 0, 51, 0, 51, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (141 - 45), 11, 11, 70, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (141 - 45), 16, 298, 12, 138, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (127 - 83), 3, 23, 121, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (127 - 83), 6, 257, 24, 136, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (117 - 35), 2, 14, 65, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (117 - 35), 5, 267, 12, 114, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (67 - 71), 1, 60, 126, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (67 - 71), 4, 245, 3, 156, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (105 - 5), 1, 39, 52, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (105 - 5), 5, 336, 12, 139, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (8 - 148), 2, 46, 135, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (8 - 148), 6, 338, 57, 196, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (124 - 91), 3, 14, 114, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (124 - 91), 6, 236, 24, 133, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (66 - 82), 1, 49, 116, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (66 - 82), 4, 242, 3, 145, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (30 - 5), 1, 3, 23, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (30 - 5), 2, 117, 6, 52, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (42 - 52), 1, 33, 26, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (42 - 52), 4, 308, 12, 114, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (144 - 46), 1, 12, 69, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (144 - 46), 6, 342, 12, 141, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (64 - 150), 1, 53, 133, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (64 - 150), 5, 333, 20, 197, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (121 - 155), 4, 31, 108, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (121 - 155), 206, 9448, 178, 193, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (21 - 87), 1, 55, 118, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (21 - 87), 5, 368, 6, 182, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (60 - 18), 1, 4, 23, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (60 - 18), 4, 179, 18, 57, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (27 - 68), 2, 66, 118, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (25 - 57), (27 - 68), 5, 340, 22, 176, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (8 - 87), 4, 8, 107, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (8 - 87), 6, 211, 9, 75, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (171 - 83), 0, 90, 0, 90, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (124 - 120), 0, 43, 0, 43, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (140 - 95), 0, 59, 0, 59, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (59 - 63), 4, 10, 113, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (59 - 63), 6, 165, 12, 44, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (23 - 111), 5, 7, 99, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (23 - 111), 7, 155, 14, 60, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (113 - 35), 4, 3, 27, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (113 - 35), 6, 109, 17, 47, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (118 - 36), 4, 3, 27, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (118 - 36), 5, 98, 16, 46, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (43 - 125), 0, 44, 0, 44, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (94 - 137), 0, 56, 0, 56, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (96 - 85), 0, 15, 0, 15, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (163 - 144), 0, 82, 0, 82, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (145 - 123), 0, 64, 0, 64, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (18 - 146), 6, 4, 84, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (18 - 146), 8, 129, 56, 65, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (14 - 80), 4, 8, 107, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (14 - 80), 9, 403, 10, 69, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (82 - 82), (152 - 101), 0, 71, 0, 71, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 143), 4, 20, 112, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 143), 8, 353, 14, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 114), 5, 15, 105, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 114), 6, 93, 19, 82, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (59 - 86), 4, 23, 126, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (59 - 86), 5, 96, 6, 74, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (93 - 39), 0, 21, 0, 21, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (168 - 164), 5, 11, 94, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (168 - 164), 36, 1811, 72, 107, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (123 - 7), 2, 25, 57, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (123 - 7), 7, 407, 33, 67, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (50 - 151), 3, 19, 125, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (50 - 151), 6, 213, 20, 119, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (152 - 18), 2, 39, 54, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (152 - 18), 5, 246, 12, 98, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (153 - 68), 4, 25, 108, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (153 - 68), 6, 140, 1, 67, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (157 - 107), 4, 19, 117, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (157 - 107), 14, 621, 40, 71, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (169 - 85), 4, 34, 107, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (169 - 85), 14, 642, 18, 83, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (107 - 17), 2, 21, 57, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (107 - 17), 6, 371, 15, 57, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (120 - 161), 5, 6, 94, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (120 - 161), 59, 3213, 51, 104, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (111 - 155), 5, 5, 94, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (111 - 155), 38, 2175, 73, 98, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (87 - 144), 4, 16, 117, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (87 - 144), 8, 333, 14, 112, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 87), 5, 9, 58, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (73 - 33), (92 - 87), 9, 243, 19, 55, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (124 - 136), 5, 7, 92, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (124 - 136), 11, 269, 46, 79, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (124 - 94), 6, 7, 93, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (124 - 94), 25, 1191, 28, 79, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (77 - 5), 3, 20, 127, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (77 - 5), 6, 167, 20, 115, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (52 - 49), 3, 28, 112, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (52 - 49), 6, 135, 20, 87, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (101 - 156), 5, 10, 121, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (101 - 156), 12, 477, 33, 84, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (24 - 134), 5, 4, 81, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (24 - 134), 6, 104, 31, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (80 - 32), 6, 18, 116, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (80 - 32), 10, 136, 20, 88, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (8 - 163), 8, 9, 95, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (8 - 163), 15, 342, 38, 91, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (108 - 75), 5, 4, 94, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (108 - 75), 13, 469, 29, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (128 - 128), 7, 9, 92, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (128 - 128), 30, 1242, 82, 83, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (45 - 5), 4, 25, 126, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (45 - 5), 6, 150, 29, 116, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (44 - 68), 0, 5, 0, 5, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (8 - 63), 0, 38, 0, 38, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (158 - 100), 8, 9, 93, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (158 - 100), 31, 1399, 29, 113, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (123 - 15), 4, 29, 141, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (123 - 15), 6, 159, 21, 105, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (81 - 32), 4, 18, 116, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (45 - 72), (81 - 32), 6, 137, 20, 88, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (35 - 6), 4, 21, 129, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (35 - 6), 46, 2287, 61, 148, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (74 - 51), 0, 92, 0, 92, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (171 - 147), 0, 37, 0, 37, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (62 - 108), 0, 74, 0, 74, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (168 - 112), 0, 34, 0, 34, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (171 - 147), 0, 37, 0, 37, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (90 - 71), 0, 72, 0, 72, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (163 - 87), 0, 56, 0, 56, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (43 - 10), 5, 18, 114, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (43 - 10), 44, 2205, 61, 140, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (142 - 81), 0, 62, 0, 62, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (31 - 116), 0, 105, 0, 105, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (100 - 47), 5, 4, 92, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (100 - 47), 40, 2144, 61, 95, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (97 - 6), 4, 6, 100, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (97 - 6), 38, 2165, 61, 136, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (21 - 116), 0, 115, 0, 115, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (97 - 79), 0, 64, 0, 64, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (135 - 142), (84 - 158), 0, 52, 0, 52, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (171 - 162), 6, 13, 113, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (171 - 162), 295, 11481, 222, 153, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (97 - 49), 4, 15, 129, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (97 - 49), 12, 661, 20, 98, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (87 - 143), 4, 6, 111, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (87 - 143), 7, 235, 22, 79, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (74 - 101), 0, 57, 0, 57, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (10 - 89), 2, 14, 92, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (10 - 89), 10, 631, 20, 97, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (78 - 21), 3, 20, 132, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (78 - 21), 12, 715, 20, 126, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (153 - 77), 5, 14, 85, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (153 - 77), 101, 5639, 76, 135, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (121 - 38), 3, 12, 120, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (121 - 38), 12, 693, 20, 114, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (150 - 63), 3, 40, 121, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (150 - 63), 14, 829, 20, 143, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (70 - 45), 5, 19, 116, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (70 - 45), 20, 689, 20, 102, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (119 - 83), 5, 12, 86, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (119 - 83), 28, 1733, 28, 101, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (85 - 20), 3, 24, 128, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (85 - 20), 12, 695, 20, 127, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (133 - 159), 5, 6, 113, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (133 - 159), 13, 543, 27, 115, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (133 - 110), 0, 116, 0, 116, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (18 - 77), 2, 8, 81, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (18 - 77), 19, 1277, 28, 89, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (34 - 5), 3, 38, 131, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (18 - 112), (34 - 5), 13, 757, 29, 154, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (77 - 160), 0, 71, 0, 71, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (171 - 159), 0, 25, 0, 25, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (107 - 159), 0, 41, 0, 41, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (12 - 89), 4, 14, 125, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (12 - 89), 19, 971, 62, 135, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (113 - 165), 0, 35, 0, 35, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (150 - 71), 0, 82, 0, 82, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (31 - 109), 0, 117, 0, 117, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (8 - 52), 5, 109, 117, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (8 - 52), 423, 15924, 276, 185, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (112 - 13), 4, 8, 120, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (112 - 13), 420, 15974, 276, 139, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (97 - 128), 0, 51, 0, 51, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (165 - 82), 0, 71, 0, 71, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (85 - 70), 0, 83, 0, 83, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (98 - 85), 0, 68, 0, 68, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (18 - 128), 5, 9, 118, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (18 - 128), 11, 506, 23, 129, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (89 - 99), 0, 59, 0, 59, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (67 - 70), 4, 5, 94, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (147 - 152), (67 - 70), 17, 876, 62, 101, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (18 - 122), 0, 39, 0, 39, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (46 - 151), 0, 10, 0, 10, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (139 - 73), 4, 14, 109, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (139 - 73), 11, 453, 53, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (36 - 15), 2, 72, 114, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (36 - 15), 8, 471, 20, 165, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (153 - 82), 7, 5, 52, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (153 - 82), 12, 324, 67, 102, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (50 - 53), 4, 53, 102, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (50 - 53), 7, 294, 20, 129, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (150 - 16), 3, 95, 139, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (150 - 16), 7, 275, 20, 179, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (115 - 132), 5, 4, 52, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (115 - 132), 9, 298, 19, 62, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (150 - 18), 3, 93, 139, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (150 - 18), 7, 273, 20, 177, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (85 - 9), 8, 21, 123, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (85 - 9), 12, 243, 20, 151, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (171 - 158), 0, 119, 0, 119, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (84 - 92), 15, 8, 55, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (84 - 92), 20, 360, 38, 68, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (67 - 15), 2, 37, 147, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (67 - 15), 5, 275, 20, 145, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (151 - 50), 3, 68, 103, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (151 - 50), 34, 2245, 47, 157, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (12 - 6), 3, 92, 96, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (12 - 6), 17, 1129, 29, 189, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (106 - 71), 4, 8, 55, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (53 - 160), (106 - 71), 14, 657, 52, 89, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (110 - 46), 1, 9, 69, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (110 - 46), 4, 226, 12, 88, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (18 - 123), 3, 50, 114, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (18 - 123), 7, 332, 20, 166, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (53 - 16), 0, 32, 0, 32, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (100 - 139), 4, 21, 106, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (100 - 139), 9, 459, 24, 158, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (112 - 165), 4, 29, 109, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (112 - 165), 124, 6901, 88, 184, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (24 - 37), 0, 3, 0, 3, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (123 - 8), 1, 35, 52, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (123 - 8), 8, 537, 32, 117, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (19 - 119), 3, 52, 112, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (19 - 119), 7, 337, 16, 165, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (135 - 45), 1, 9, 70, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (135 - 45), 5, 272, 12, 113, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (166 - 39), 2, 14, 78, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (166 - 39), 5, 317, 12, 144, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (171 - 15), 1, 40, 54, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (171 - 15), 5, 334, 22, 152, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (44 - 119), 3, 26, 120, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (44 - 119), 6, 261, 29, 140, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (90 - 115), 4, 26, 113, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (90 - 115), 7, 236, 17, 134, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (105 - 150), 4, 21, 106, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (105 - 150), 15, 858, 24, 169, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (15 - 148), 2, 38, 131, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (15 - 148), 8, 335, 57, 170, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (159 - 143), 4, 14, 113, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (22 - 36), (159 - 143), 17, 869, 63, 162, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (84 - 60), 3, 15, 97, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (84 - 60), 6, 213, 11, 70, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (123 - 16), 1, 28, 141, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (123 - 16), 4, 210, 21, 114, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (143 - 62), 2, 35, 118, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (143 - 62), 6, 366, 6, 119, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (88 - 23), 2, 23, 111, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (88 - 23), 4, 179, 15, 107, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (55 - 81), 0, 21, 0, 21, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (73 - 27), 2, 21, 124, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (73 - 27), 4, 174, 6, 103, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (55 - 143), 1, 6, 97, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (55 - 143), 3, 79, 1, 74, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (34 - 57), 2, 40, 101, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (34 - 57), 4, 242, 6, 115, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (50 - 53), 1, 30, 110, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (50 - 53), 3, 194, 6, 99, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (87 - 149), 3, 8, 123, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (87 - 149), 10, 396, 33, 80, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (43 - 88), 0, 9, 0, 9, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (8 - 56), 1, 82, 115, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (8 - 56), 5, 327, 18, 167, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (39 - 104), 2, 4, 81, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (39 - 104), 3, 55, 1, 51, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (91 - 111), 3, 7, 42, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (91 - 111), 5, 97, 21, 56, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (142 - 136), 4, 19, 99, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (142 - 136), 163, 7474, 175, 107, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (15 - 46), 2, 69, 107, 9, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (35 - 89), (15 - 46), 5, 306, 11, 157, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (93 - 124), 4, 27, 112, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (93 - 124), 8, 325, 20, 157, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (171 - 112), 4, 29, 128, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (171 - 112), 141, 5993, 197, 175, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (83 - 93), 5, 15, 71, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (83 - 93), 11, 524, 10, 126, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (131 - 139), 4, 27, 111, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (131 - 139), 151, 6564, 187, 172, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (139 - 127), 4, 13, 111, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (139 - 127), 32, 1601, 87, 160, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (52 - 56), 1, 24, 34, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (52 - 56), 4, 239, 13, 99, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (60 - 123), 3, 23, 116, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (60 - 123), 9, 434, 15, 156, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (125 - 112), 4, 13, 111, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (125 - 112), 9, 398, 29, 145, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (95 - 96), 4, 17, 69, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (95 - 96), 21, 1246, 54, 129, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (64 - 50), 1, 15, 37, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (64 - 50), 4, 247, 7, 87, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (55 - 158), 2, 29, 132, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (55 - 158), 6, 386, 20, 191, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (59 - 67), 2, 65, 122, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (59 - 67), 6, 396, 12, 155, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (155 - 32), 1, 30, 63, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (155 - 32), 6, 449, 12, 149, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (153 - 140), 4, 19, 115, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (153 - 140), 22, 1162, 57, 173, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (61 - 83), 2, 48, 111, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (61 - 83), 5, 290, 7, 139, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (8 - 31), (72 - 21), 0, 65, 0, 65, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (58 - 75), 2, 57, 109, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (58 - 75), 19, 1201, 27, 131, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (69 - 103), 4, 22, 118, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (69 - 103), 21, 1167, 27, 120, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (151 - 156), 5, 25, 111, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (151 - 156), 47, 2801, 55, 173, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (27 - 68), 2, 66, 118, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (27 - 68), 19, 1269, 27, 155, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (133 - 44), 1, 7, 63, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (133 - 44), 17, 1207, 27, 109, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (8 - 149), 2, 44, 136, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (8 - 149), 18, 1287, 57, 175, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (48 - 130), 4, 24, 122, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (48 - 130), 22, 1343, 27, 147, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (171 - 21), 2, 31, 62, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (171 - 21), 18, 1321, 27, 147, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (49 - 84), 3, 52, 120, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (49 - 84), 20, 1199, 27, 133, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (163 - 121), 4, 19, 122, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (163 - 121), 41, 2313, 91, 151, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (156 - 97), 4, 29, 126, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (156 - 97), 86, 4818, 90, 144, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (72 - 94), 4, 18, 121, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (72 - 94), 19, 1140, 27, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (140 - 45), 2, 7, 63, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (140 - 45), 18, 1250, 27, 116, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (124 - 151), 4, 26, 112, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (124 - 151), 39, 2393, 45, 168, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (87 - 46), 2, 5, 29, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (87 - 46), 17, 1107, 27, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (24 - 26), (63 - 26), 0, 40, 0, 40, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (74 - 42), 1, 5, 29, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (74 - 42), 3, 130, 6, 47, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (50 - 153), 2, 29, 133, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (50 - 153), 6, 321, 20, 158, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (129 - 71), 4, 23, 121, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (129 - 71), 6, 234, 24, 105, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (27 - 150), 4, 22, 117, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (27 - 150), 14, 540, 48, 155, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (34 - 10), 0, 19, 0, 19, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (65 - 165), 2, 41, 137, 8, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (65 - 165), 6, 296, 20, 170, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (164 - 13), 1, 42, 52, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (164 - 13), 5, 359, 15, 140, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (155 - 34), 1, 22, 63, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (155 - 34), 5, 326, 12, 119, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (39 - 150), 4, 31, 130, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (39 - 150), 8, 277, 20, 155, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (38 - 69), 3, 61, 104, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (38 - 69), 7, 297, 23, 132, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (50 - 124), 4, 22, 124, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (50 - 124), 7, 269, 27, 129, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (16 - 148), 2, 30, 138, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (16 - 148), 6, 282, 57, 155, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (147 - 96), 4, 21, 123, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (147 - 96), 8, 362, 29, 123, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (41 - 41), 1, 28, 32, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (41 - 41), 4, 186, 6, 82, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (163 - 78), 4, 38, 108, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (163 - 78), 14, 787, 24, 139, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (162 - 147), 4, 14, 112, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (36 - 28), (162 - 147), 31, 1495, 109, 152, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (64 - 118), 0, 104, 0, 104, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (151 - 60), 1, 3, 28, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (151 - 60), 3, 130, 22, 52, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (139 - 81), 3, 27, 115, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (139 - 81), 9, 427, 18, 95, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (101 - 164), 3, 8, 114, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (101 - 164), 10, 671, 18, 149, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (69 - 55), 1, 8, 78, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (69 - 55), 4, 198, 18, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (34 - 133), 3, 12, 127, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (34 - 133), 7, 301, 41, 118, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (62 - 103), 3, 11, 127, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (62 - 103), 6, 221, 18, 88, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (8 - 46), 1, 25, 91, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (8 - 46), 5, 359, 18, 124, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (11 - 76), 2, 49, 145, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (11 - 76), 29, 1846, 42, 139, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (167 - 132), 3, 26, 109, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (167 - 132), 12, 579, 65, 123, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (158 - 111), 3, 29, 113, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (158 - 111), 28, 1436, 71, 114, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (37 - 75), 5, 44, 148, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (37 - 75), 9, 275, 18, 113, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (15 - 23), 2, 12, 58, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (15 - 23), 8, 391, 18, 117, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (35 - 151), 5, 16, 124, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (35 - 151), 17, 816, 40, 136, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (171 - 122), 4, 32, 110, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (171 - 122), 29, 1180, 55, 127, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (27 - 81), 13, 44, 148, 7, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (120 - 15), (27 - 81), 18, 389, 18, 123, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (123 - 28), 2, 19, 120, 5, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (123 - 28), 5, 202, 27, 111, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (64 - 150), 1, 3, 27, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (64 - 150), 2, 23, 1, 20, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (20 - 122), 0, 36, 0, 36, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (150 - 50), 2, 46, 123, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (150 - 50), 32, 1999, 47, 135, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (62 - 117), 3, 3, 52, 2, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (62 - 117), 4, 79, 8, 22, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (111 - 5), 2, 39, 148, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (111 - 5), 12, 833, 22, 134, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (41 - 104), 0, 36, 0, 36, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (39 - 107), 0, 33, 0, 33, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (74 - 76), 4, 10, 95, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (74 - 76), 6, 114, 20, 63, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (166 - 148), 4, 5, 72, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (166 - 148), 7, 280, 3, 122, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (37 - 116), 0, 24, 0, 24, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (88 - 65), 4, 12, 93, 3, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (88 - 65), 6, 137, 20, 74, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (49 - 106), 0, 34, 0, 34, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (51 - 111), 0, 29, 0, 29, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (18 - 112), 0, 38, 0, 38, Subgoal, HotQueue, Octile, 1
+Assets/Map/House.txt, (55 - 139), (32 - 118), 0, 24, 0, 24, Subgoal, HotQueue, Octile, 1
