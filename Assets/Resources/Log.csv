@@ -2782,3 +2782,5 @@ Assets/Map/House.txt, (105 - 86), (8 - 44), 4, 15, 10, 6, FindAbstractPath - SG 
 Assets/Map/House.txt, (105 - 86), (3 - 44), 7, 286, 10, 119, Subgoal, HotQueue, Octile, 1
 Assets/Map/Paris.txt, (143 - 0), (275 - 149), 553, 260, 44, 105, FindAbstractPath - SG Graph, HotQueue, Octile, 1
 Assets/Map/Paris.txt, (143 - 0), (275 - 149), 1090, 324, 2, 185, Subgoal-TL, HotQueue, Octile, 1
+House, (107 - 123), (154 - 50), 11, 5, 13, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+House, (107 - 123), (154 - 50), 31, 1050, 22, 122, Subgoal, HotQueue, Octile, 1

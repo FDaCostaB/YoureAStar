@@ -5,27 +5,22 @@ using UnityEngine;
 using System;
 
 public class MapReader {
-	StreamReader reader;
-	String fileName;
+	TextAsset mapFile;
+	string name;
 
-	public MapReader(string path) {
-		reader = new StreamReader(path);
-		fileName = path;
+	public MapReader(TextAsset map) {
+		mapFile = map;
+		name = map.name;
 	}
 
 	public Map read() {
-		Map m = new Map(fileName);
+		Map m = new Map(name);
 		string line = null;
 		int i=0;
+        List<string> lines = new List<string>(mapFile.text.Split('\n'));
 
-		try {
-			line = reader.ReadLine();
-		} catch (Exception e) {
-			Debug.LogError("ReadLine failed : " + e);
-			Application.Quit();
-            return null;
-		}
-		while (line.Length > 0) {
+		line = lines[0];
+		while ( i < lines.Count) {
 			if (line[0] == ';') {
 				return m;
 			} else {
@@ -52,14 +47,12 @@ public class MapReader {
 							m.add(0,x,i);
 							break;
 						default:
-							Debug.LogError("Unknown character encounter while reading the map");
-							Application.Quit();
 							break;
 					}
 					m.setMark(AStar.EMPTY,x,i);
 				}
 			}
-			line = reader.ReadLine();
+			line = lines[i];
 			i++;
 		}
 		Debug.Log(m.Height());

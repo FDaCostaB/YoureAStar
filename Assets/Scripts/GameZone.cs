@@ -10,8 +10,8 @@ using Unity.Mathematics;
 
 public class GameZone : MonoBehaviour, IObserver
 {
-    string mapPath;
     public string[] mapsPath;
+    public TextAsset mapFile;
     public GameObject pauseMenu;
     public GameObject benchmarkMenu;
     public TextMeshProUGUI xStart;
@@ -44,10 +44,11 @@ public class GameZone : MonoBehaviour, IObserver
     private Controller c;
 
     private void Start(){
-        mapPath = mapsPath[0];
-        Debug.Log(mapPath);
+        mapFile = Resources.Load<TextAsset>(mapsPath[0]);
+        Debug.Log(mapsPath[0]);
+        Debug.Log(mapFile);
         characterList = new List<Transform>();
-		MapReader mapReader = new MapReader(mapPath);
+		MapReader mapReader = new MapReader(mapFile);
 		map = mapReader.read();
         map.Attach(this);
         updateStart(map.CharacterX(), map.CharacterY());
@@ -73,13 +74,13 @@ public class GameZone : MonoBehaviour, IObserver
 
     public void updateMapPath(int value)
     {
-        mapPath = mapsPath[value];
+        mapFile = (TextAsset)Resources.Load(mapsPath[value], typeof(TextAsset));
     }
 
-    public void generatePaths()
-    {
-        map.GenerateBenchmark();
-    }
+//    public void generatePaths()
+//    {
+//        map.GenerateBenchmark();
+//    }
 
     public void readPaths()
     {
@@ -90,7 +91,7 @@ public class GameZone : MonoBehaviour, IObserver
     {
         CursorController.instance.SetLoading();
         c.cancelMove();
-        MapReader mapReader = new MapReader(mapPath);
+        MapReader mapReader = new MapReader(mapFile);
         map = mapReader.read();
         map.Attach(this);
         c = new Controller(map, cam, this);

@@ -29,8 +29,8 @@ public class AStar {
 
     public void readPaths()
     {
-        Map m = new Map(map.pathFile);
-        StreamReader reader = new StreamReader(map.pathFile);
+        Map m = new Map(map.name);
+        StreamReader reader = new StreamReader(map.name);
         string line = null;
         int[] intRead = { 0, 0, 0, 0 };
         bool saveDebug = Parameters.instance.debug;

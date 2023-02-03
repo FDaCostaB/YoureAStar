@@ -7224,16 +7224,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapsPath:
-  - Map/House.txt
-  - Map/Flat.txt
-  - Map/Maze.txt
-  - Map/Amsterdam.txt
-  - Map/Cauldron.txt
-  - Map/FloodedPlains.txt
-  - Map/TheFrozenSea.txt
-  - Map/London.txt
-  - Map/Paris.txt
-  - Map/Tehran.txt
+  - Map/House
+  - Map/Flat
+  - Map/Maze
+  - Map/Amsterdam
+  - Map/Cauldron
+  - Map/FloodedPlains
+  - Map/TheFrozenSea
+  - Map/London
+  - Map/Paris
+  - Map/Tehran
+  mapFile: {fileID: 0}
   pauseMenu: {fileID: 1725157078}
   benchmarkMenu: {fileID: 1643987874}
   xStart: {fileID: 1420342798}
