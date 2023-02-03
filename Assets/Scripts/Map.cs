@@ -17,6 +17,7 @@ public class Map : Subject {
 	int [,] content;
 	int width, height;
     int charcater = 0;
+	bool characterAdded = false;
 	public int FreeTiles = 0;
 	public string name ="";
 	List<Vector2Int> characterPos = new List<Vector2Int>();
@@ -91,10 +92,12 @@ public class Map : Subject {
 		add(WATER, x, y);
 	}
 
-	public void addCharacter(int x, int y) { 
+	public void addCharacter(int x, int y) {
+		if (characterAdded) return;
 		add(CHARACTER, x, y);
 		characterPos.Add(new Vector2Int(x,y));
 		FreeTiles++;
+		characterAdded = true;
 	}
 
 	public void selectChar(int x, int y) {

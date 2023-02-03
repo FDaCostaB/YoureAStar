@@ -34,22 +34,24 @@ public class MapReader {
 							break;
 						case 'X':
 							m.addCharacter(x,i);
-							break;
+                            m.setMark(AStar.EMPTY, x, i);
+                            break;
 						case '%':
 						case 'W':
 							m.addWater(x,i);
-							break;
+                            break;
 						case ' ':
 						case '$':
 						case '.':
 						case 'G':
 						case 'S':
 							m.add(0,x,i);
-							break;
+                            m.setMark(AStar.EMPTY, x, i);
+                            break;
 						default:
 							break;
 					}
-					m.setMark(AStar.EMPTY,x,i);
+					
 				}
 			}
 			line = lines[i];
