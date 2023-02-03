@@ -162,15 +162,17 @@ public class SubGoalGraph {
     public Move path(Vector2Int goal){
         Move cp = TryDirectPath(goal);
         if(cp.Steps().Count > 0){
-            return cp;
+            for (int i = 0; i < cp.Steps().Count; i++)
+                if(map.isIn(cp.Steps()[i].toX, cp.Steps()[i].toX))
+                map.setMark(AStar.PATH, cp.Steps()[i].toX, cp.Steps()[i].toY);
+                return cp;
         }
         int fromX = CharacterX();
         int fromY = CharacterY();
 
         Move globalPath = measureFindAbstractPath(goal);
-        globalPath.scanned += cp.scanned;
-
-        if(globalPath.Steps().Count == 0) return null;
+        if (globalPath == null || globalPath.Steps().Count == 0) return null;
+        if (globalPath != null) globalPath.scanned += cp.scanned;
 
         //TODO : State that extra time from measureFindAbstract can be skipped (give a direction and a length (path not magnetize to grid))
         if (!Parameters.instance.skipHreachable)

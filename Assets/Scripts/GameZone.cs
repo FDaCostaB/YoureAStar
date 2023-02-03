@@ -13,6 +13,7 @@ public class GameZone : MonoBehaviour, IObserver
     string mapPath;
     public TextAsset[] maps;
     public GameObject pauseMenu;
+    public GameObject benchmarkMenu;
     public TextMeshProUGUI xStart;
     public TextMeshProUGUI yStart;
     public TextMeshProUGUI xGoal;
@@ -163,6 +164,11 @@ public class GameZone : MonoBehaviour, IObserver
     public void updateBidirectionnal(bool value)
     {
         Parameters.instance.doBidirectionnal= value;
+    }
+
+    public void toogleBenchmark()
+    {
+        benchmarkMenu.SetActive(!benchmarkMenu.activeInHierarchy);
     }
 
     public void updateDebug(bool value)

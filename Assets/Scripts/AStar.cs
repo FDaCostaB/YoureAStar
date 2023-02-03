@@ -281,10 +281,19 @@ public class AStar {
         stopwatch.Start();
         while (exploreF.size + exploreB.size > 0 && (stopwatch.ElapsedMilliseconds < 10_000 || !Parameters.instance.benchmark) )
         {
-            float c = Math.Min(exploreF.FirstPrio(), exploreB.FirstPrio());
+            float c = 0;
+            if (exploreF.size > 0 && exploreB.size > 0) c = Math.Min(exploreF.FirstPrio(), exploreB.FirstPrio());
+            else if (exploreF.size > 0) c = exploreF.FirstPrio();
+            else if (exploreB.size > 0) c = exploreB.FirstPrio();
 
             //If stopping condition
-            if (u <= Math.Max(Math.Max(Math.Max(c, exploreF.FirstPrio()), exploreB.FirstPrio()), distF[exploreF.First().x, exploreF.First().y] + distB[exploreB.First().x, exploreB.First().y] + 1))
+            float max = 0;
+            if (exploreF.size > 0) max = Math.Max(c, exploreF.FirstPrio());
+            if (exploreB.size > 0) max = Math.Max(max, exploreB.FirstPrio());
+            if (exploreF.size > 0 && exploreB.size > 0) max = Math.Max(max, distF[exploreF.First().x, exploreF.First().y] + distB[exploreB.First().x, exploreB.First().y] + 1);
+
+
+            if (u <= max)
             {
                 curr = new Vector2Int(middle.x,middle.y);
                 map.setMark(PATH, curr.x, curr.y);
@@ -521,10 +530,18 @@ public class AStar {
 
         while (exploreF.size + exploreB.size > 0)
         {
-            float c = Math.Min(exploreF.FirstPrio(), exploreB.FirstPrio());
+            float c = 0;
+            if (exploreF.size > 0 && exploreB.size > 0) c = Math.Min(exploreF.FirstPrio(), exploreB.FirstPrio());
+            else if(exploreF.size > 0) c = exploreF.FirstPrio();
+            else if(exploreB.size > 0) c = exploreB.FirstPrio();
 
             //If stopping condition
-            if (u <= Math.Max(Math.Max(Math.Max(c, exploreF.FirstPrio()), exploreB.FirstPrio()), distF[exploreF.First().x, exploreF.First().y] + distB[exploreB.First().x, exploreB.First().y] + 1))
+            float max = 0;
+            if (exploreF.size > 0) max = Math.Max(c, exploreF.FirstPrio());
+            if (exploreB.size > 0) max = Math.Max(max, exploreB.FirstPrio());
+            if (exploreF.size > 0 && exploreB.size > 0) max = Math.Max(max, distF[exploreF.First().x, exploreF.First().y] + distB[exploreB.First().x, exploreB.First().y] + 1);
+
+            if (u <= max)
             {
                 curr = new Vector2Int(middle.x, middle.y);
                 map.setMark(PATH, curr.x, curr.y);
