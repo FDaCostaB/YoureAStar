@@ -19,7 +19,7 @@ public class Parameters : MonoBehaviour
     public bool useSubgoal;
     public bool useTL;
     public bool useHPA;
-    public int clusterSize = 20;
+    public int clusterSize = 50;
     public int layerNb = 1;
     private void Awake()
     {
