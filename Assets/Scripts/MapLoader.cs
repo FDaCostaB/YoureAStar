@@ -9,7 +9,7 @@ using UnityEditor;
 public class MapLoader : MonoBehaviour
 {
     public Sprite sourceMap;
-    public TextAsset map;
+    public string mapPath;
     
     // Start is called before the first frame update
     void Start()
@@ -25,11 +25,11 @@ public class MapLoader : MonoBehaviour
 
     public void ReadPNGandWriteText()
     {
-        byte[] imageBytes = File.ReadAllBytes(AssetDatabase.GetAssetPath(sourceMap));
+        byte[] imageBytes = File.ReadAllBytes(mapPath);
         Texture2D image = new Texture2D(2, 2);
         image.LoadImage(imageBytes);
 
-        using (StreamWriter writer = new StreamWriter(AssetDatabase.GetAssetPath(map)))
+        using (StreamWriter writer = new StreamWriter(mapPath))
         {
             for (int x = 0; x < image.height; x++)
             {

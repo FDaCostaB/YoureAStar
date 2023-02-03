@@ -11,7 +11,7 @@ using Unity.Mathematics;
 public class GameZone : MonoBehaviour, IObserver
 {
     string mapPath;
-    public TextAsset[] maps;
+    public string[] mapsPath;
     public GameObject pauseMenu;
     public GameObject benchmarkMenu;
     public TextMeshProUGUI xStart;
@@ -44,7 +44,7 @@ public class GameZone : MonoBehaviour, IObserver
     private Controller c;
 
     private void Start(){
-        mapPath = AssetDatabase.GetAssetPath(maps[0]);
+        mapPath = mapsPath[0];
         Debug.Log(mapPath);
         characterList = new List<Transform>();
 		MapReader mapReader = new MapReader(mapPath);
@@ -73,7 +73,7 @@ public class GameZone : MonoBehaviour, IObserver
 
     public void updateMapPath(int value)
     {
-        mapPath = AssetDatabase.GetAssetPath(maps[value]);
+        mapPath = mapsPath[value];
     }
 
     public void generatePaths()

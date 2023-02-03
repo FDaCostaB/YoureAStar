@@ -7223,17 +7223,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a2713295d21e4488c16b4ccc0adc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maps:
-  - {fileID: 4900000, guid: 880c8108fa381c5439c04cce19d79001, type: 3}
-  - {fileID: 4900000, guid: 8612e28dcc6c53746abecef2cff1a35b, type: 3}
-  - {fileID: 4900000, guid: 17f16f841c223f147bdace6d665256b3, type: 3}
-  - {fileID: 4900000, guid: 6d7d980fe2e74b14cb4d44fcd64c9171, type: 3}
-  - {fileID: 4900000, guid: cf7ccfe58ecc3c7488b327d210f32d9c, type: 3}
-  - {fileID: 4900000, guid: 8fa1a1fa24e517e45963bea72b60a228, type: 3}
-  - {fileID: 4900000, guid: f0545e46251d3d44b946632b82ad6188, type: 3}
-  - {fileID: 4900000, guid: 7dbb41fb13242864d8697febf9e72f28, type: 3}
-  - {fileID: 4900000, guid: fc9386b65fc3740439a17c1f42156428, type: 3}
-  - {fileID: 4900000, guid: f288e783c42987c48a77f9185aa5b3eb, type: 3}
+  mapsPath:
+  - Map/House.txt
+  - Map/Flat.txt
+  - Map/Maze.txt
+  - Map/Amsterdam.txt
+  - Map/Cauldron.txt
+  - Map/FloodedPlains.txt
+  - Map/TheFrozenSea.txt
+  - Map/London.txt
+  - Map/Paris.txt
+  - Map/Tehran.txt
   pauseMenu: {fileID: 1725157078}
   benchmarkMenu: {fileID: 1643987874}
   xStart: {fileID: 1420342798}
