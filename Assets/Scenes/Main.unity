@@ -7223,6 +7223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a2713295d21e4488c16b4ccc0adc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  param: {fileID: 0}
   mapsPath:
   - Map/House
   - Map/Flat

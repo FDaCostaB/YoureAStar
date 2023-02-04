@@ -14,10 +14,10 @@ public class Parameters : MonoBehaviour
     public bool benchmark = false;
     public bool pause = false;
     public int heuristicMultiplier =1;
-    public Heuristics heuristic;
-    public OpenSetType listType;
-    public bool useSubgoal;
-    public bool useTL;
+    public Heuristics heuristic = Heuristics.Octile;
+    public OpenSetType listType = OpenSetType.HotQueue;
+    public bool useSubgoal = true;
+    public bool useTL = false;
     public bool useHPA;
     public int clusterSize = 50;
     public int layerNb = 1;

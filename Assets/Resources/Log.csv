@@ -2786,3 +2786,18 @@ House, (107 - 123), (154 - 50), 11, 5, 13, 4, FindAbstractPath - SG Graph, HotQu
 House, (107 - 123), (154 - 50), 31, 1050, 22, 122, Subgoal, HotQueue, Octile, 1
 FloodedPlains, (0 - 0), (38 - 20), 1, 39, 0, 39, Subgoal-TL, HotQueue, Octile, 1
 FloodedPlains, (10 - 5), (39 - 34), 0, 30, 0, 30, Subgoal-TL, HotQueue, Octile, 1
+House, (107 - 123), (125 - 55), 6, 5, 13, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+House, (107 - 123), (125 - 55), 17, 353, 11, 93, Subgoal, HotQueue, Octile, 1
+House, (107 - 123), (145 - 50), 4, 5, 13, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+House, (107 - 123), (145 - 50), 18, 1011, 22, 113, Subgoal, HotQueue, Octile, 1
+House, (107 - 123), (110 - 106), 1, 18, 0, 18, Subgoal, HotQueue, Octile, 1
+House, (110 - 106), (158 - 23), 5, 8, 12, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+House, (110 - 106), (158 - 23), 9, 356, 19, 118, Subgoal, HotQueue, Octile, 1
+House, (107 - 123), (132 - 92), 1, 32, 0, 32, Subgoal, HotQueue, Octile, 1
+House, (132 - 92), (149 - 48), 6, 5, 12, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+House, (132 - 92), (149 - 48), 13, 276, 24, 98, Subgoal, HotQueue, Octile, 1
+House, (123 - 83), (158 - 48), 4, 5, 14, 4, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+House, (123 - 83), (158 - 48), 7, 279, 15, 98, Subgoal, HotQueue, Octile, 1
+House, (107 - 123), (138 - 90), 2, 34, 0, 34, Subgoal, HotQueue, Octile, 1
+House, (126 - 103), (18 - 48), 10, 17, 12, 6, FindAbstractPath - SG Graph, HotQueue, Octile, 1
+House, (126 - 103), (18 - 48), 26, 328, 30, 130, Subgoal, HotQueue, Octile, 1

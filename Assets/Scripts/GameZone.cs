@@ -10,6 +10,7 @@ using Unity.Mathematics;
 
 public class GameZone : MonoBehaviour, IObserver
 {
+    public Parameters param;
     public string[] mapsPath;
     public TextAsset mapFile;
     public GameObject pauseMenu;
@@ -44,6 +45,7 @@ public class GameZone : MonoBehaviour, IObserver
     private Controller c;
 
     private void Start(){
+        param = new Parameters();
         mapFile = Resources.Load<TextAsset>(mapsPath[0]);
         Debug.Log(mapsPath[0]);
         Debug.Log(mapFile);
@@ -76,11 +78,6 @@ public class GameZone : MonoBehaviour, IObserver
     {
         mapFile = (TextAsset)Resources.Load(mapsPath[value], typeof(TextAsset));
     }
-
-//    public void generatePaths()
-//    {
-//        map.GenerateBenchmark();
-//    }
 
     public void readPaths()
     {

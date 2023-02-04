@@ -135,7 +135,7 @@ public class AStar {
             m.time = stopwatch.ElapsedMilliseconds;
             Data.CacheLine(map.name, fromX, fromY, toX, toY,  stopwatch.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
         }
-        Data.flush();
+        //Data.flush();
 
         CursorController.instance.SetNormal();
         return m;
