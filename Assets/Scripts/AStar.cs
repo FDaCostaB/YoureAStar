@@ -30,7 +30,7 @@ public class AStar {
     public void readPaths()
     {
         Map m = new Map(map.name);
-        StreamReader reader = new StreamReader(map.name);
+        StreamReader reader = new StreamReader(Application.persistentDataPath + Path.DirectorySeparatorChar + map.name + ".paths");
         string line = null;
         int[] intRead = { 0, 0, 0, 0 };
         bool saveDebug = Parameters.instance.debug;
@@ -82,7 +82,6 @@ public class AStar {
         map.Notify();
     }
     
-
     public void mark(bool doRefresh) {
         int characterX = map.CharacterX();
         int characterY = map.CharacterY();
@@ -102,7 +101,6 @@ public class AStar {
         }
 
         return;
-
     }
 
     public Move measurePath(int toX, int toY){
@@ -135,7 +133,7 @@ public class AStar {
             m.time = stopwatch.ElapsedMilliseconds;
             Data.CacheLine(map.name, fromX, fromY, toX, toY,  stopwatch.ElapsedMilliseconds, m.scanned, m.openSetMaxSize, m.Steps().Count, method, Parameters.instance.listType, Parameters.instance.heuristic, Parameters.instance.heuristicMultiplier);
         }
-        //Data.flush();
+        Data.flush();
 
         CursorController.instance.SetNormal();
         return m;

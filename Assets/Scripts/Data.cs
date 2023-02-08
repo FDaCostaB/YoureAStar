@@ -17,7 +17,8 @@ public static class Data
     }
 
     public static void flush(){
-        string path = "Assets/Resources/Log.csv";
+        string path = Application.persistentDataPath + Path.DirectorySeparatorChar + "Log.csv";
+        if (!File.Exists(path)) File.CreateText(path);
         StreamWriter writer = new StreamWriter(path, true);
         writer.Write(buffer);
         writer.Close();

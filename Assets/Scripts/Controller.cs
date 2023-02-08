@@ -102,7 +102,7 @@ public class Controller : IEventCollector {
         if(map.isFree(hoverTile.x, hoverTile.y)) 
 			gZone.highlightTile(hoverTile.x, hoverTile.y);
 	}
-        public void debugClic(float x, float y)
+    public void debugClic(float x, float y)
 	{
         Vector2Int clic = new Vector2Int((int)Math.Floor(x + cam.GetComponent<Transform>().position.x), (int)Math.Floor(y + 1 - cam.GetComponent<Transform>().position.y));
         aStar.debug(clic.x, clic.y); 

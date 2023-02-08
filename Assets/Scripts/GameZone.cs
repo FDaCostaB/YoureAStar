@@ -79,6 +79,11 @@ public class GameZone : MonoBehaviour, IObserver
         mapFile = (TextAsset)Resources.Load(mapsPath[value], typeof(TextAsset));
     }
 
+    public void generatePaths()
+    {
+        map.GenerateBenchmark();
+    }
+
     public void readPaths()
     {
         c.readPaths();
@@ -166,7 +171,7 @@ public class GameZone : MonoBehaviour, IObserver
 
     public void toogleBenchmark()
     {
-        benchmarkMenu.SetActive(!benchmarkMenu.activeInHierarchy);
+        benchmarkMenu.SetActive(!benchmarkMenu.activeSelf);
     }
 
     public void updateDebug(bool value)
@@ -194,12 +199,12 @@ public class GameZone : MonoBehaviour, IObserver
         c.cancelMove();
         if (pause)
         {
-            pauseMenu.active = true;
+            pauseMenu.SetActive(true);
             pauseMenu.transform.localPosition = new float3(-400, -225, 0); 
         }
         else
         {
-            pauseMenu.active = false;
+            pauseMenu.SetActive(false);
             pauseMenu.transform.position = new float3(-190, -225, 0);
         }
     }
