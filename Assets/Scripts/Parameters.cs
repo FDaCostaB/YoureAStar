@@ -21,6 +21,7 @@ public class Parameters : MonoBehaviour
     public bool useHPA;
     public int clusterSize = 50;
     public int layerNb = 1;
+
     private void Awake()
     {
         instance = this;

@@ -45,10 +45,8 @@ public class GameZone : MonoBehaviour, IObserver
     private Controller c;
 
     private void Start(){
-        param = new Parameters();
         mapFile = Resources.Load<TextAsset>(mapsPath[0]);
         Debug.Log(mapsPath[0]);
-        Debug.Log(mapFile);
         characterList = new List<Transform>();
 		MapReader mapReader = new MapReader(mapFile);
 		map = mapReader.read();
@@ -171,7 +169,7 @@ public class GameZone : MonoBehaviour, IObserver
 
     public void toogleBenchmark()
     {
-        benchmarkMenu.SetActive(!benchmarkMenu.activeSelf);
+        if(benchmarkMenu.transform.parent.gameObject.activeInHierarchy) benchmarkMenu.SetActive(!benchmarkMenu.activeSelf);
     }
 
     public void updateDebug(bool value)
